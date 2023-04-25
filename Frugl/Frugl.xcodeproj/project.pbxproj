@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		237063D629F871110014B188 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D529F871110014B188 /* Placeholder.swift */; };
+		237063D929F871290014B188 /* Placehodler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D829F871290014B188 /* Placehodler.swift */; };
+		237063DC29F871390014B188 /* Hodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DB29F871390014B188 /* Hodlr.swift */; };
+		237063DF29F871520014B188 /* NotherHodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DE29F871520014B188 /* NotherHodlr.swift */; };
 		936A492F29F838F400F400CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A492E29F838F400F400CB /* AppDelegate.swift */; };
 		936A493129F838F400F400CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493029F838F400F400CB /* SceneDelegate.swift */; };
 		936A493329F838F400F400CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493229F838F400F400CB /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		237063D529F871110014B188 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		237063D829F871290014B188 /* Placehodler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placehodler.swift; sourceTree = "<group>"; };
+		237063DB29F871390014B188 /* Hodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hodlr.swift; sourceTree = "<group>"; };
+		237063DE29F871520014B188 /* NotherHodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotherHodlr.swift; sourceTree = "<group>"; };
 		936A492B29F838F400F400CB /* Frugl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frugl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A492E29F838F400F400CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A493029F838F400F400CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237063D329F870820014B188 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				936A492E29F838F400F400CB /* AppDelegate.swift */,
+				936A493029F838F400F400CB /* SceneDelegate.swift */,
+				936A493729F838F600F400CB /* Assets.xcassets */,
+				936A493C29F838F600F400CB /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		237063D429F870FB0014B188 /* Helper&Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				237063D529F871110014B188 /* Placeholder.swift */,
+			);
+			path = "Helper&Extensions";
+			sourceTree = "<group>";
+		};
+		237063D729F871180014B188 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				237063D829F871290014B188 /* Placehodler.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		237063DA29F8712F0014B188 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				237063DB29F871390014B188 /* Hodlr.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		237063DD29F871460014B188 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				237063DE29F871520014B188 /* NotherHodlr.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		936A492229F838F400F400CB = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +107,14 @@
 		936A492D29F838F400F400CB /* Frugl */ = {
 			isa = PBXGroup;
 			children = (
-				936A492E29F838F400F400CB /* AppDelegate.swift */,
-				936A493029F838F400F400CB /* SceneDelegate.swift */,
+				237063DD29F871460014B188 /* Views */,
+				237063DA29F8712F0014B188 /* Model */,
+				237063D729F871180014B188 /* Networking */,
+				237063D429F870FB0014B188 /* Helper&Extensions */,
+				237063D329F870820014B188 /* SupportingFiles */,
 				936A493229F838F400F400CB /* ViewController.swift */,
 				936A493429F838F400F400CB /* Main.storyboard */,
-				936A493729F838F600F400CB /* Assets.xcassets */,
 				936A493929F838F600F400CB /* LaunchScreen.storyboard */,
-				936A493C29F838F600F400CB /* Info.plist */,
 			);
 			path = Frugl;
 			sourceTree = "<group>";
@@ -141,6 +193,10 @@
 				936A493329F838F400F400CB /* ViewController.swift in Sources */,
 				936A492F29F838F400F400CB /* AppDelegate.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
+				237063DC29F871390014B188 /* Hodlr.swift in Sources */,
+				237063D629F871110014B188 /* Placeholder.swift in Sources */,
+				237063DF29F871520014B188 /* NotherHodlr.swift in Sources */,
+				237063D929F871290014B188 /* Placehodler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Frugl/Info.plist;
+				INFOPLIST_FILE = Frugl/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Frugl/Info.plist;
+				INFOPLIST_FILE = Frugl/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
