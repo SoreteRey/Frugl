@@ -1,0 +1,2 @@
+# Frugl
+Financial Tracker App
