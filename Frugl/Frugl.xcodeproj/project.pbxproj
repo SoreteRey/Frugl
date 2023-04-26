@@ -11,9 +11,12 @@
 		237063D929F871290014B188 /* Placehodler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D829F871290014B188 /* Placehodler.swift */; };
 		237063DC29F871390014B188 /* Hodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DB29F871390014B188 /* Hodlr.swift */; };
 		237063DF29F871520014B188 /* NotherHodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DE29F871520014B188 /* NotherHodlr.swift */; };
+		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
+		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
+		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
+		237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */; };
 		936A492F29F838F400F400CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A492E29F838F400F400CB /* AppDelegate.swift */; };
 		936A493129F838F400F400CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493029F838F400F400CB /* SceneDelegate.swift */; };
-		936A493329F838F400F400CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493229F838F400F400CB /* ViewController.swift */; };
 		936A493629F838F400F400CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493429F838F400F400CB /* Main.storyboard */; };
 		936A493829F838F600F400CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936A493729F838F600F400CB /* Assets.xcassets */; };
 		936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493929F838F600F400CB /* LaunchScreen.storyboard */; };
@@ -24,10 +27,13 @@
 		237063D829F871290014B188 /* Placehodler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placehodler.swift; sourceTree = "<group>"; };
 		237063DB29F871390014B188 /* Hodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hodlr.swift; sourceTree = "<group>"; };
 		237063DE29F871520014B188 /* NotherHodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotherHodlr.swift; sourceTree = "<group>"; };
+		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		936A492B29F838F400F400CB /* Frugl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frugl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A492E29F838F400F400CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A493029F838F400F400CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		936A493229F838F400F400CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		936A493529F838F400F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		936A493729F838F600F400CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		936A493A29F838F600F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,9 +89,29 @@
 		237063DD29F871460014B188 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				237063E029F9B48C0014B188 /* UserSignIn */,
 				237063DE29F871520014B188 /* NotherHodlr.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		237063E029F9B48C0014B188 /* UserSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				237063E129F9B5620014B188 /* SignInViewController.swift */,
+				237063E629F9B5FD0014B188 /* SignInViewModel.swift */,
+				237063E529F9B5E50014B188 /* CreateAccount */,
+			);
+			path = UserSignIn;
+			sourceTree = "<group>";
+		};
+		237063E529F9B5E50014B188 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				237063E329F9B5D90014B188 /* CreateAccountViewController.swift */,
+				237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */,
+			);
+			path = CreateAccount;
 			sourceTree = "<group>";
 		};
 		936A492229F838F400F400CB = {
@@ -112,7 +138,6 @@
 				237063D729F871180014B188 /* Networking */,
 				237063D429F870FB0014B188 /* Helper&Extensions */,
 				237063D329F870820014B188 /* SupportingFiles */,
-				936A493229F838F400F400CB /* ViewController.swift */,
 				936A493429F838F400F400CB /* Main.storyboard */,
 				936A493929F838F600F400CB /* LaunchScreen.storyboard */,
 			);
@@ -190,10 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				936A493329F838F400F400CB /* ViewController.swift in Sources */,
+				237063E229F9B5620014B188 /* SignInViewController.swift in Sources */,
 				936A492F29F838F400F400CB /* AppDelegate.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
 				237063DC29F871390014B188 /* Hodlr.swift in Sources */,
+				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
+				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
+				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				237063D629F871110014B188 /* Placeholder.swift in Sources */,
 				237063DF29F871520014B188 /* NotherHodlr.swift in Sources */,
 				237063D929F871290014B188 /* Placehodler.swift in Sources */,
