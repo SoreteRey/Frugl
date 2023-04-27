@@ -10,10 +10,20 @@
 		237063D629F871110014B188 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D529F871110014B188 /* Placeholder.swift */; };
 		237063D929F871290014B188 /* Placehodler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D829F871290014B188 /* Placehodler.swift */; };
 		237063DC29F871390014B188 /* Hodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DB29F871390014B188 /* Hodlr.swift */; };
-		237063DF29F871520014B188 /* NotherHodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DE29F871520014B188 /* NotherHodlr.swift */; };
+		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
+		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
+		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
+		237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */; };
+		237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */; };
+		237063EE29F9C6800014B188 /* BudgetGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063ED29F9C6800014B188 /* BudgetGoalsTableViewCell.swift */; };
+		237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F129F9CCF30014B188 /* ItemizationViewController.swift */; };
+		237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */; };
+		23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */; };
+		23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */; };
+		23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */; };
+		23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */; };
 		936A492F29F838F400F400CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A492E29F838F400F400CB /* AppDelegate.swift */; };
 		936A493129F838F400F400CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493029F838F400F400CB /* SceneDelegate.swift */; };
-		936A493329F838F400F400CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493229F838F400F400CB /* ViewController.swift */; };
 		936A493629F838F400F400CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493429F838F400F400CB /* Main.storyboard */; };
 		936A493829F838F600F400CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936A493729F838F600F400CB /* Assets.xcassets */; };
 		936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493929F838F600F400CB /* LaunchScreen.storyboard */; };
@@ -23,11 +33,21 @@
 		237063D529F871110014B188 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		237063D829F871290014B188 /* Placehodler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placehodler.swift; sourceTree = "<group>"; };
 		237063DB29F871390014B188 /* Hodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hodlr.swift; sourceTree = "<group>"; };
-		237063DE29F871520014B188 /* NotherHodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotherHodlr.swift; sourceTree = "<group>"; };
+		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsViewController.swift; sourceTree = "<group>"; };
+		237063ED29F9C6800014B188 /* BudgetGoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsTableViewCell.swift; sourceTree = "<group>"; };
+		237063F129F9CCF30014B188 /* ItemizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationViewController.swift; sourceTree = "<group>"; };
+		237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationTableViewCell.swift; sourceTree = "<group>"; };
+		23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartTableViewCell.swift; sourceTree = "<group>"; };
 		936A492B29F838F400F400CB /* Frugl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frugl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A492E29F838F400F400CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A493029F838F400F400CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		936A493229F838F400F400CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		936A493529F838F400F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		936A493729F838F600F400CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		936A493A29F838F600F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,9 +103,100 @@
 		237063DD29F871460014B188 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				237063DE29F871520014B188 /* NotherHodlr.swift */,
+				237063E029F9B48C0014B188 /* UserSignIn */,
+				237063E529F9B5E50014B188 /* CreateAccount */,
+				237063EA29F9C6160014B188 /* BudgetGoals */,
+				237063F029F9CCC60014B188 /* Itemization */,
+				23BC26E729F9DB2E00B30A0F /* Calendar */,
+				23BC26EF29F9DC4100B30A0F /* PieChart */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		237063E029F9B48C0014B188 /* UserSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				237063E129F9B5620014B188 /* SignInViewController.swift */,
+				237063E629F9B5FD0014B188 /* SignInViewModel.swift */,
+			);
+			path = UserSignIn;
+			sourceTree = "<group>";
+		};
+		237063E529F9B5E50014B188 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				237063E329F9B5D90014B188 /* CreateAccountViewController.swift */,
+				237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		237063EA29F9C6160014B188 /* BudgetGoals */ = {
+			isa = PBXGroup;
+			children = (
+				237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */,
+				237063EF29F9C6830014B188 /* CustomCell */,
+			);
+			path = BudgetGoals;
+			sourceTree = "<group>";
+		};
+		237063EF29F9C6830014B188 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				237063ED29F9C6800014B188 /* BudgetGoalsTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		237063F029F9CCC60014B188 /* Itemization */ = {
+			isa = PBXGroup;
+			children = (
+				237063F129F9CCF30014B188 /* ItemizationViewController.swift */,
+				237063F329F9CD180014B188 /* CustomCell */,
+			);
+			path = Itemization;
+			sourceTree = "<group>";
+		};
+		237063F329F9CD180014B188 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		23BC26E729F9DB2E00B30A0F /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */,
+				23BC26EC29F9DB8C00B30A0F /* CustomCell */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		23BC26EC29F9DB8C00B30A0F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		23BC26EF29F9DC4100B30A0F /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */,
+				23BC26F229F9DC9800B30A0F /* CustomCell */,
+			);
+			path = PieChart;
+			sourceTree = "<group>";
+		};
+		23BC26F229F9DC9800B30A0F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		936A492229F838F400F400CB = {
@@ -112,7 +223,6 @@
 				237063D729F871180014B188 /* Networking */,
 				237063D429F870FB0014B188 /* Helper&Extensions */,
 				237063D329F870820014B188 /* SupportingFiles */,
-				936A493229F838F400F400CB /* ViewController.swift */,
 				936A493429F838F400F400CB /* Main.storyboard */,
 				936A493929F838F600F400CB /* LaunchScreen.storyboard */,
 			);
@@ -190,12 +300,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				936A493329F838F400F400CB /* ViewController.swift in Sources */,
+				237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */,
+				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
+				237063EE29F9C6800014B188 /* BudgetGoalsTableViewCell.swift in Sources */,
+				237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */,
+				237063E229F9B5620014B188 /* SignInViewController.swift in Sources */,
 				936A492F29F838F400F400CB /* AppDelegate.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
+				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
 				237063DC29F871390014B188 /* Hodlr.swift in Sources */,
+				237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */,
+				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
+				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
+				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
+				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				237063D629F871110014B188 /* Placeholder.swift in Sources */,
-				237063DF29F871520014B188 /* NotherHodlr.swift in Sources */,
+				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
 				237063D929F871290014B188 /* Placehodler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +470,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +498,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
