@@ -498,6 +498,9 @@
                                 <rect key="frame" x="125.33333333333333" y="600" width="142.33333333333337" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccountButtonTapped:" destination="0cz-Hi-Tru" eventType="touchUpInside" id="KS5-Rw-qjL"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-L7-lPe">
                                 <rect key="frame" x="70" y="140" width="253" height="148"/>
@@ -534,6 +537,11 @@
                             <constraint firstItem="52W-Fn-dOh" firstAttribute="leading" secondItem="bMh-L7-lPe" secondAttribute="trailing" constant="-197.66666666666669" id="mx7-ML-bG8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userConfirmPasswordTextField" destination="YHo-Sz-ZLI" id="wvp-ki-oks"/>
+                        <outlet property="userEmailTextField" destination="Zbu-Yy-xby" id="GwB-8Y-b1Z"/>
+                        <outlet property="userPassWordTextField" destination="PVn-Mf-e6f" id="GaB-Sg-6mM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98f-s5-LB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
