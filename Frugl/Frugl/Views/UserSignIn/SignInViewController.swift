@@ -18,21 +18,29 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = SignInAccountViewModel()
+        viewModel = SignInAccountViewModel(delegate: self)
+    }
+    
+    func presentErrorAlertController(error: String) {
+        let alertController = UIAlertController(title: "", message: error, preferredStyle: .actionSheet)
+        let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true)
     }
     
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text else { return }
-        
-        viewModel.signInAccount(email: email, password: password)
+        guard let email = emailTextField.text, email != "",
+              let password = passwordTextField.text, password != "" else { return }
+        viewModel.signInAccount(email: email, password: password) { Bool, error in
+            if let error = error {
+                self.presentErrorAlertController(error: error.localizedDescription)
+            }
+        }
     }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+} // End of class
+
+extension SignInViewController: SignInAccountViewModelDelegate {
+    func signInSuccessfull() {
     }
 }

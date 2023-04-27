@@ -20,7 +20,23 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = CreateAccountViewModel()
+        viewModel = CreateAccountViewModel(delegate: self)
+    }
+    
+    // MARK: - Functions
+    func presentMainVC() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(identifier: "navigation")
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalTransitionStyle = .crossDissolve
+        present(viewController, animated: true)
+    }
+    
+    func presentErrorAlertController(error: String) {
+        let alertController = UIAlertController(title: "", message: error, preferredStyle: .actionSheet)
+        let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true)
     }
     
     // MARK: - Action
@@ -29,7 +45,20 @@ class CreateAccountViewController: UIViewController {
               let password = userPassWordTextField.text,
               let confirmPassword = userConfirmPasswordTextField.text else { return }
         
-        viewModel.createAccount(email: email, password: password, confirmPassword: confirmPassword)
-        self.navigationController?.popViewController(animated: true)
+        viewModel.createAccount(email: email, password: password, confirmPassword: confirmPassword) { success, error in
+            if success == true {
+                print("succesful account creation")
+            } else {
+                self.presentErrorAlertController(error: error?.localizedDescription ?? "")
+            }
+        }
+    }
+} // End of class
+
+// MARK: - Extensions
+extension CreateAccountViewController: CreateAccountViewModelDelegate {
+    func accountCreatedSuccessfully() {
+        presentMainVC()
     }
 }
+
