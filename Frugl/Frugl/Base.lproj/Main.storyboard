@@ -13,7 +13,7 @@
         <!--Budget Goals-->
         <scene sceneID="5qg-oW-WkZ">
             <objects>
-                <viewController id="ztZ-mf-VA6" customClass="BudgetGoalsViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="budgetGoalsVC" id="ztZ-mf-VA6" customClass="BudgetGoalsViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ypi-4s-LtE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,7 +415,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="5KD-x7-Fs3">
             <objects>
-                <viewController id="Cm2-eo-bQ2" customClass="SignInViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" id="Cm2-eo-bQ2" customClass="SignInViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4GH-WW-Qdc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,7 +482,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="Ryy-hN-w9z">
             <objects>
-                <viewController id="0cz-Hi-Tru" customClass="CreateAccountViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createAccount" id="0cz-Hi-Tru" customClass="CreateAccountViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2hz-9x-Gqw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
