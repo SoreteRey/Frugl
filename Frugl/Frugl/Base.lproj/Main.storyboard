@@ -441,6 +441,9 @@
                                 <rect key="frame" x="100" y="349" width="193" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButtonTapped:" destination="Cm2-eo-bQ2" eventType="touchUpInside" id="oFJ-ha-ied"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trying to get frugl?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-QR-M9V">
                                 <rect key="frame" x="114.33333333333333" y="453.33333333333331" width="164.66666666666669" height="24"/>
@@ -474,6 +477,10 @@
                             <constraint firstItem="jYv-KD-5MA" firstAttribute="leading" secondItem="LxP-9R-uET" secondAttribute="leading" constant="100" id="si4-qd-d1Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="qFc-cx-WcB" id="3KI-JM-qVb"/>
+                        <outlet property="passwordTextField" destination="y6l-PC-0qT" id="8qH-gy-Xg0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzS-fW-h4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
