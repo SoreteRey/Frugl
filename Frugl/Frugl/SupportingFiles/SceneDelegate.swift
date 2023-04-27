@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if Auth.auth().currentUser != nil {
                 // User is signed in
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let budgetGoalsVC = storyBoard.instantiateViewController(withIdentifier: "budgetGoalsVC")
+                let budgetGoalsVC = storyBoard.instantiateViewController(withIdentifier: "navigation")
                 self.window?.rootViewController = budgetGoalsVC
             } else {
                 // No user signed in
