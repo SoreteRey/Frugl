@@ -13,6 +13,7 @@ class Budget {
         static let amount = "amount"
         static let date = "date"
         static let uuid = "uuid"
+        static let collectionType = "budget"
     }
     
     var amount: Double
