@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		237063D629F871110014B188 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D529F871110014B188 /* Placeholder.swift */; };
 		237063D929F871290014B188 /* Placehodler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D829F871290014B188 /* Placehodler.swift */; };
-		237063DC29F871390014B188 /* Hodlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063DB29F871390014B188 /* Hodlr.swift */; };
 		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
 		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
 		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
@@ -28,6 +26,9 @@
 		34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C4330E29FAD1C600064959 /* GoogleService-Info.plist */; };
 		34C4331229FAD24700064959 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331129FAD24700064959 /* FirebaseAuth */; };
 		34C4331429FAD24700064959 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331329FAD24700064959 /* FirebaseFirestore */; };
+		34C433162A000F2000064959 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433152A000F2000064959 /* Budget.swift */; };
+		34C433182A000F3800064959 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433172A000F3800064959 /* Expense.swift */; };
+		34C4331A2A0018F000064959 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433192A0018F000064959 /* DateExtension.swift */; };
 		936A492F29F838F400F400CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A492E29F838F400F400CB /* AppDelegate.swift */; };
 		936A493129F838F400F400CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493029F838F400F400CB /* SceneDelegate.swift */; };
 		936A493629F838F400F400CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493429F838F400F400CB /* Main.storyboard */; };
@@ -36,9 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		237063D529F871110014B188 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		237063D829F871290014B188 /* Placehodler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placehodler.swift; sourceTree = "<group>"; };
-		237063DB29F871390014B188 /* Hodlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hodlr.swift; sourceTree = "<group>"; };
 		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +54,9 @@
 		23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartTableViewCell.swift; sourceTree = "<group>"; };
 		34C4330E29FAD1C600064959 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34C433152A000F2000064959 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		34C433172A000F3800064959 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		34C433192A0018F000064959 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		936A492B29F838F400F400CB /* Frugl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frugl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A492E29F838F400F400CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A493029F838F400F400CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 		237063D429F870FB0014B188 /* Helper&Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				237063D529F871110014B188 /* Placeholder.swift */,
+				34C433192A0018F000064959 /* DateExtension.swift */,
 			);
 			path = "Helper&Extensions";
 			sourceTree = "<group>";
@@ -107,7 +109,8 @@
 		237063DA29F8712F0014B188 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				237063DB29F871390014B188 /* Hodlr.swift */,
+				34C433152A000F2000064959 /* Budget.swift */,
+				34C433172A000F3800064959 /* Expense.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,8 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C433182A000F3800064959 /* Expense.swift in Sources */,
 				237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */,
 				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
+				34C433162A000F2000064959 /* Budget.swift in Sources */,
 				237063EE29F9C6800014B188 /* BudgetGoalsTableViewCell.swift in Sources */,
 				237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */,
 				237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */,
@@ -342,14 +347,13 @@
 				237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
 				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
-				237063DC29F871390014B188 /* Hodlr.swift in Sources */,
 				237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */,
 				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
 				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
 				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
 				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
+				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
-				237063D629F871110014B188 /* Placeholder.swift in Sources */,
 				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
 				237063D929F871290014B188 /* Placehodler.swift in Sources */,
 			);
