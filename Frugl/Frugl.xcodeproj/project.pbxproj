@@ -18,6 +18,9 @@
 		237063EE29F9C6800014B188 /* BudgetGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063ED29F9C6800014B188 /* BudgetGoalsTableViewCell.swift */; };
 		237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F129F9CCF30014B188 /* ItemizationViewController.swift */; };
 		237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */; };
+		237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */; };
+		237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889F929FB0B280044F6E1 /* SignOutViewController.swift */; };
+		237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */; };
 		23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */; };
 		23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */; };
 		23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */; };
@@ -44,6 +47,9 @@
 		237063ED29F9C6800014B188 /* BudgetGoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		237063F129F9CCF30014B188 /* ItemizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationViewController.swift; sourceTree = "<group>"; };
 		237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationTableViewCell.swift; sourceTree = "<group>"; };
+		237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsViewModel.swift; sourceTree = "<group>"; };
+		237889F929FB0B280044F6E1 /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
+		237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewModel.swift; sourceTree = "<group>"; };
 		23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */,
+				237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */,
 				237063EF29F9C6830014B188 /* CustomCell */,
 			);
 			path = BudgetGoals;
@@ -171,10 +178,20 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		237889FD29FB0BE80044F6E1 /* SignOut */ = {
+			isa = PBXGroup;
+			children = (
+				237889F929FB0B280044F6E1 /* SignOutViewController.swift */,
+				237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */,
+			);
+			path = SignOut;
+			sourceTree = "<group>";
+		};
 		23BC26E729F9DB2E00B30A0F /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */,
+				237889FD29FB0BE80044F6E1 /* SignOut */,
 				23BC26EC29F9DB8C00B30A0F /* CustomCell */,
 			);
 			path = Calendar;
@@ -318,15 +335,18 @@
 				237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */,
 				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
 				237063EE29F9C6800014B188 /* BudgetGoalsTableViewCell.swift in Sources */,
+				237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */,
 				237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */,
 				237063E229F9B5620014B188 /* SignInViewController.swift in Sources */,
 				936A492F29F838F400F400CB /* AppDelegate.swift in Sources */,
+				237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
 				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
 				237063DC29F871390014B188 /* Hodlr.swift in Sources */,
 				237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */,
 				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
 				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
+				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
 				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				237063D629F871110014B188 /* Placeholder.swift in Sources */,

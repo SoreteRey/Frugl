@@ -8,9 +8,13 @@
 import UIKit
 
 class BudgetGoalsViewController: UIViewController {
-
+    
+    
+    // MARK: - Properties
+    var viewModel: BudgetGoalsViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel = BudgetGoalsViewModel()
     }
 }
