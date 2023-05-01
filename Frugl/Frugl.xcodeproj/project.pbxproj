@@ -34,6 +34,8 @@
 		936A493629F838F400F400CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493429F838F400F400CB /* Main.storyboard */; };
 		936A493829F838F600F400CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936A493729F838F600F400CB /* Assets.xcassets */; };
 		936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493929F838F600F400CB /* LaunchScreen.storyboard */; };
+		939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */; };
+		939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939B5A5E2A001DE700FC3D2E /* PieChartView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		936A493729F838F600F400CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		936A493A29F838F600F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		936A493C29F838F600F400CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		939B5A5E2A001DE700FC3D2E /* PieChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */,
+				939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */,
+				939B5A5E2A001DE700FC3D2E /* PieChartView.xib */,
 				23BC26F229F9DC9800B30A0F /* CustomCell */,
 			);
 			path = PieChart;
@@ -322,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */,
+				939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */,
 				936A493829F838F600F400CB /* Assets.xcassets in Resources */,
 				936A493629F838F400F400CB /* Main.storyboard in Resources */,
 				34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */,
@@ -336,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C433182A000F3800064959 /* Expense.swift in Sources */,
+				939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */,
 				237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */,
 				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
 				34C433162A000F2000064959 /* Budget.swift in Sources */,
