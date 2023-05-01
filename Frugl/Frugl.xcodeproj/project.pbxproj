@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		237063D929F871290014B188 /* Placehodler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063D829F871290014B188 /* Placehodler.swift */; };
 		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
 		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
 		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
@@ -45,10 +44,10 @@
 		936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493929F838F600F400CB /* LaunchScreen.storyboard */; };
 		939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */; };
 		939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939B5A5E2A001DE700FC3D2E /* PieChartView.xib */; };
+		939B5A632A004D9D00FC3D2E /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A622A004D9D00FC3D2E /* FirebaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		237063D829F871290014B188 /* Placehodler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placehodler.swift; sourceTree = "<group>"; };
 		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		936A493C29F838F600F400CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		939B5A5E2A001DE700FC3D2E /* PieChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
+		939B5A622A004D9D00FC3D2E /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 		237063D729F871180014B188 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				237063D829F871290014B188 /* Placehodler.swift */,
+				939B5A622A004D9D00FC3D2E /* FirebaseService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -395,6 +395,7 @@
 				237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */,
 				237063E229F9B5620014B188 /* SignInViewController.swift in Sources */,
 				936A492F29F838F400F400CB /* AppDelegate.swift in Sources */,
+				939B5A632A004D9D00FC3D2E /* FirebaseService.swift in Sources */,
 				237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
 				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
