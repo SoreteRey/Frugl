@@ -12,6 +12,7 @@ protocol SignOutViewModelDelegate: AnyObject {
     func signOutSuccessfully()
 }
 
+// I like Sea Bass's G.O.A.T.ee
 struct SignOutViewModel {
     
     // MARK: - Properties
