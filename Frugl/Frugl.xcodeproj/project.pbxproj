@@ -23,6 +23,15 @@
 		23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */; };
 		23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */; };
 		23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */; };
+		23BCD23E2A00313F002EC273 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD23D2A00313F002EC273 /* SignIn.storyboard */; };
+		23BCD2402A003178002EC273 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD23F2A003178002EC273 /* CreateAccount.storyboard */; };
+		23BCD2422A0031BE002EC273 /* BudgetGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2412A0031BE002EC273 /* BudgetGoals.storyboard */; };
+		23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */; };
+		23BCD2472A003344002EC273 /* Itemization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2462A003344002EC273 /* Itemization.storyboard */; };
+		23BCD2492A0033AC002EC273 /* CreateExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */; };
+		23BCD24B2A0033F5002EC273 /* PieChart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD24A2A0033F5002EC273 /* PieChart.storyboard */; };
+		23BCD2562A003636002EC273 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2552A003636002EC273 /* Calendar.storyboard */; };
+		23BCD2582A00364E002EC273 /* SignOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2572A00364E002EC273 /* SignOut.storyboard */; };
 		34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C4330E29FAD1C600064959 /* GoogleService-Info.plist */; };
 		34C4331229FAD24700064959 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331129FAD24700064959 /* FirebaseAuth */; };
 		34C4331429FAD24700064959 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331329FAD24700064959 /* FirebaseFirestore */; };
@@ -55,6 +64,15 @@
 		23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartTableViewCell.swift; sourceTree = "<group>"; };
+		23BCD23D2A00313F002EC273 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		23BCD23F2A003178002EC273 /* CreateAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		23BCD2412A0031BE002EC273 /* BudgetGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BudgetGoals.storyboard; sourceTree = "<group>"; };
+		23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExpenseViewController.swift; sourceTree = "<group>"; };
+		23BCD2462A003344002EC273 /* Itemization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Itemization.storyboard; sourceTree = "<group>"; };
+		23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateExpense.storyboard; sourceTree = "<group>"; };
+		23BCD24A2A0033F5002EC273 /* PieChart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PieChart.storyboard; sourceTree = "<group>"; };
+		23BCD2552A003636002EC273 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		23BCD2572A00364E002EC273 /* SignOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignOut.storyboard; sourceTree = "<group>"; };
 		34C4330E29FAD1C600064959 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34C433152A000F2000064959 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		34C433172A000F3800064959 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -137,6 +155,7 @@
 			children = (
 				237063E129F9B5620014B188 /* SignInViewController.swift */,
 				237063E629F9B5FD0014B188 /* SignInViewModel.swift */,
+				23BCD23D2A00313F002EC273 /* SignIn.storyboard */,
 			);
 			path = UserSignIn;
 			sourceTree = "<group>";
@@ -146,6 +165,7 @@
 			children = (
 				237063E329F9B5D90014B188 /* CreateAccountViewController.swift */,
 				237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */,
+				23BCD23F2A003178002EC273 /* CreateAccount.storyboard */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -155,6 +175,7 @@
 			children = (
 				237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */,
 				237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */,
+				23BCD2412A0031BE002EC273 /* BudgetGoals.storyboard */,
 				237063EF29F9C6830014B188 /* CustomCell */,
 			);
 			path = BudgetGoals;
@@ -172,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				237063F129F9CCF30014B188 /* ItemizationViewController.swift */,
+				23BCD2462A003344002EC273 /* Itemization.storyboard */,
+				23BCD2432A0032DC002EC273 /* CreateExpense */,
 				237063F329F9CD180014B188 /* CustomCell */,
 			);
 			path = Itemization;
@@ -190,6 +213,7 @@
 			children = (
 				237889F929FB0B280044F6E1 /* SignOutViewController.swift */,
 				237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */,
+				23BCD2572A00364E002EC273 /* SignOut.storyboard */,
 			);
 			path = SignOut;
 			sourceTree = "<group>";
@@ -198,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */,
+				23BCD2552A003636002EC273 /* Calendar.storyboard */,
 				237889FD29FB0BE80044F6E1 /* SignOut */,
 				23BC26EC29F9DB8C00B30A0F /* CustomCell */,
 			);
@@ -215,6 +240,7 @@
 		23BC26EF29F9DC4100B30A0F /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
+				23BCD24A2A0033F5002EC273 /* PieChart.storyboard */,
 				23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */,
 				939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */,
 				939B5A5E2A001DE700FC3D2E /* PieChartView.xib */,
@@ -229,6 +255,15 @@
 				23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		23BCD2432A0032DC002EC273 /* CreateExpense */ = {
+			isa = PBXGroup;
+			children = (
+				23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */,
+				23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */,
+			);
+			path = CreateExpense;
 			sourceTree = "<group>";
 		};
 		936A492229F838F400F400CB = {
@@ -327,10 +362,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BCD2562A003636002EC273 /* Calendar.storyboard in Resources */,
 				936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */,
 				939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */,
+				23BCD24B2A0033F5002EC273 /* PieChart.storyboard in Resources */,
 				936A493829F838F600F400CB /* Assets.xcassets in Resources */,
+				23BCD2582A00364E002EC273 /* SignOut.storyboard in Resources */,
 				936A493629F838F400F400CB /* Main.storyboard in Resources */,
+				23BCD23E2A00313F002EC273 /* SignIn.storyboard in Resources */,
+				23BCD2492A0033AC002EC273 /* CreateExpense.storyboard in Resources */,
+				23BCD2402A003178002EC273 /* CreateAccount.storyboard in Resources */,
+				23BCD2472A003344002EC273 /* Itemization.storyboard in Resources */,
+				23BCD2422A0031BE002EC273 /* BudgetGoals.storyboard in Resources */,
 				34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +406,7 @@
 				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
+				23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */,
 				237063D929F871290014B188 /* Placehodler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

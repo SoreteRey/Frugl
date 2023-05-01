@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l14-Kc-5aY">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pie-->
+        <scene sceneID="fem-jZ-YdT">
+            <objects>
+                <viewController id="l14-Kc-5aY" customClass="PieChartViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="reM-a4-J6J">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6QY-mt-aMe">
+                                <rect key="frame" x="8" y="425" width="377" height="337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="337" id="cAs-th-DFE"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pieCell" id="T5z-Mj-RDd" customClass="PieChartTableViewCell" customModule="Frugl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T5z-Mj-RDd" id="OVR-Oh-3P0">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Monthly Budget Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-vd-JN0">
+                                <rect key="frame" x="110.33333333333333" y="386" width="172.33333333333337" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-bh-hvH" customClass="PieChartView" customModule="Frugl" customModuleProvider="target">
+                                <rect key="frame" x="76.666666666666686" y="99" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="6CQ-fi-7aF"/>
+                                    <constraint firstAttribute="width" constant="240" id="h83-5P-TiN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v8T-80-sfZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v8T-80-sfZ" firstAttribute="bottom" secondItem="6QY-mt-aMe" secondAttribute="bottom" constant="7" id="EDL-SL-ab3"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="MMb-vd-JN0" secondAttribute="bottom" constant="18" id="H5j-Q1-zGd"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="centerX" secondItem="v8T-80-sfZ" secondAttribute="centerX" id="Sxq-lc-eAf"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="centerX" secondItem="MMb-vd-JN0" secondAttribute="centerX" id="Xaz-dR-e98"/>
+                            <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="6QY-mt-aMe" secondAttribute="trailing" constant="8" id="dPE-7K-pqF"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="top" secondItem="v8T-80-sfZ" secondAttribute="top" constant="40" id="gQ5-kZ-fys"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="nSp-aV-cVY"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="8" id="wuU-iO-WmX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pie" image="chart.pie" catalog="system" id="jDZ-bo-dRt"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="sWj-bh-hvH" id="vTY-4I-dwh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apL-Ah-lKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="1229"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.pie" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
