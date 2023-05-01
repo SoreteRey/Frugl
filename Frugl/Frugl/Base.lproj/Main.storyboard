@@ -246,18 +246,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-bh-hvH" customClass="PieChartView" customModule="PieChart" customModuleProvider="target">
+                                <rect key="frame" x="76.666666666666686" y="99" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="6CQ-fi-7aF"/>
+                                    <constraint firstAttribute="width" constant="240" id="h83-5P-TiN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v8T-80-sfZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="bottom" secondItem="6QY-mt-aMe" secondAttribute="bottom" constant="7" id="EDL-SL-ab3"/>
                             <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="MMb-vd-JN0" secondAttribute="bottom" constant="18" id="H5j-Q1-zGd"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="centerX" secondItem="v8T-80-sfZ" secondAttribute="centerX" id="Sxq-lc-eAf"/>
                             <constraint firstItem="6QY-mt-aMe" firstAttribute="centerX" secondItem="MMb-vd-JN0" secondAttribute="centerX" id="Xaz-dR-e98"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="6QY-mt-aMe" secondAttribute="trailing" constant="8" id="dPE-7K-pqF"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="top" secondItem="v8T-80-sfZ" secondAttribute="top" constant="40" id="gQ5-kZ-fys"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="nSp-aV-cVY"/>
                             <constraint firstItem="6QY-mt-aMe" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="8" id="wuU-iO-WmX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pie" image="chart.pie" catalog="system" id="jDZ-bo-dRt"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="sWj-bh-hvH" id="vTY-4I-dwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apL-Ah-lKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -551,10 +565,46 @@
             </objects>
             <point key="canvasLocation" x="598" y="1229"/>
         </scene>
+        <!--My Budget-->
+        <scene sceneID="5nB-w6-71Y">
+            <objects>
+                <viewController id="Kkj-81-yXl" customClass="ViewController" customModule="PieChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="po5-si-2gF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-kR-rkG" customClass="PieChartView" customModule="PieChart" customModuleProvider="target">
+                                <rect key="frame" x="76.666666666666686" y="135.66666666666666" width="240" height="239.99999999999997"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1zr-kR-rkG" secondAttribute="height" multiplier="1:1" id="6CI-kG-HRm"/>
+                                    <constraint firstAttribute="width" constant="240" id="gBD-X6-wCZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TXo-9n-SWk"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1zr-kR-rkG" firstAttribute="centerX" secondItem="po5-si-2gF" secondAttribute="centerX" id="CWE-Uf-bUy"/>
+                            <constraint firstItem="1zr-kR-rkG" firstAttribute="centerY" secondItem="po5-si-2gF" secondAttribute="centerY" multiplier="0.6" id="oDP-j0-PvW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="OoB-CJ-WQ4"/>
+                    <navigationItem key="navigationItem" title="My Budget" id="wXu-1R-YSz"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="1zr-kR-rkG" id="jLs-Z4-e8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYW-KO-rhT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2221" y="1896"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
+        <image name="house" catalog="system" width="128" height="104"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
