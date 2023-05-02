@@ -48,6 +48,6 @@ class CalendarHelper {
     
     func weekDay (date: Date) -> Int {
         let components = calendar.dateComponents([.weekday], from: date)
-        return components.weekday! - 1
+        return (components.weekday ?? 0) - 1
     }
  }
