@@ -35,18 +35,6 @@ class CreateExpenseViewModel {
         }
     }
     
-    func fetchExpenses() {
-        service.loadExpense { result in
-            switch result {
-            case .success(let expenses):
-                self.expenses = expenses
-                self.delegate?.expenseCreatedSuccessfully()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
-    }
-    
     func deleteExpense(with expense: Expense) {
         service.deleteExpense(expense: expense) { result in
             switch result {
