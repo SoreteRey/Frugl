@@ -15,10 +15,10 @@ enum FirebaseError: Error {
 }
 
 protocol FireBaseSyncable {
-    func saveExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
+    func saveExpense(expense: Expense)
     func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void)
     func deleteExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
-    func saveBudget(budget: Budget, completion: @escaping (Result<Bool, FirebaseError> ) -> Void)
+    func saveBudget(budget: Budget)
     func loadBudget(completion: @escaping (Result<Budget, FirebaseError>) -> Void)
 }
 
@@ -30,18 +30,12 @@ struct FirebaseService: FireBaseSyncable {
     
     // MARK: - Functions
     
-    func saveExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void) {
-        
+    func saveExpense(expense: Expense) {
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(expense.uuid).setData(expense.dictionaryRepresentation) { error in
-            if let error = error {
-                print(error.localizedDescription)
-                completion(.failure(.firebaseError(error)))
+        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(expense.uuid).setData(expense.dictionaryRepresentation)
             }
-            completion(.success(true))
-        }
-    }
+    
+    
     
     func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void) {
         
@@ -65,24 +59,10 @@ struct FirebaseService: FireBaseSyncable {
         }
     }
     
-    func saveBudget(budget: Budget, completion: @escaping (Result<Bool, FirebaseError> ) -> Void) {
+    func saveBudget(budget: Budget) {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).getDocuments { snapshot, error in
-            if let error {
-                print(error.localizedDescription)
-                completion(.failure(.firebaseError(error)))
-                return
-            }
-            
-            guard let docSnapShotArray = snapshot?.documents else {
-                completion(.failure(.noDataFound))
-                return
-            }
-            
-            let dictionaryArray = docSnapShotArray.compactMap { $0.data()}
-            let expense = dictionaryArray.compactMap { Expense(fromDictionary: $0) }
-            completion(.success(true))    }
+        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).setData(budget.dictionaryRepresentation)
     }
     
     func loadBudget(completion: @escaping (Result<Budget, FirebaseError>) -> Void) {
