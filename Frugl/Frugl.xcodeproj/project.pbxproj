@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235F2E832A016BA50025E1AE /* CreateExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */; };
+		235F2E852A01859A0025E1AE /* ItemizationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235F2E842A01859A0025E1AE /* ItemizationCellViewModel.swift */; };
 		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
 		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
 		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExpenseViewModel.swift; sourceTree = "<group>"; };
+		235F2E842A01859A0025E1AE /* ItemizationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationCellViewModel.swift; sourceTree = "<group>"; };
 		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -199,8 +203,8 @@
 			children = (
 				237063F129F9CCF30014B188 /* ItemizationViewController.swift */,
 				23BCD2462A003344002EC273 /* Itemization.storyboard */,
-				23BCD2432A0032DC002EC273 /* CreateExpense */,
 				237063F329F9CD180014B188 /* CustomCell */,
+				23BCD2432A0032DC002EC273 /* CreateExpense */,
 			);
 			path = Itemization;
 			sourceTree = "<group>";
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */,
+				235F2E842A01859A0025E1AE /* ItemizationCellViewModel.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */,
+				235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */,
 				23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */,
 			);
 			path = CreateExpense;
@@ -416,6 +422,7 @@
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
 				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
 				237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */,
+				235F2E852A01859A0025E1AE /* ItemizationCellViewModel.swift in Sources */,
 				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
 				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
 				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
@@ -424,6 +431,7 @@
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
 				23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */,
+				235F2E832A016BA50025E1AE /* CreateExpenseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
