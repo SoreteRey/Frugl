@@ -37,6 +37,8 @@
 		34C433162A000F2000064959 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433152A000F2000064959 /* Budget.swift */; };
 		34C433182A000F3800064959 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433172A000F3800064959 /* Expense.swift */; };
 		34C4331A2A0018F000064959 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433192A0018F000064959 /* DateExtension.swift */; };
+		34D5292E2A0182A30067B388 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5292D2A0182A30067B388 /* CalendarCollectionViewCell.swift */; };
+		34D529302A0183010067B388 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5292F2A0183010067B388 /* CalendarHelper.swift */; };
 		936A492F29F838F400F400CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A492E29F838F400F400CB /* AppDelegate.swift */; };
 		936A493129F838F400F400CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493029F838F400F400CB /* SceneDelegate.swift */; };
 		936A493629F838F400F400CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493429F838F400F400CB /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		34C433152A000F2000064959 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		34C433172A000F3800064959 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		34C433192A0018F000064959 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		34D5292D2A0182A30067B388 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		34D5292F2A0183010067B388 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		936A492B29F838F400F400CB /* Frugl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frugl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A492E29F838F400F400CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A493029F838F400F400CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				34C433192A0018F000064959 /* DateExtension.swift */,
+				34D5292F2A0183010067B388 /* CalendarHelper.swift */,
 			);
 			path = "Helper&Extensions";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			children = (
 				23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */,
 				23BCD2552A003636002EC273 /* Calendar.storyboard */,
+				34D5292C2A0182900067B388 /* CollectionCustomCell */,
 				237889FD29FB0BE80044F6E1 /* SignOut */,
 				23BC26EC29F9DB8C00B30A0F /* CustomCell */,
 			);
@@ -264,6 +270,14 @@
 				23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */,
 			);
 			path = CreateExpense;
+			sourceTree = "<group>";
+		};
+		34D5292C2A0182900067B388 /* CollectionCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				34D5292D2A0182A30067B388 /* CalendarCollectionViewCell.swift */,
+			);
+			path = CollectionCustomCell;
 			sourceTree = "<group>";
 		};
 		936A492229F838F400F400CB = {
@@ -385,10 +399,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D5292E2A0182A30067B388 /* CalendarCollectionViewCell.swift in Sources */,
 				34C433182A000F3800064959 /* Expense.swift in Sources */,
 				939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */,
 				237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */,
 				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
+				34D529302A0183010067B388 /* CalendarHelper.swift in Sources */,
 				34C433162A000F2000064959 /* Budget.swift in Sources */,
 				237063EE29F9C6800014B188 /* BudgetGoalsTableViewCell.swift in Sources */,
 				237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */,
@@ -408,7 +424,6 @@
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
 				23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */,
-				237063D929F871290014B188 /* Placehodler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
