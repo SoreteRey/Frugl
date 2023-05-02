@@ -8,14 +8,24 @@
 import UIKit
 
 class BudgetGoalsTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    // MARK: - Outlets
+    @IBOutlet weak var financialGoalTextField: UITextField!
+    @IBOutlet weak var goalAmountTextField: UITextField!
+    
+   // MARK: - Helper Functions
+    func configureCell(with budget: Budget) {
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    
+    // MARK: - Actions
+    @IBAction func checkmarkButtonTapped(_ sender: Any) {
     }
-
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        guard let financialGoal = financialGoalTextField.text, financialGoal != "",
+              let goalAmount = goalAmountTextField.text, goalAmount != "" else { return }
+        
+    }
+    
 }
