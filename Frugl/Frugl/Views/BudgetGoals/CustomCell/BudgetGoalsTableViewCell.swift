@@ -15,7 +15,7 @@ class BudgetGoalsTableViewCell: UITableViewCell {
     
    // MARK: - Helper Functions
     func configureCell(with budget: Budget) {
-        financialGoalTextField.text =
+        
     }
     
     // MARK: - Actions
