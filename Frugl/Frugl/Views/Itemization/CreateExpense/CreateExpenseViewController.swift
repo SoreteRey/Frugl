@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateExpenseViewController: UIViewController {
-
+    
     
     // MARK: - Outlets
     @IBOutlet weak var expenseNameTextField: UITextField!
@@ -17,11 +17,13 @@ class CreateExpenseViewController: UIViewController {
     @IBOutlet weak var optionalFirstAlertTextField: UITextField!
     @IBOutlet weak var optionalSecondAlertTextField: UITextField!
     
+    // MARK: - Properties
+    var viewModel: CreateExpenseViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        viewModel = CreateExpenseViewModel(delegate: self)
+        
     }
     
     // MARK: - Actions
@@ -29,4 +31,9 @@ class CreateExpenseViewController: UIViewController {
     }
     
     
+}
+extension CreateExpenseViewController: CreateExpenseViewModelDelegate {
+    func expenseCreatedSuccessfully() {
+
+    }
 }

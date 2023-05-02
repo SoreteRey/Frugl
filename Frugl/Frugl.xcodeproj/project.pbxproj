@@ -196,8 +196,8 @@
 			children = (
 				237063F129F9CCF30014B188 /* ItemizationViewController.swift */,
 				23BCD2462A003344002EC273 /* Itemization.storyboard */,
-				23BCD2432A0032DC002EC273 /* CreateExpense */,
 				237063F329F9CD180014B188 /* CustomCell */,
+				23BCD2432A0032DC002EC273 /* CreateExpense */,
 			);
 			path = Itemization;
 			sourceTree = "<group>";
