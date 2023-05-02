@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="157" translatesAutoresizingMaskIntoConstraints="NO" id="qJI-JB-gAb">
-                                <rect key="frame" x="48" y="119.99999999999999" width="321" height="20.333333333333329"/>
+                                <rect key="frame" x="48" y="119.99999999999999" width="330.33333333333331" height="20.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-pg-r62">
                                         <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="20.333333333333332"/>
@@ -26,8 +26,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Total)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-1y-urf">
-                                        <rect key="frame" x="212.33333333333329" y="0.0" width="108.66666666666666" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Expense Total)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-1y-urf">
+                                        <rect key="frame" x="212.33333333333331" y="0.0" width="118" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -88,6 +88,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="budgetLabel" destination="6ej-pg-r62" id="Skq-Ur-eKa"/>
+                        <outlet property="expectedBalanceLabel" destination="6K2-X9-y7k" id="jdF-dJ-0v3"/>
+                        <outlet property="expenseTotalLabel" destination="NLB-1y-urf" id="e3N-SR-O43"/>
+                        <outlet property="expensesTableView" destination="Vx1-IU-U3v" id="JQJ-ZS-s3X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4y-26-HfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -61,6 +62,9 @@
                                 <rect key="frame" x="150.33333333333334" y="710" width="92.333333333333343" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add Item"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="1u5-gS-7ys" eventType="touchUpInside" id="2kE-mw-4np"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n5P-Cj-CSe"/>
@@ -74,6 +78,13 @@
                             <constraint firstItem="zd3-JR-hci" firstAttribute="top" secondItem="dBS-nb-vcy" secondAttribute="bottom" constant="141" id="fbQ-SB-qEE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="o6W-xz-dpm" id="d53-pu-pu7"/>
+                        <outlet property="expenseNameTextField" destination="Pdp-2n-h3F" id="wcl-D9-4Bn"/>
+                        <outlet property="optionalDueDateTextField" destination="rX3-NE-8Fi" id="vxE-9q-9F7"/>
+                        <outlet property="optionalFirstAlertTextField" destination="Xy4-nW-Idy" id="F3S-fo-PBd"/>
+                        <outlet property="optionalSecondAlertTextField" destination="Zbe-He-zz3" id="He8-Vs-Nf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlV-FJ-0HM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

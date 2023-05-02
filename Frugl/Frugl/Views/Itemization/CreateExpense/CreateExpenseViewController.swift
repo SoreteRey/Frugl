@@ -9,21 +9,24 @@ import UIKit
 
 class CreateExpenseViewController: UIViewController {
 
+    
+    // MARK: - Outlets
+    @IBOutlet weak var expenseNameTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var optionalDueDateTextField: UITextField!
+    @IBOutlet weak var optionalFirstAlertTextField: UITextField!
+    @IBOutlet weak var optionalSecondAlertTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    @IBAction func addButtonTapped(_ sender: Any) {
     }
-    */
-
+    
+    
 }
