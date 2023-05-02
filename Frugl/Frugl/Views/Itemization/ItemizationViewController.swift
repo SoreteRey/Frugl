@@ -17,12 +17,12 @@ class ItemizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        expensesTableView.dataSource = self
+        expensesTableView.delegate = self
     }
     
     // MARK: - Properties
     var expense: Expense?
-    
     
 }
 
@@ -43,11 +43,13 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as? ItemizationTableViewCell else { return UITableViewCell() }
+        
+        return cell
     }
     
 }
