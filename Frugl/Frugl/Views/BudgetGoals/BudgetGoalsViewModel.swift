@@ -6,9 +6,23 @@
 //
 
 import Foundation
-import FirebaseAuth
+import FirebaseFirestore
+
+protocol BudgetGoalsViewModelDelegate: AnyObject {
+    
+}
 
 struct BudgetGoalsViewModel {
-    
-
+    // MARK: - Properties
+    var budget: Budget?
+    let service: FireBaseSyncable
+    private weak var delegate: BudgetGoalsViewModelDelegate?
+    init(serviceInjected: FireBaseSyncable = FirebaseService(), delegate: BudgetGoalsViewModelDelegate) {
+        self.service = serviceInjected
+        self.delegate = delegate
+    }
+    // MARK: - Functions
+   
+           
+            
 }

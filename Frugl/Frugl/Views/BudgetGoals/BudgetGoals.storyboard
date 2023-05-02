@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,7 +30,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YmF-mw-9Ob">
-                                <rect key="frame" x="8" y="295" width="377" height="466"/>
+                                <rect key="frame" x="8" y="344" width="377" height="466"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="466" id="KzN-O3-7qJ"/>
@@ -43,6 +44,10 @@
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                            <connections>
+                                                <action selector="addButtonTapped:" destination="96v-xI-wNt" eventType="touchUpInside" id="MMZ-UW-7lI"/>
+                                                <action selector="addButtonTapped:" destination="LOi-mY-Xwd" eventType="touchUpInside" id="nwB-bG-aGg"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="tintColor"/>
@@ -68,6 +73,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="52"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="checkmarkButtonTapped:" destination="LOi-mY-Xwd" eventType="touchUpInside" id="hyZ-gT-OCL"/>
+                                                            </connections>
                                                         </button>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input a financial goal cuh.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-eq-hjG">
                                                             <rect key="frame" x="57.666666666666686" y="0.0" width="197" height="52"/>
@@ -92,11 +100,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <connections>
+                                            <outlet property="financialGoalTextField" destination="2zi-eq-hjG" id="kdb-cE-cZk"/>
+                                            <outlet property="goalAmountTextField" destination="wtj-Jf-10L" id="Rg7-Pe-g9U"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you working towards?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p37-mZ-JaF">
-                                <rect key="frame" x="77.333333333333329" y="216" width="238.33333333333337" height="71"/>
+                                <rect key="frame" x="77.333333333333329" y="216" width="238.33333333333337" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -121,8 +133,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="KYL-IQ-i2i"/>
                     <navigationItem key="navigationItem" title="Budget Goals" id="8Hs-1v-aQ6"/>
+                    <connections>
+                        <outlet property="budgetGoalsTextField" destination="fGW-sz-jco" id="PeF-B0-Xs7"/>
+                        <outlet property="tableView" destination="YmF-mw-9Ob" id="kcF-qm-5SQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qR-DA-vzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="96v-xI-wNt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-483.20610687022901" y="1228.8732394366198"/>
         </scene>
