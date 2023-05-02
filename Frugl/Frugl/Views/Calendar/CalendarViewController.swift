@@ -26,7 +26,6 @@ class CalendarViewController: UIViewController {
     var totalSquares = [String]()
     
     // MARK: - Functions
-    
     func setCellsView() {
         let width = (calendarCollectionView.frame.size.width - 0.5) / 8
         let height = (calendarCollectionView.frame.size.height - 0.5) / 7
@@ -68,11 +67,9 @@ class CalendarViewController: UIViewController {
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
         setMonthView()
     }
-    
 } // End of class
 
 // MARK: - Extensions
-
 extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalSquares.count
@@ -85,6 +82,4 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         
         return cell
     }
-    
-    
 }
