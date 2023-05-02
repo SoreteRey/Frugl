@@ -94,7 +94,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xv0-sB-ple">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xv0-sB-ple" customClass="CalendarCollectionViewCell" customModule="Frugl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cdc-P2-dfd">
@@ -113,6 +113,9 @@
                                                 <constraint firstItem="mIP-Ps-1TY" firstAttribute="centerX" secondItem="cdc-P2-dfd" secondAttribute="centerX" id="qsw-hX-tJV"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayOfMonth" destination="mIP-Ps-1TY" id="VIh-5E-MfD"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
