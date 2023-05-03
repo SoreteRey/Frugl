@@ -45,7 +45,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                             <connections>
-                                                <action selector="addButtonTapped:" destination="ztZ-mf-VA6" eventType="touchUpInside" id="xSi-rw-5v4"/>
+                                                <action selector="addButtonTapped:" destination="ztZ-mf-VA6" eventType="touchUpInside" id="LGH-AE-WJa"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -58,7 +58,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="budgetCell" rowHeight="68" id="LOi-mY-Xwd" customClass="BudgetGoalsTableViewCell" customModule="Frugl" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="68" id="LOi-mY-Xwd" customClass="BudgetGoalsTableViewCell" customModule="Frugl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="377" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LOi-mY-Xwd" id="kXd-Ku-2EV">
