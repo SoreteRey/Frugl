@@ -27,16 +27,4 @@ class CreateExpenseViewModel {
         service.saveExpense(expense: expense)
         self.delegate?.expenseCreatedSuccessfully()
     }
-    
-    func deleteExpense() {
-        guard let expense = expense else { return }
-        service.deleteExpense(expense: expense) { result in
-            switch result {
-            case .success(_):
-                self.delegate?.expenseCreatedSuccessfully()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
-    }
 }

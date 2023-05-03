@@ -17,6 +17,7 @@ class ItemizationViewModel {
     private weak var delegate: ItemizationViewModelDelegate?
     private var service: FireBaseSyncable
     var budget: Budget?
+    var expense: Expense?
     
     init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.delegate = delegate
@@ -28,6 +29,18 @@ class ItemizationViewModel {
             switch result {
             case .success(let budget):
                 self.budget = budget
+                self.delegate?.budgetLoadedSuccessfully()
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
+    func deleteExpense() {
+        guard let expense = expense else { return }
+        service.deleteExpense(expense: expense) { result in
+            switch result {
+            case .success(_):
                 self.delegate?.budgetLoadedSuccessfully()
             case .failure(let failure):
                 print(failure.localizedDescription)

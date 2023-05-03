@@ -91,8 +91,7 @@ class CreateExpenseViewController: UIViewController {
         firstAlertDatePickerInitialized.datePickerMode = .date
         firstAlertDatePickerInitialized.preferredDatePickerStyle = .wheels
     }
-    
-    
+
     @objc func donePressedAlert() {
             // Formatter for Date
             let formatter = DateFormatter()

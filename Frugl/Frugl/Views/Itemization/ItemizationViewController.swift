@@ -23,16 +23,11 @@ class ItemizationViewController: UIViewController {
     }
     
     // MARK: - Properties
-    var expense: Expense?
     var viewModel: ItemizationViewModel!
     
     
     // MARK: - Functions
-//    func updateView() {
-//        guard let budget = viewModel.budget else { return }
-//        viewModel.loadBudget()
-//        budgetTotalLabel.text = "\(budget.amount)"
-//    }
+
     
 } // End of Class
 
