@@ -21,18 +21,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-nb-vcy">
                                 <rect key="frame" x="80" y="139" width="233" height="430"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsw-BK-aoq">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="30"/>
-                                        <menu key="menu" id="ItR-Rs-HJ7">
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BfW-tR-G2U">
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="34.333333333333336"/>
+                                        <menu key="menu" id="UC9-qY-f5g">
                                             <children>
-                                                <command title="Item 1" id="ClM-kB-sFm"/>
-                                                <command title="Item 2" id="uay-EH-rei"/>
+                                                <command title="Recurring" id="cZy-Ks-mXB"/>
+                                                <command title="Individual" input="I" id="ZDc-fI-S9I"/>
+                                                <command title="Savings" id="jLi-dO-JiX"/>
                                             </children>
                                         </menu>
                                         <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Button"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expense Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdp-2n-h3F">
-                                        <rect key="frame" x="0.0" y="76" width="233" height="34"/>
+                                        <rect key="frame" x="0.0" y="80.333333333333343" width="233" height="29.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -80,6 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="o6W-xz-dpm" id="d53-pu-pu7"/>
+                        <outlet property="categoryPopUpButton" destination="BfW-tR-G2U" id="ou8-KG-nUD"/>
                         <outlet property="expenseNameTextField" destination="Pdp-2n-h3F" id="wcl-D9-4Bn"/>
                         <outlet property="optionalDueDateTextField" destination="rX3-NE-8Fi" id="vxE-9q-9F7"/>
                         <outlet property="optionalFirstAlertTextField" destination="Xy4-nW-Idy" id="F3S-fo-PBd"/>

@@ -23,9 +23,8 @@ class CreateExpenseViewModel {
         self.service = service
     }
     
-    func createExpense(name: String, amount: Double) {
-        guard let expense = expense else { return }
-    
+    func createExpense(expense: Expense) {
+        service.saveExpense(expense: expense)
     }
     
     func deleteExpense() {
