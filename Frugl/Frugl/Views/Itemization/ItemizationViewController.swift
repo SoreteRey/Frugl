@@ -19,13 +19,19 @@ class ItemizationViewController: UIViewController {
         super.viewDidLoad()
         expensesTableView.dataSource = self
         expensesTableView.delegate = self
+//        updateView()
     }
     
     // MARK: - Properties
-    var expense: Expense?
+    var viewModel: ItemizationViewModel!
     
-}
+    
+    // MARK: - Functions
 
+    
+} // End of Class
+
+// MARK: - Extensions
 extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,4 +58,10 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
+}
+
+extension ItemizationViewController: ItemizationCellViewModelDelegate {
+    func expenseLoadedSuccessfully() {
+        
+    }
 }

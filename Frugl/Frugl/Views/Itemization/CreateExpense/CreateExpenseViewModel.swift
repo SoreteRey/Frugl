@@ -23,20 +23,8 @@ class CreateExpenseViewModel {
         self.service = service
     }
     
-    func createExpense(name: String, amount: Double) {
-        guard let expense = expense else { return }
-    
-    }
-    
-    func deleteExpense() {
-        guard let expense = expense else { return }
-        service.deleteExpense(expense: expense) { result in
-            switch result {
-            case .success(_):
-                self.delegate?.expenseCreatedSuccessfully()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
+    func createExpense(expense: Expense) {
+        service.saveExpense(expense: expense)
+        self.delegate?.expenseCreatedSuccessfully()
     }
 }

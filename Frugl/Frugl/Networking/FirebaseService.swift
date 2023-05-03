@@ -33,9 +33,7 @@ struct FirebaseService: FireBaseSyncable {
     func saveExpense(expense: Expense) {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(expense.uuid).setData(expense.dictionaryRepresentation)
-            }
-    
-    
+    }
     
     func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void) {
         
