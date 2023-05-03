@@ -25,6 +25,7 @@ class CreateExpenseViewModel {
     
     func createExpense(expense: Expense) {
         service.saveExpense(expense: expense)
+        self.delegate?.expenseCreatedSuccessfully()
     }
     
     func deleteExpense() {

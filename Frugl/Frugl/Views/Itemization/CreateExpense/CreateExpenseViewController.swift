@@ -21,54 +21,112 @@ class CreateExpenseViewController: UIViewController {
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
     
-    private var datePicker: UIDatePicker?
+    private var datePicker = UIDatePicker()
+    private var firstAlertDatePickerInitialized = UIDatePicker()
+    private var secondAlertDatePickerInitialized = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(CreateExpenseViewController.dateChanged(datePicker:)), for: .valueChanged)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateExpenseViewController.viewTapped(gestureRecognizer:)))
-        
-        view.addGestureRecognizer(tapGesture)
-        
-        dueDatePicker.inputView = datePicker
-        firstAlertDatePicker.inputView = datePicker
-        secondAlertDatePicker.inputView = datePicker
-        
         viewModel = CreateExpenseViewModel(delegate: self)
         popUpConfig()
+        dueDateDatePicker()
+        firstAlert()
+        secondAlert()
     }
     
     // MARK: - Functions
-    
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
-    
-    @objc func dateChanged(datePicker: UIDatePicker) {
-       
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dueDatePicker.text = dateFormatter.string(from: datePicker.date)
-        firstAlertDatePicker.text = dateFormatter.string(from: datePicker.date)
-        secondAlertDatePicker.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
-    }
     
     func popUpConfig() {
         let closure = { (action: UIAction) in
             print(action.title)
         }
         categoryPopUpButton.menu = UIMenu(children: [
-            UIAction(title: "Recurring/Individual/Savings ↓", attributes: .hidden, state: .on, handler: closure),
+            UIAction(title: "Recurring/Individual/Savings", attributes: .hidden, state: .on, handler: closure),
             UIAction(title: "Recurring", handler: closure),
             UIAction(title: "Individual", handler: closure),
             UIAction(title: "Savings", handler: closure)
         ])
         categoryPopUpButton.showsMenuAsPrimaryAction = true
         categoryPopUpButton.changesSelectionAsPrimaryAction = true
+    }
+    
+    func dueDateDatePicker() {
+        // adds the toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        // Adds the bar button item
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        // Date Picker Attributes
+        dueDatePicker.inputView = datePicker
+        dueDatePicker.inputAccessoryView = toolbar
+        dueDatePicker.textAlignment = .center
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+    }
+    
+    @objc func donePressed() {
+        // Formatter for Date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        dueDatePicker.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    func firstAlert() {
+        // adds the toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        // Adds the bar button item
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedAlert))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        // Date Picker Attributes
+        firstAlertDatePicker.inputView = firstAlertDatePickerInitialized
+        firstAlertDatePicker.inputAccessoryView = toolbar
+        firstAlertDatePicker.textAlignment = .center
+        firstAlertDatePickerInitialized.datePickerMode = .date
+        firstAlertDatePickerInitialized.preferredDatePickerStyle = .wheels
+    }
+    
+    
+    @objc func donePressedAlert() {
+            // Formatter for Date
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            
+            firstAlertDatePicker.text = formatter.string(from: firstAlertDatePickerInitialized.date)
+            self.view.endEditing(true)
+        }
+    
+    func secondAlert() {
+        // adds the toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        // Adds the bar button item
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedSecondAlert))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        // Date Picker Attributes
+        secondAlertDatePicker.inputView = secondAlertDatePickerInitialized
+        secondAlertDatePicker.inputAccessoryView = toolbar
+        secondAlertDatePicker.textAlignment = .center
+        secondAlertDatePickerInitialized.datePickerMode = .date
+        secondAlertDatePickerInitialized.preferredDatePickerStyle = .wheels
+    }
+    
+    @objc func donePressedSecondAlert() {
+        // Formatter for Date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        secondAlertDatePicker.text = formatter.string(from: secondAlertDatePickerInitialized.date)
+        self.view.endEditing(true)
     }
     
     // MARK: - Actions
@@ -98,6 +156,6 @@ class CreateExpenseViewController: UIViewController {
 
 extension CreateExpenseViewController: CreateExpenseViewModelDelegate {
     func expenseCreatedSuccessfully() {
-        
+        self.dismiss(animated: true)
     }
 }
