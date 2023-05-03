@@ -24,8 +24,9 @@ class ItemizationViewController: UIViewController {
     // MARK: - Properties
     var expense: Expense?
     
-}
+} // End of Class
 
+// MARK: - Extensions
 extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,4 +53,10 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
+}
+
+extension ItemizationViewController: ItemizationCellViewModelDelegate {
+    func expenseLoadedSuccessfully() {
+        
+    }
 }

@@ -44,19 +44,27 @@ class CreateExpenseViewController: UIViewController {
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: Any) {
         guard let amount = Double(amountTextField.text ?? "0.0"),
-        let name = expenseNameTextField.text else { return }
-        let expense = Expense(amount: amount, name: name)
-        viewModel.createExpense(expense: expense)
+              let category = categoryPopUpButton.titleLabel?.text,
+              let name = expenseNameTextField.text else { return }
+        
+        switch category {
+        case "Recurring":
+            let expense = Expense(isSavings: false, isRecurring: true, isIndividual: false, amount: amount, name: name, dueDate: <#T##String?#>, dueDateAlert: <#T##String?#>, dueDateSecondAlert: <#T##String?#>)
+            viewModel.createExpense(expense: expense)
+        case "Individual":
+            let expense = Expense(isSavings: false, isRecurring: false, isIndividual: true, amount: amount, name: name, dueDate: <#T##String?#>, dueDateAlert: <#T##String?#>, dueDateSecondAlert: <#T##String?#>)
+            viewModel.createExpense(expense: expense)
+        case "Savings":
+            let expense = Expense(isSavings: true, isRecurring: false, isIndividual: false, amount: amount, name: name, dueDate: <#T##String?#>, dueDateAlert: <#T##String?#>, dueDateSecondAlert: <#T##String?#>)
+            viewModel.createExpense(expense: expense)
+        default:
+            return
+        }
     }
-    
-    @IBAction func popUpButtonTapped(_ sender: Any) {
-    }
-    
-    
-    
 }
+
 extension CreateExpenseViewController: CreateExpenseViewModelDelegate {
     func expenseCreatedSuccessfully() {
-
+        
     }
 }
