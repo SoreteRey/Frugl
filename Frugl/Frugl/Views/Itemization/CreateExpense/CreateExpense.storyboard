@@ -83,10 +83,10 @@
                     <connections>
                         <outlet property="amountTextField" destination="o6W-xz-dpm" id="d53-pu-pu7"/>
                         <outlet property="categoryPopUpButton" destination="BfW-tR-G2U" id="ou8-KG-nUD"/>
+                        <outlet property="dueDatePicker" destination="rX3-NE-8Fi" id="vxE-9q-9F7"/>
                         <outlet property="expenseNameTextField" destination="Pdp-2n-h3F" id="wcl-D9-4Bn"/>
-                        <outlet property="optionalDueDateTextField" destination="rX3-NE-8Fi" id="vxE-9q-9F7"/>
-                        <outlet property="optionalFirstAlertTextField" destination="Xy4-nW-Idy" id="F3S-fo-PBd"/>
-                        <outlet property="optionalSecondAlertTextField" destination="Zbe-He-zz3" id="He8-Vs-Nf1"/>
+                        <outlet property="firstAlertDatePicker" destination="Xy4-nW-Idy" id="F3S-fo-PBd"/>
+                        <outlet property="secondAlertDatePicker" destination="Zbe-He-zz3" id="He8-Vs-Nf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlV-FJ-0HM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

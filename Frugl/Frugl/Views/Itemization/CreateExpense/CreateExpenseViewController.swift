@@ -13,18 +13,48 @@ class CreateExpenseViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var expenseNameTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var optionalDueDateTextField: UITextField!
-    @IBOutlet weak var optionalFirstAlertTextField: UITextField!
-    @IBOutlet weak var optionalSecondAlertTextField: UITextField!
+    @IBOutlet weak var dueDatePicker: UITextField!
+    @IBOutlet weak var firstAlertDatePicker: UITextField!
+    @IBOutlet weak var secondAlertDatePicker: UITextField!
     @IBOutlet weak var categoryPopUpButton: UIButton!
     
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
     
+    private var datePicker: UIDatePicker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(CreateExpenseViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateExpenseViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        dueDatePicker.inputView = datePicker
+        firstAlertDatePicker.inputView = datePicker
+        secondAlertDatePicker.inputView = datePicker
+        
         viewModel = CreateExpenseViewModel(delegate: self)
         popUpConfig()
+    }
+    
+    // MARK: - Functions
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dueDatePicker.text = dateFormatter.string(from: datePicker.date)
+        firstAlertDatePicker.text = dateFormatter.string(from: datePicker.date)
+        secondAlertDatePicker.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
     }
     
     func popUpConfig() {
@@ -45,17 +75,20 @@ class CreateExpenseViewController: UIViewController {
     @IBAction func addButtonTapped(_ sender: Any) {
         guard let amount = Double(amountTextField.text ?? "0.0"),
               let category = categoryPopUpButton.titleLabel?.text,
+              let dueDate = dueDatePicker.text,
+              let firstAlert = firstAlertDatePicker.text,
+              let secondAlert = secondAlertDatePicker.text,
               let name = expenseNameTextField.text else { return }
         
         switch category {
         case "Recurring":
-            let expense = Expense(isSavings: false, isRecurring: true, isIndividual: false, amount: amount, name: name, dueDate: <#T##String?#>, dueDateAlert: <#T##String?#>, dueDateSecondAlert: <#T##String?#>)
+            let expense = Expense(isSavings: false, isRecurring: true, isIndividual: false, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
         case "Individual":
-            let expense = Expense(isSavings: false, isRecurring: false, isIndividual: true, amount: amount, name: name, dueDate: <#T##String?#>, dueDateAlert: <#T##String?#>, dueDateSecondAlert: <#T##String?#>)
+            let expense = Expense(isSavings: false, isRecurring: false, isIndividual: true, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
         case "Savings":
-            let expense = Expense(isSavings: true, isRecurring: false, isIndividual: false, amount: amount, name: name, dueDate: <#T##String?#>, dueDateAlert: <#T##String?#>, dueDateSecondAlert: <#T##String?#>)
+            let expense = Expense(isSavings: true, isRecurring: false, isIndividual: false, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
         default:
             return

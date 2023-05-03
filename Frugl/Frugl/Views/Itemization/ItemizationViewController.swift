@@ -24,6 +24,8 @@ class ItemizationViewController: UIViewController {
     // MARK: - Properties
     var expense: Expense?
     
+    
+    
 } // End of Class
 
 // MARK: - Extensions
