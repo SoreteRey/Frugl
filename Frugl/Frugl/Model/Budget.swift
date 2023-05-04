@@ -50,3 +50,9 @@ extension Budget {
         self.init(amount: amount, date: date, uuid: uuid, name: name)
     }
 }
+
+extension Budget: Equatable {
+    static func == (lhs: Budget, rhs: Budget) -> Bool {
+        return lhs.uuid == rhs.uuid 
+    }
+}

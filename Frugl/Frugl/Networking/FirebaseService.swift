@@ -85,14 +85,13 @@ struct FirebaseService: FireBaseSyncable {
                 return
             }
             
-            guard let docSnapShot = snapshot?.documents.first else {
+            guard let docSnapShot = snapshot?.documents else {
                 completion(.failure(.noDataFound))
                 return
             }
             
-            let budgetAmount = docSnapShot.data()
-            guard let budgets = Budget(fromDictionary: budgetAmount) else { return }
-            completion(.success([budgets]))
+            let budgets = docSnapShot.compactMap { Budget(fromDictionary: $0.data()) }
+            completion(.success(budgets))
         }
     }
     
@@ -109,3 +108,4 @@ struct FirebaseService: FireBaseSyncable {
         }
     }
 }
+

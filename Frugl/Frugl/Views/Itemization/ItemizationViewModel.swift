@@ -24,17 +24,17 @@ class ItemizationViewModel {
         self.service = service
     }
     
-    func loadBudget() {
-        service.loadBudget { result in
-            switch result {
-            case .success(let budget):
-                self.budget = budget
-                self.delegate?.budgetLoadedSuccessfully()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
-    }
+//    func loadBudget() {
+//        service.loadBudget { result in
+//            switch result {
+//            case .success(let budget):
+//                self.budget = budget
+//                self.delegate?.budgetLoadedSuccessfully()
+//            case .failure(let failure):
+//                print(failure.localizedDescription)
+//            }
+//        }
+//    }
     
     func deleteExpense() {
         guard let expense = expense else { return }
