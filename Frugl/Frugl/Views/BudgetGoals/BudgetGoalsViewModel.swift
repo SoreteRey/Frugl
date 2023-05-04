@@ -19,7 +19,7 @@ class BudgetGoalsViewModel {
     let service: FireBaseSyncable
     weak var delegate: BudgetGoalsViewModelDelegate?
     var budget: Budget?
-    var expense: [Expense] = []
+    var budgets: [Budget] = []
     
     init(serviceInjected: FireBaseSyncable = FirebaseService(), delegate: BudgetGoalsViewModelDelegate) {
         self.service = serviceInjected
@@ -32,13 +32,9 @@ class BudgetGoalsViewModel {
         service.saveBudget(budget: budget)
     }
     
-    func updateExpense(at index: Int, with updatedExpense: Expense) {
-        expense[index] = updatedExpense
-        delegate?.didUpdateExpense()
-    }
-    
-    func addExpense(_ expense: Expense) {
-            self.expense.append(expense)
+
+    func addBudget(_ budget: Budget) {
+        self.budgets.append(budget)
         }
 }
 

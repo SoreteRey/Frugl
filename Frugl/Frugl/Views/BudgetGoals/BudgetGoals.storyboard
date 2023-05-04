@@ -66,43 +66,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-hx-TT8">
-                                                    <rect key="frame" x="8" y="8" width="361" height="52"/>
+                                                    <rect key="frame" x="28" y="19" width="321" height="30"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-m7-jzn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="52"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-m7-jzn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="30"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
                                                             <connections>
                                                                 <action selector="checkmarkButtonTapped:" destination="LOi-mY-Xwd" eventType="touchUpInside" id="hyZ-gT-OCL"/>
                                                             </connections>
                                                         </button>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input a financial goal cuh.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-eq-hjG">
-                                                            <rect key="frame" x="57.666666666666686" y="0.0" width="197" height="52"/>
-                                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wtj-Jf-10L">
-                                                            <rect key="frame" x="262.66666666666669" y="0.0" width="98.333333333333314" height="52"/>
-                                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-sf-KYJ">
+                                                            <rect key="frame" x="57.666666666666664" y="0.0" width="116.66666666666669" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Amount)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-4q-s6t">
+                                                            <rect key="frame" x="182.33333333333337" y="0.0" width="138.66666666666663" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="JPN-hx-TT8" secondAttribute="bottom" constant="8" id="C3A-GS-Zw7"/>
-                                                <constraint firstItem="JPN-hx-TT8" firstAttribute="top" secondItem="kXd-Ku-2EV" secondAttribute="top" constant="8" id="jXb-vQ-Plv"/>
-                                                <constraint firstAttribute="trailing" secondItem="JPN-hx-TT8" secondAttribute="trailing" constant="8" id="owh-9k-pg5"/>
-                                                <constraint firstItem="JPN-hx-TT8" firstAttribute="leading" secondItem="kXd-Ku-2EV" secondAttribute="leading" constant="8" id="zI3-6G-EJq"/>
+                                                <constraint firstItem="JPN-hx-TT8" firstAttribute="top" secondItem="kXd-Ku-2EV" secondAttribute="topMargin" constant="8" id="33s-Uz-wYg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JPN-hx-TT8" secondAttribute="bottom" constant="8" id="73Q-x6-wva"/>
+                                                <constraint firstItem="JPN-hx-TT8" firstAttribute="leading" secondItem="kXd-Ku-2EV" secondAttribute="leadingMargin" constant="8" id="EUp-I0-EMH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JPN-hx-TT8" secondAttribute="trailing" constant="8" id="mgy-p2-isE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <connections>
-                                            <outlet property="financialGoalTextField" destination="2zi-eq-hjG" id="kdb-cE-cZk"/>
-                                            <outlet property="goalAmountTextField" destination="wtj-Jf-10L" id="Rg7-Pe-g9U"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
