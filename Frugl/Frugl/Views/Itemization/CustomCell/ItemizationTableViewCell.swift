@@ -9,15 +9,15 @@ import UIKit
 
 class ItemizationTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+// MARK: - Outlets
+    @IBOutlet weak var expenseNameLabel: UILabel!
+    @IBOutlet weak var expenseAmountLabel: UILabel!
+    
+    
+    // MARK: - Properties
+    var viewModel: ItemizationCellViewModel!
+    
+    // MARK: - Functions
 
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-
-    }
-
+    
 }

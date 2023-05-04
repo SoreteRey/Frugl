@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 protocol BudgetGoalsViewModelDelegate: AnyObject {
     func budgetSavedSuccessfully()
+    func didUpdateExpense()
     
 }
 
@@ -17,7 +18,8 @@ class BudgetGoalsViewModel {
     // MARK: - Properties
     let service: FireBaseSyncable
     weak var delegate: BudgetGoalsViewModelDelegate?
-    var budgets: [Budget] = []
+    var budget: Budget?
+    var expense: [Expense] = []
     
     init(serviceInjected: FireBaseSyncable = FirebaseService(), delegate: BudgetGoalsViewModelDelegate) {
         self.service = serviceInjected
@@ -26,27 +28,17 @@ class BudgetGoalsViewModel {
     
     // MARK: - Functions
     func saveBudget(with amount: Double) {
-//        let budget = Budget(amount: amount)
-//        service.saveBudget(budget) { [weak self] result in
-//            switch result {
-//            case .success(let budget):
-//                self?.budgets.append(budget)
-//                self?.delegate?.budgetSavedSuccessfully()
-//            case .failure(let error):
-//                self?.delegate?(with: error)
-//            }
-        
+        let budget = Budget(amount: amount)
+        service.saveBudget(budget: budget)
     }
     
-    
-    func loadBudget() {
-//        service.loadBudget() { [weak self] result in
-//            switch result {
-//            case .success(let budgets):
-//                self?.budgets = budgets
-//            case .failure(let error):
-//                self?.delegate?(with: error)
-//            }
-//        }
+    func updateExpense(at index: Int, with updatedExpense: Expense) {
+        expense[index] = updatedExpense
+        delegate?.didUpdateExpense()
     }
+    
+    func addExpense(_ expense: Expense) {
+            self.expense.append(expense)
+        }
 }
+
