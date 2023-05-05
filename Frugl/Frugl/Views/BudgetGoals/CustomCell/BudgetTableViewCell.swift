@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BudgetTableViewCellDelegate: AnyObject {
+    func didSelectButton(in cell: BudgetTableViewCell)
+}
+
 class BudgetTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -15,7 +19,13 @@ class BudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var isCurrentBudgetButton: UIButton!
     
     // MARK: - Properties
-    var budget: Budget?
+    weak var delegate: BudgetTableViewCellDelegate?
+    var isCurrentBudget: Bool = false {
+        didSet {
+            let imageName = isCurrentBudget ? "checkmark.circle.fill" : "checkmark.circle"
+            isCurrentBudgetButton.setImage(UIImage(systemName: imageName), for: .normal)
+        }
+    }
     
     // MARK: - Helper Functions
     func updateUI(with budget: Budget) {
@@ -23,27 +33,8 @@ class BudgetTableViewCell: UITableViewCell {
         budgetAmountLabel.text = String(budget.amount)
     }
     
-    func currentBudget() {
-        guard let budget = budget else { return }
-        let isCurrentBudget = CurrentUser.shared.currentBudget
-        if isCurrentBudget != nil {
-            isCurrentBudgetButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-        } else {
-            isCurrentBudgetButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
-        }
-    }
-    
-    
-    
     // MARK: - Actions
     @IBAction func checkmarkButtonTapped(_ sender: Any) {
-        guard let budget = budget else { return }
-        if CurrentUser.shared.currentBudget == budget {
-            isCurrentBudgetButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-            CurrentUser.shared.currentBudget = budget
-        } else {
-            isCurrentBudgetButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
-            CurrentUser.shared.currentBudget != budget
-        }
+        delegate?.didSelectButton(in: self)
     }
 } // End of class
