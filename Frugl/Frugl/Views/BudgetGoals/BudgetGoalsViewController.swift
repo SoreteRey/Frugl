@@ -87,7 +87,7 @@ extension BudgetGoalsViewController: UITableViewDataSource {
             alertController.addAction(dismissAction)
             let confirmAction = UIAlertAction(title: "Delete Budget", style: .destructive) { _ in
                 let budget = self.viewModel.budgets[indexPath.row]
-                guard let budget = self.viewModel.budgets.first(where: { $0.uuid == budget.uuid} ) else { return }
+                guard let budget = self.viewModel.budgets.first(where: { $0.uuid == budget.uuid }) else { return }
                 self.viewModel.deleteBudget(budget: budget)
                 self.navigationController?.popViewController(animated: true)
             }
