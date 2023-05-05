@@ -22,7 +22,6 @@ class BudgetGoalsViewController: UIViewController {
         super.viewDidLoad()
         viewModel = BudgetGoalsViewModel(delegate: self)
         budgetTableView.dataSource = self
-        
     }
     
     // MARK: - Helper Functions
@@ -31,7 +30,7 @@ class BudgetGoalsViewController: UIViewController {
         budgetAmountTextField.text = ""
         budgetTableView.reloadData()
     }
-
+    
     // MARK: - Actions
     @IBAction func addBudgetButtonTapped(_ sender: Any) {
         guard let name = budgetNameTextField.text else { return }
@@ -56,7 +55,6 @@ extension BudgetGoalsViewController: BudgetTableViewCellDelegate {
         }
     }
 }
-
 
 extension BudgetGoalsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,7 +87,7 @@ extension BudgetGoalsViewController: UITableViewDataSource {
             alertController.addAction(dismissAction)
             let confirmAction = UIAlertAction(title: "Delete Budget", style: .destructive) { _ in
                 let budget = self.viewModel.budgets[indexPath.row]
-                guard let budget = self.viewModel.budgets.first(where: { $0.uuid == budget.uuid}) else { return }
+                guard let budget = self.viewModel.budgets.first(where: { $0.uuid == budget.uuid} ) else { return }
                 self.viewModel.deleteBudget(budget: budget)
                 self.navigationController?.popViewController(animated: true)
             }
