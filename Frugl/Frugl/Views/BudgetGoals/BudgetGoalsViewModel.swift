@@ -10,8 +10,9 @@ import FirebaseFirestore
 
 protocol BudgetGoalsViewModelDelegate: AnyObject {
     func budgetSavedSuccessfully()
-    func didUpdateExpense()
-    
+    func budgetsFetchedSuccessfully()
+    func budgetDeletedSuccessfully()
+
 }
 
 class BudgetGoalsViewModel {
@@ -19,26 +20,51 @@ class BudgetGoalsViewModel {
     let service: FireBaseSyncable
     weak var delegate: BudgetGoalsViewModelDelegate?
     var budget: Budget?
-    var expense: [Expense] = []
+    var budgets: [Budget] = []
     
     init(serviceInjected: FireBaseSyncable = FirebaseService(), delegate: BudgetGoalsViewModelDelegate) {
         self.service = serviceInjected
         self.delegate = delegate
+        self.loadBudgets()
     }
     
     // MARK: - Functions
-    func saveBudget(with amount: Double) {
-        let budget = Budget(amount: amount)
+
+    func saveBudget(budget: Budget) {
         service.saveBudget(budget: budget)
+        CurrentUser.shared.currentBudget = budget
+        self.delegate?.budgetSavedSuccessfully()
     }
-    
-    func updateExpense(at index: Int, with updatedExpense: Expense) {
-        expense[index] = updatedExpense
-        delegate?.didUpdateExpense()
-    }
-    
-    func addExpense(_ expense: Expense) {
-            self.expense.append(expense)
+
+    func addBudget(_ budget: Budget) {
+        self.budgets.append(budget)
         }
+    
+    func loadBudgets() {
+        service.loadBudget { [weak self] result in
+            switch result {
+            case .success(let budgets):
+                self?.budgets = budgets
+                self?.delegate?.budgetsFetchedSuccessfully()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func deleteBudget(budget: Budget) {
+        service.deleteBudget(budget: budget) { result in
+            switch result {
+            case .success(_):
+                guard let indexOfBudget = self.budgets.firstIndex(of: budget) else { return }
+                self.budgets.remove(at: indexOfBudget)
+                self.delegate?.budgetDeletedSuccessfully()
+                
+            case .failure(_):
+                print("Budget failed to delete.")
+            }
+        }
+    }
 }
+
 
