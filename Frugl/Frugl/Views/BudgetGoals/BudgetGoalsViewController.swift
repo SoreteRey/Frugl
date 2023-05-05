@@ -84,12 +84,27 @@ extension BudgetGoalsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            let alertController = UIAlertController(title: "Delete Budget?", message: "You sure you want to delete this budget?", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(dismissAction)
+            let confirmAction = UIAlertAction(title: "Delete Budget", style: .destructive) { _ in
+                let budget = self.viewModel.budgets[indexPath.row]
+                guard let budget = self.viewModel.budgets.first(where: { $0.uuid == budget.uuid}) else { return }
+                self.viewModel.deleteBudget(budget: budget)
+                self.navigationController?.popViewController(animated: true)
+            }
             
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true)
         }
     }
 }
 
 extension BudgetGoalsViewController: BudgetGoalsViewModelDelegate {
+    func budgetDeletedSuccessfully() {
+        budgetTableView.reloadData()
+    }
+    
     func budgetsFetchedSuccessfully() {
         budgetTableView.reloadData()
     }
