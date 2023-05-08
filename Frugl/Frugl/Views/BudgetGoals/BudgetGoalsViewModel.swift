@@ -29,16 +29,16 @@ class BudgetGoalsViewModel {
     }
     
     // MARK: - Functions
-
     func saveBudget(budget: Budget) {
         service.saveBudget(budget: budget)
-        CurrentUser.shared.currentBudget = budget
+        // MAXPOFF: - This makes the most recently added budget the currentBudget
+//        CurrentUser.shared.currentBudget = budget
         self.delegate?.budgetSavedSuccessfully()
     }
 
     func addBudget(_ budget: Budget) {
         self.budgets.append(budget)
-        }
+    }
     
     func loadBudgets() {
         service.loadBudget { [weak self] result in
@@ -66,5 +66,3 @@ class BudgetGoalsViewModel {
         }
     }
 }
-
-
