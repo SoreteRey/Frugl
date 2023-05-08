@@ -22,6 +22,7 @@ class BudgetGoalsViewController: UIViewController {
         super.viewDidLoad()
         viewModel = BudgetGoalsViewModel(delegate: self)
         budgetTableView.dataSource = self
+        viewModel.loadBudgets()
     }
     
     // MARK: - Helper Functions
@@ -51,6 +52,7 @@ extension BudgetGoalsViewController: BudgetTableViewCellDelegate {
             }
             cell.isCurrentBudget = true
             CurrentUser.shared.currentBudgetID = viewModel.budgets[indexPath.row].uuid
+            CurrentUser.shared.currentBudget = viewModel.budgets[indexPath.row]
             selectedIndexPath = indexPath
         }
     }
@@ -67,6 +69,7 @@ extension BudgetGoalsViewController: UITableViewDataSource {
         let budget = viewModel.budgets[indexPath.row]
         if let currentBudgetID = CurrentUser.shared.currentBudgetID, currentBudgetID == budget.uuid {
             cell.isCurrentBudget = true
+            CurrentUser.shared.currentBudget = budget
             selectedIndexPath = indexPath
         } else {
             cell.isCurrentBudget = false
@@ -74,10 +77,6 @@ extension BudgetGoalsViewController: UITableViewDataSource {
         cell.updateUI(with: budget)
         cell.delegate = self
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

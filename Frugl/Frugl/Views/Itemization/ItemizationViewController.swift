@@ -8,29 +8,34 @@
 import UIKit
 
 class ItemizationViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet weak var budgetTotalLabel: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var expectedBalanceLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         expensesTableView.dataSource = self
         expensesTableView.delegate = self
-//        updateView()
+        viewModel = ItemizationViewModel(delegate: self)
     }
     
     // MARK: - Properties
     var viewModel: ItemizationViewModel!
     
-    
     // MARK: - Functions
-
-    
+    func updateUI() {
+        if let budget = CurrentUser.shared.currentBudget {
+            budgetTotalLabel.text = "\(budget.amount)"
+        }
+    }
 } // End of Class
-
 // MARK: - Extensions
 extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -47,7 +52,6 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -57,11 +61,10 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         
         return cell
     }
-    
 }
 
-extension ItemizationViewController: ItemizationCellViewModelDelegate {
-    func expenseLoadedSuccessfully() {
+extension ItemizationViewController: ItemizationViewModelDelegate {
+    func budgetLoadedSuccessfully() {
         
     }
 }
