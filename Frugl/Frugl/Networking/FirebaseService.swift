@@ -19,20 +19,28 @@ protocol FireBaseSyncable {
     func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void)
     func deleteExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
     func saveBudget(budget: Budget)
-    func loadBudget(completion: @escaping (Result<Budget, FirebaseError>) -> Void)
+    func loadBudget(completion: @escaping (Result<[Budget], FirebaseError>) -> Void)
 }
 
 struct FirebaseService: FireBaseSyncable {
     
     // MARK: - Properties
     let ref = Firestore.firestore()
-    
+    var budgetArray: [Budget] = []
+    var budget: Budget?
     
     // MARK: - Functions
     
     func saveExpense(expense: Expense) {
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(expense.uuid).setData(expense.dictionaryRepresentation)
+        guard let budget = CurrentUser.shared.currentBudget else { print("no current budget") ; return }
+        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).collection("expenses").document(expense.uuid).setData(expense.dictionaryRepresentation) { error in
+            if let error = error {
+                print("Error saving expense: \(error.localizedDescription)")
+            } else {
+                print("Expense saved successfully!")
+            }
+        }
     }
     
     func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void) {
@@ -61,9 +69,12 @@ struct FirebaseService: FireBaseSyncable {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
         ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).setData(budget.dictionaryRepresentation)
+        
+        var budgets = budgetArray
+        budgets.append(budget)
     }
     
-    func loadBudget(completion: @escaping (Result<Budget, FirebaseError>) -> Void) {
+    func loadBudget(completion: @escaping (Result<[Budget], FirebaseError>) -> Void) {
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
@@ -74,14 +85,13 @@ struct FirebaseService: FireBaseSyncable {
                 return
             }
             
-            guard let docSnapShot = snapshot?.documents.first else {
+            guard let docSnapShot = snapshot?.documents else {
                 completion(.failure(.noDataFound))
                 return
             }
             
-            let budgetAmount = docSnapShot.data()
-            guard let budget = Budget(fromDictionary: budgetAmount) else { return }
-            completion(.success(budget))
+            let budgets = docSnapShot.compactMap { Budget(fromDictionary: $0.data()) }
+            completion(.success(budgets))
         }
     }
     
@@ -98,3 +108,4 @@ struct FirebaseService: FireBaseSyncable {
         }
     }
 }
+
