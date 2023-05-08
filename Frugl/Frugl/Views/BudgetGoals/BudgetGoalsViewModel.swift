@@ -35,10 +35,6 @@ class BudgetGoalsViewModel {
 //        CurrentUser.shared.currentBudget = budget
         self.delegate?.budgetSavedSuccessfully()
     }
-
-    func addBudget(_ budget: Budget) {
-        self.budgets.append(budget)
-    }
     
     func loadBudgets() {
         service.loadBudget { [weak self] result in
