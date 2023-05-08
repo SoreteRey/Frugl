@@ -11,7 +11,7 @@ import FirebaseFirestore
 protocol BudgetGoalsViewModelDelegate: AnyObject {
     func budgetSavedSuccessfully()
     func budgetsFetchedSuccessfully()
-    
+    func budgetDeletedSuccessfully()
 
 }
 
@@ -48,6 +48,20 @@ class BudgetGoalsViewModel {
                 self?.delegate?.budgetsFetchedSuccessfully()
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func deleteBudget(budget: Budget) {
+        service.deleteBudget(budget: budget) { result in
+            switch result {
+            case .success(_):
+                guard let indexOfBudget = self.budgets.firstIndex(of: budget) else { return }
+                self.budgets.remove(at: indexOfBudget)
+                self.delegate?.budgetDeletedSuccessfully()
+                
+            case .failure(_):
+                print("Budget failed to delete.")
             }
         }
     }
