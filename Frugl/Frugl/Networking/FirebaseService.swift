@@ -20,6 +20,7 @@ protocol FireBaseSyncable {
     func deleteExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
     func saveBudget(budget: Budget)
     func loadBudget(completion: @escaping (Result<[Budget], FirebaseError>) -> Void)
+    func deleteBudget(budget: Budget, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
 }
 
 struct FirebaseService: FireBaseSyncable {
@@ -100,6 +101,19 @@ struct FirebaseService: FireBaseSyncable {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
         ref.collection("users").document(userId).collection(Expense.Key.collectionType).document(expense.uuid).delete() { error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(.failure(.firebaseError(error)))
+            }
+            completion(.success(true))
+        }
+    }
+    
+    func deleteBudget(budget: Budget, completion: @escaping (Result<Bool, FirebaseError>) -> Void) {
+        
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
