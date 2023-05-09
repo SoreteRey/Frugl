@@ -11,11 +11,21 @@ import FirebaseAuth
 class CurrentUser {
     static let shared = CurrentUser()
     private let budgetKey = "currentBudgetID"
-    var currentBudget: Budget?
+    // MAXPOFF: - remove didSet. Only for debug
+    var currentBudget: Budget? {
+        willSet {
+            print("\n---------------------------------\n")
+            print("Current Budget will be: \(newValue?.name)")
+        }
+        didSet {
+            print("Current budget was: \(oldValue?.name)")
+            print("\n---------------------------------\n")
+        }
+    }
     
     var currentBudgetID: String? {
         didSet {
-            UserDefaults.standard.set(currentBudget, forKey: budgetKey)
+            UserDefaults.standard.set(currentBudgetID, forKey: budgetKey)
         }
     }
     

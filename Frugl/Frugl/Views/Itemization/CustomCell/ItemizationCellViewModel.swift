@@ -16,7 +16,8 @@ class ItemizationCellViewModel {
     // MARK: - Properties
     private weak var delegate: ItemizationCellViewModelDelegate?
     private var service: FireBaseSyncable
-    var expense: [Expense] = []
+    var expenses: [Expense] = []
+    var expense: Expense?
     
     init(delegate: ItemizationCellViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.service = service
@@ -27,7 +28,19 @@ class ItemizationCellViewModel {
         service.loadExpense { result in
             switch result {
             case .success(let expense):
-                self.expense = expense
+                self.expenses = expense
+                self.delegate?.expenseLoadedSuccessfully()
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
+    func deleteExpense() {
+        guard let expense = expense else { return }
+        service.deleteExpense(expense: expense) { result in
+            switch result {
+            case .success(_):
                 self.delegate?.expenseLoadedSuccessfully()
             case .failure(let failure):
                 print(failure.localizedDescription)
