@@ -16,7 +16,7 @@ enum FirebaseError: Error {
 
 protocol FireBaseSyncable {
     func saveExpense(expense: Expense)
-    func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void)
+	func loadExpenses(forBudget budget: Budget, completion: @escaping (Result<[Expense], FirebaseError>) -> Void)
     func deleteExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
     func saveBudget(budget: Budget)
     func loadBudget(completion: @escaping (Result<[Budget], FirebaseError>) -> Void)
@@ -31,11 +31,11 @@ struct FirebaseService: FireBaseSyncable {
     var budget: Budget?
     
     // MARK: - Functions
-    
     func saveExpense(expense: Expense) {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let budget = CurrentUser.shared.currentBudget else { print("no current budget") ; return }
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).collection("expenses").document(expense.uuid).setData(expense.dictionaryRepresentation) { error in
+
+		ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Budget.collectionType).document(budget.uuid).collection(Constants.Expenses.collectionName).document(expense.uuid).setData(expense.dictionaryRepresentation) { error in
             if let error = error {
                 print("Error saving expense: \(error.localizedDescription)")
             } else {
@@ -44,11 +44,11 @@ struct FirebaseService: FireBaseSyncable {
         }
     }
     
-    func loadExpense(completion: @escaping (Result<[Expense], FirebaseError>) -> Void) {
+	func loadExpenses(forBudget budget: Budget, completion: @escaping (Result<[Expense], FirebaseError>) -> Void) {
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).getDocuments { snapshot, error in
+		ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Budget.collectionType).document(budget.uuid).collection(Constants.Expenses.collectionName).getDocuments { snapshot, error in
             if let error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
@@ -69,38 +69,38 @@ struct FirebaseService: FireBaseSyncable {
     func saveBudget(budget: Budget) {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).setData(budget.dictionaryRepresentation)
+        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Budget.collectionType).document(budget.uuid).setData(budget.dictionaryRepresentation)
         
         var budgets = budgetArray
         budgets.append(budget)
     }
-    
+
     func loadBudget(completion: @escaping (Result<[Budget], FirebaseError>) -> Void) {
-        
+
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).getDocuments { snapshot, error in
+
+        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Budget.collectionType).getDocuments { snapshot, error in
             if let error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
                 return
             }
-            
+
             guard let docSnapShot = snapshot?.documents else {
                 completion(.failure(.noDataFound))
                 return
             }
-            
+
             let budgets = docSnapShot.compactMap { Budget(fromDictionary: $0.data()) }
             completion(.success(budgets))
         }
     }
-    
+
     func deleteExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void) {
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        ref.collection("users").document(userId).collection(Expense.Key.collectionType).document(expense.uuid).delete() { error in
+        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Expense.Key.collectionType).document(expense.uuid).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
@@ -113,7 +113,7 @@ struct FirebaseService: FireBaseSyncable {
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        ref.collection("users").document(userId).collection(Budget.Key.collectionType).document(budget.uuid).delete() { error in
+        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Budget.collectionType).document(budget.uuid).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))

@@ -8,19 +8,45 @@
 import Foundation
 
 protocol ItemizationViewModelDelegate: AnyObject {
-    func budgetLoadedSuccessfully()
+	func expenseLoadedSuccessfully()
 }
 
 class ItemizationViewModel {
     
     // MARK: - Properties
-    private weak var delegate: ItemizationViewModelDelegate?
+	private weak var delegate: ItemizationViewModelDelegate?
     private var service: FireBaseSyncable
-    var expense: Expense?
+    var expenses: [Expense]?
     var currentBudget: CurrentUser?
     
     init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.delegate = delegate
         self.service = service
     }
+
+	// MARK: - Functions
+	func fetchExpenses() {
+		guard let currentBudget = CurrentUser.shared.currentBudget else { return }
+		service.loadExpenses(forBudget: currentBudget) { result in
+			switch result {
+			case .success(let expenses):
+				self.expenses = expenses
+				self.delegate?.expenseLoadedSuccessfully()
+			case .failure(let failure):
+				print(failure.localizedDescription)
+			}
+		}
+	}
+
+//	func deleteExpense() {
+//		guard let expense = expense else { return }
+//		service.deleteExpense(expense: expense) { result in
+//			switch result {
+//			case .success(_):
+//				self.delegate?.expenseLoadedSuccessfully()
+//			case .failure(let failure):
+//				print(failure.localizedDescription)
+//			}
+//		}
+//	}
 }
