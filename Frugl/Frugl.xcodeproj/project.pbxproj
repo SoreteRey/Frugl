@@ -36,6 +36,7 @@
 		23BCD24B2A0033F5002EC273 /* PieChart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD24A2A0033F5002EC273 /* PieChart.storyboard */; };
 		23BCD2562A003636002EC273 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2552A003636002EC273 /* Calendar.storyboard */; };
 		23BCD2582A00364E002EC273 /* SignOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2572A00364E002EC273 /* SignOut.storyboard */; };
+		3498FAE02A0A9F5300962BA9 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */; };
 		34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C4330E29FAD1C600064959 /* GoogleService-Info.plist */; };
 		34C4331229FAD24700064959 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331129FAD24700064959 /* FirebaseAuth */; };
 		34C4331429FAD24700064959 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331329FAD24700064959 /* FirebaseFirestore */; };
@@ -84,6 +85,7 @@
 		23BCD24A2A0033F5002EC273 /* PieChart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PieChart.storyboard; sourceTree = "<group>"; };
 		23BCD2552A003636002EC273 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		23BCD2572A00364E002EC273 /* SignOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignOut.storyboard; sourceTree = "<group>"; };
+		3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		34C4330E29FAD1C600064959 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34C433152A000F2000064959 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		34C433172A000F3800064959 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -241,7 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */,
+				3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */,
 				23BCD2552A003636002EC273 /* Calendar.storyboard */,
+				3498FAE12A0AA54E00962BA9 /* TableViewCustomCell */,
 				34D5292C2A0182900067B388 /* CollectionCustomCell */,
 				237889FD29FB0BE80044F6E1 /* SignOut */,
 				23BC26EC29F9DB8C00B30A0F /* CustomCell */,
@@ -285,6 +289,13 @@
 				23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */,
 			);
 			path = CreateExpense;
+			sourceTree = "<group>";
+		};
+		3498FAE12A0AA54E00962BA9 /* TableViewCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCustomCell;
 			sourceTree = "<group>";
 		};
 		34D5292C2A0182900067B388 /* CollectionCustomCell */ = {
@@ -442,6 +453,7 @@
 				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
+				3498FAE02A0A9F5300962BA9 /* CalendarViewModel.swift in Sources */,
 				23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */,
 				235F2E832A016BA50025E1AE /* CreateExpenseViewModel.swift in Sources */,
 			);
