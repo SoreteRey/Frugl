@@ -17,7 +17,7 @@ struct PieSlice {
 class PieChartViewModel {
     var slices: [Slice] = []
     
-    func fetchDataFromFirebase() {
+    func fetchDataFromFirebase(completion: @escaping () -> Void) {
         // Configure Firebase if it's not already configured
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
@@ -32,17 +32,18 @@ class PieChartViewModel {
         amountsCollection.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error fetching data: \(error)")
+                completion()
                 return
             }
             
             guard let documents = snapshot?.documents else {
                 print("No documents found")
+                completion()
                 return
             }
             
             // Extract the amounts from the documents
             let sliceAmounts = documents.compactMap { $0.data()["amount"] as? Double }
-            
             
             // Calculate the total amount
             let totalAmount = sliceAmounts.reduce(0, +)
@@ -54,6 +55,8 @@ class PieChartViewModel {
                 let color = self.getRandomColor()
                 return Slice(percent: percent, color: color)
             }
+            
+            completion()
         }
     }
     

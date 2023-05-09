@@ -23,16 +23,18 @@ class PieChartViewController: UIViewController {
         super.viewDidLoad()
         
         pieChartTableView.dataSource = self
-                
-        pieChartTableView.reloadData() 
         
-        viewModel.fetchDataFromFirebase()
-        pieChartView.slices = viewModel.slices
-                
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        pieChartView.animateChart()
+        viewModel.fetchDataFromFirebase { [weak self] in
+            self?.pieChartView.slices = self?.viewModel.slices
+            self?.pieChartTableView.reloadData()
+            
+        }
+        
+        func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            
+            pieChartView.animateChart()
+        }
     }
 }
 extension PieChartViewController: UITableViewDataSource {
