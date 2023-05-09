@@ -12,6 +12,9 @@ class CalendarViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
+    @IBOutlet weak var budgetAmountLabel: UILabel!
+    @IBOutlet weak var expensesAmountLabel: UILabel!
+    @IBOutlet weak var upcomingExpensesTableView: UITableView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
