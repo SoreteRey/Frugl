@@ -9,23 +9,13 @@ import Foundation
 
 class Expense: Codable {
 
-	enum Key {
-		static let isSaving = "savings"
-		static let isRecurring = "recurring"
-		static let isIndividual = "individual"
-		static let amount = "amount"
-		static let name = "name"
-		static let date = "date"
-		static let dueDate = "dueDate"
-		static let dueDateAlert = "dueDateAlert"
-		static let dueDateSecondAlert = "dueDateSecondAlert"
-		static let uuid = "uuid"
-		static let collectionType = "expenses"
+	enum ExpenseType: String, Codable {
+		case savings = "savings"
+		case recurring = "recurring"
+		case individual = "individual"
 	}
 
-	var isSavings: Bool
-	var isRecurring: Bool
-	var isIndividual: Bool
+	var type: ExpenseType
 	var amount: Double
 	var name: String
 	var date: String
@@ -35,23 +25,20 @@ class Expense: Codable {
 	var uuid: String
 
 	var dictionaryRepresentation: [String: AnyHashable] {
-		[Key.isSaving:self.isSavings,
-		 Key.isRecurring:self.isRecurring,
-		 Key.isIndividual:self.isIndividual,
-		 Key.amount:self.amount,
-		 Key.name:self.name,
-		 Key.date:self.date,
-		 Key.dueDate:self.dueDate,
-		 Key.dueDateAlert:self.dueDateAlert,
-		 Key.dueDateSecondAlert:self.dueDateSecondAlert,
-		 Key.uuid:self.uuid
+		[
+			Constants.Expenses.expenseType : self.type.rawValue,
+			Constants.Expenses.amount : self.amount,
+			Constants.Expenses.name : self.name,
+			Constants.Expenses.date : self.date,
+			Constants.Expenses.dueDate : self.dueDate,
+			Constants.Expenses.dueDateAlert : self.dueDateAlert,
+			Constants.Expenses.dueDateSecondAlert : self.dueDateSecondAlert,
+			Constants.Expenses.uuid : self.uuid
 		]
 	}
 
-	init(isSavings: Bool = false, isRecurring: Bool = false, isIndividual: Bool = false, amount: Double, name: String, date: String = Date().stringValue(), dueDate: String? = nil, dueDateAlert: String? = nil, dueDateSecondAlert: String? = nil, uuid: String = UUID().uuidString) {
-		self.isSavings = isSavings
-		self.isRecurring = isRecurring
-		self.isIndividual = isIndividual
+	init(type: ExpenseType, amount: Double, name: String, date: String = Date().stringValue(), dueDate: String? = nil, dueDateAlert: String? = nil, dueDateSecondAlert: String? = nil, uuid: String = UUID().uuidString) {
+		self.type = type
 		self.amount = amount
 		self.name = name
 		self.date = date
@@ -65,20 +52,22 @@ class Expense: Codable {
 // MARK: - Extensions
 extension Expense {
 	convenience init? (fromDictionary dictionary: [String: Any]) {
-		guard let isSavings = dictionary[Key.isSaving] as? Bool,
-			  let isRecurring = dictionary[Key.isRecurring] as? Bool,
-			  let isIndividual = dictionary[Key.isIndividual] as? Bool,
-			  let amount = dictionary[Key.amount] as? Double,
-			  let name = dictionary[Key.name] as? String,
-			  let date = dictionary[Key.date] as? String,
-			  let dueDate = dictionary[Key.dueDate] as? String,
-			  let dueDateAlert = dictionary[Key.dueDateAlert] as? String,
-			  let dueDateSecondAlert = dictionary[Key.dueDateSecondAlert] as? String,
-			  let uuid = dictionary[Key.uuid] as? String else { return nil }
+		guard let typeString = dictionary[Constants.Expenses.expenseType] as? String,
+			  let amount = dictionary[Constants.Expenses.amount] as? Double,
+			  let name = dictionary[Constants.Expenses.name] as? String,
+			  let date = dictionary[Constants.Expenses.date] as? String,
+			  let uuid = dictionary[Constants.Expenses.uuid] as? String else { return nil }
 
-		self.init(isSavings: isSavings, isRecurring: isRecurring, isIndividual: isIndividual, amount: amount, name: name, date: date, dueDate: dueDate, dueDateAlert: dueDateAlert, dueDateSecondAlert: dueDateSecondAlert, uuid: uuid)
+		guard let type = ExpenseType(rawValue: typeString) else { return nil }
+
+		let dueDate = dictionary[Constants.Expenses.dueDate] as? String
+		let dueDateAlert = dictionary[Constants.Expenses.dueDateAlert] as? String
+		let dueDateSecondAlert = dictionary[Constants.Expenses.dueDateSecondAlert] as? String
+
+		self.init(type: type, amount: amount, name: name, date: date, dueDate: dueDate, dueDateAlert: dueDateAlert, dueDateSecondAlert: dueDateSecondAlert, uuid: uuid)
 	}
 }
+
 
 extension Expense: Equatable {
 	static func == (lhs: Expense, rhs: Expense) -> Bool {

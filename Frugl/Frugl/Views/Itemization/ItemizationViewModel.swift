@@ -12,19 +12,31 @@ protocol ItemizationViewModelDelegate: AnyObject {
 }
 
 class ItemizationViewModel {
-    
-    // MARK: - Properties
+
+	// MARK: - Init
+	init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
+		self.delegate = delegate
+		self.service = service
+	}
+
+	// MARK: - Properties
 	private weak var delegate: ItemizationViewModelDelegate?
-    private var service: FireBaseSyncable
-    var expenses: [Expense]?
-    var currentBudget: CurrentUser?
-    
-    init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
-        self.delegate = delegate
-        self.service = service
-    }
+	private var service: FireBaseSyncable
+	var sectionedExpenses: [[Expense]] = [[], [], []] // 2D array
+	var currentBudget: CurrentUser?
+	var expenses: [Expense]? {
+		didSet {
+			updateSectionedExpenses()
+		}
+	}
 
 	// MARK: - Functions
+	private func updateSectionedExpenses() {
+		sectionedExpenses[0] = expenses?.filter { $0.type == .recurring } ?? []
+		sectionedExpenses[1] = expenses?.filter { $0.type == .individual } ?? []
+		sectionedExpenses[2] = expenses?.filter { $0.type == .savings } ?? []
+	}
+
 	func fetchExpenses() {
 		guard let currentBudget = CurrentUser.shared.currentBudget else { return }
 		service.loadExpenses(forBudget: currentBudget) { result in
@@ -38,15 +50,15 @@ class ItemizationViewModel {
 		}
 	}
 
-//	func deleteExpense() {
-//		guard let expense = expense else { return }
-//		service.deleteExpense(expense: expense) { result in
-//			switch result {
-//			case .success(_):
-//				self.delegate?.expenseLoadedSuccessfully()
-//			case .failure(let failure):
-//				print(failure.localizedDescription)
-//			}
-//		}
-//	}
+	//	func deleteExpense() {
+	//		guard let expense = expense else { return }
+	//		service.deleteExpense(expense: expense) { result in
+	//			switch result {
+	//			case .success(_):
+	//				self.delegate?.expenseLoadedSuccessfully()
+	//			case .failure(let failure):
+	//				print(failure.localizedDescription)
+	//			}
+	//		}
+	//	}
 }

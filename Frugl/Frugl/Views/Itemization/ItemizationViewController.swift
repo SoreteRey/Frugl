@@ -55,33 +55,19 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		switch section {
-		case 0: return viewModel.expenses?.filter { $0.isRecurring }.count ?? 0
-		case 1: return 1
-		case 2: return 1
-		default: return 1
-		}
+		viewModel.sectionedExpenses[section].count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as? ItemizationTableViewCell else { return UITableViewCell() }
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath)
 
-		guard let expenses = viewModel.expenses else { return  UITableViewCell() }
+		let expense = viewModel.sectionedExpenses[indexPath.section][indexPath.row]
+
 		var config = cell.defaultContentConfiguration()
-
-		switch indexPath.section {
-		case 0:
-			let recurringExpenses = expenses.filter { $0.isRecurring }
-			let expense = recurringExpenses[indexPath.row]
-			config.text = expense.name
-			config.secondaryText = String(expense.amount)
-		case 1: config.text = ""
-		case 2: config.text = ""
-		default: break
-		}
-
+		config.text = expense.name
+		config.secondaryText = String(expense.amount)
 		cell.contentConfiguration = config
+
 		return cell
 	}
 }

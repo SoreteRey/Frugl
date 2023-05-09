@@ -139,13 +139,13 @@ class CreateExpenseViewController: UIViewController {
         
         switch category {
         case "Recurring":
-            let expense = Expense(isSavings: false, isRecurring: true, isIndividual: false, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
+			let expense = Expense(type: .recurring, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
         case "Individual":
-            let expense = Expense(isSavings: false, isRecurring: false, isIndividual: true, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
+			let expense = Expense(type: .individual, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
         case "Savings":
-            let expense = Expense(isSavings: true, isRecurring: false, isIndividual: false, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
+			let expense = Expense(type: .savings, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
         default:
             return
