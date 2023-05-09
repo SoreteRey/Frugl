@@ -9,14 +9,18 @@ import UIKit
 
 class PieChartTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
-}
+  // MARK: - Outlets
+    
+    @IBOutlet weak var expenseNameTextLabel: UILabel!
+    @IBOutlet weak var expensePercentageTextLabel: UILabel!
+    
+    func configure(with expenseName: String, expensePercentage: String) {
+         expenseNameTextLabel.text = expenseName
+         expensePercentageTextLabel.text = expensePercentage
+     }
+     
+     func configure(with percentage: CGFloat) {
+         let formattedPercentage = String(format: "%.0f%%", percentage * 100)
+         expenseNameTextLabel.text = formattedPercentage
+     }
+ }

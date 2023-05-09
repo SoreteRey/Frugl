@@ -52,6 +52,7 @@
 		939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */; };
 		939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939B5A5E2A001DE700FC3D2E /* PieChartView.xib */; };
 		939B5A632A004D9D00FC3D2E /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A622A004D9D00FC3D2E /* FirebaseService.swift */; };
+		939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		939B5A5E2A001DE700FC3D2E /* PieChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
 		939B5A622A004D9D00FC3D2E /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */,
+				939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				235F2E852A01859A0025E1AE /* ItemizationCellViewModel.swift in Sources */,
 				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
 				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
+				939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */,
 				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
 				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
 				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
