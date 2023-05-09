@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Expense {
+class Expense: Codable {
     
      enum Key {
         static let isSaving = "savings"
@@ -34,7 +34,7 @@ class Expense {
     var dueDateSecondAlert: String?
     var uuid: String
     
-    var dictionaryRepresentation: [String: AnyHashable] {
+    var dictionaryRepresentation: [String : AnyHashable] {
         [Key.isSaving:self.isSavings,
          Key.isRecurring:self.isRecurring,
          Key.isIndividual:self.isIndividual,
@@ -63,10 +63,9 @@ class Expense {
 } // End of class
 
 // MARK: - Extension
-
 extension Expense {
     
-    convenience init? (fromDictionary dictionary: [String: Any]) {
+    convenience init? (fromDictionary dictionary: [String : Any]) {
         guard let isSavings = dictionary[Key.isSaving] as? Bool,
               let isRecurring = dictionary[Key.isRecurring] as? Bool,
               let isIndividual = dictionary[Key.isIndividual] as? Bool,
