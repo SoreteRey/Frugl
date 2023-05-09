@@ -20,6 +20,7 @@ class CreateExpenseViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
+
     
     private var datePicker = UIDatePicker()
     private var firstAlertDatePickerInitialized = UIDatePicker()
