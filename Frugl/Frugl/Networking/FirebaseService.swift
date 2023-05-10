@@ -102,7 +102,7 @@ struct FirebaseService: FireBaseSyncable {
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        ref.collection("users").document(userId).collection(Expense.Key.collectionType).document(expense.uuid).delete() { error in
+        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Expenses.collectionType).document(expense.uuid).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
