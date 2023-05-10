@@ -17,6 +17,7 @@ class ItemizationViewModel {
     init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.delegate = delegate
         self.service = service
+        fetchExpenses()
     }
 
     // MARK: - Properties
@@ -24,17 +25,24 @@ class ItemizationViewModel {
     private var service: FireBaseSyncable
     var sectionedExpenses: [[Expense]] = [[], [], []] // 2D array
     var currentBudget: CurrentUser?
-    var expenses: [Expense]? {
-        didSet {
-            updateSectionedExpenses()
-        }
-    }
+//    var currentBalance: Budget?
+    var expenses: [Expense] = []
+    #warning("Update this name, Jake.")
+    var currentidk: Double?
+//    ? {
+//        didSet {
+////            updateSectionedExpenses()
+//            getExpectedBalance()
+////            expectedBalance()
+//        }
+//    }
 
     // MARK: - Functions
-    private func updateSectionedExpenses() {
-        sectionedExpenses[0] = expenses?.filter { $0.type == .recurring } ?? []
-        sectionedExpenses[1] = expenses?.filter { $0.type == .individual } ?? []
-        sectionedExpenses[2] = expenses?.filter { $0.type == .savings } ?? []
+    private func updateSectionedExpenses(complete: ()->Void) {
+        sectionedExpenses[0] = expenses.filter { $0.type == .recurring }
+        sectionedExpenses[1] = expenses.filter { $0.type == .individual }
+        sectionedExpenses[2] = expenses.filter { $0.type == .savings }
+        complete()
     }
 
     func fetchExpenses() {
@@ -43,12 +51,38 @@ class ItemizationViewModel {
             switch result {
             case .success(let expenses):
                 self.expenses = expenses
-                self.delegate?.expenseLoadedSuccessfully()
+                self.updateSectionedExpenses {
+                    self.expectedBalance()
+                    self.delegate?.expenseLoadedSuccessfully()
+                }
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
         }
     }
+    
+    func expectedBalance() {
+        guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
+        let totalExpenses = sectionedExpenses.joined().map { $0.amount }.reduce(0.0, +)
+        let expectedBalance = currentBudget - totalExpenses
+//        self.currentBalance?.amount = expectedBalance
+        currentidk = expectedBalance
+        print(expectedBalance)
+    }
+
+//    func getExpectedBalance() -> Double {
+//        var total: Double = 0.0
+//        for section in sectionedExpenses {
+//            for expense in section {
+//                total += expense.amount
+//            }
+//        }
+//        guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return 0.0 }
+//        let expectedBalance = (currentBudget - total)
+//        print(String(expectedBalance))
+//        return expectedBalance
+//
+//    }
     
 //    func deleteExpense() {
 //        guard let expense = expense else { return }

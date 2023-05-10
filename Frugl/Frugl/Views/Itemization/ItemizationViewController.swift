@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ItemizationViewController: UIViewController {
     
     // MARK: - Outlets
@@ -24,18 +25,18 @@ class ItemizationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateUI()
-        viewModel.fetchExpenses()
+//        viewModel.fetchExpenses()
+//        updateUI()
     }
     
     // MARK: - Properties
     var viewModel: ItemizationViewModel!
     
-    
     // MARK: - Functions
     func updateUI() {
         if let budget = CurrentUser.shared.currentBudget {
-            budgetTotalLabel.text = "\(budget.amount)"
+            budgetTotalLabel.text = "$\(budget.amount)"
+            expectedBalanceLabel.text = "$\(viewModel.currentidk ?? 0)"
         }
     }
 } // End of Class
@@ -44,7 +45,7 @@ class ItemizationViewController: UIViewController {
 extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return viewModel.sectionedExpenses.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -67,7 +68,7 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         
         var config = cell.defaultContentConfiguration()
         config.text = expense.name
-        config.secondaryText = String(expense.amount)
+        config.secondaryText = "$\(expense.amount)"
         cell.contentConfiguration = config
         
         return cell
@@ -76,6 +77,7 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
 
 extension ItemizationViewController: ItemizationViewModelDelegate {
     func expenseLoadedSuccessfully() {
+        updateUI()
         expensesTableView.reloadData()
     }
 }
