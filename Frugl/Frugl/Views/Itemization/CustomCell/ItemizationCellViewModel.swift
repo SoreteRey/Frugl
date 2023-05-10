@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MAXPOFF: - MOST LIKELY DELETE THIS FILE
+
 protocol ItemizationCellViewModelDelegate: AnyObject {
     func expenseLoadedSuccessfully()
 }
@@ -24,27 +26,5 @@ class ItemizationCellViewModel {
     }
     
     // MARK: - Functions
-    func fetchExpense() {
-        service.loadExpense { result in
-            switch result {
-            case .success(let expense):
-                self.expenses = expense
-                self.delegate?.expenseLoadedSuccessfully()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
-    }
-    
-    func deleteExpense() {
-        guard let expense = expense else { return }
-        service.deleteExpense(expense: expense) { result in
-            switch result {
-            case .success(_):
-                self.delegate?.expenseLoadedSuccessfully()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
-    }
+   
 }
