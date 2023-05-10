@@ -25,17 +25,8 @@ class ItemizationViewModel {
     private var service: FireBaseSyncable
     var sectionedExpenses: [[Expense]] = [[], [], []] // 2D array
     var currentBudget: CurrentUser?
-//    var currentBalance: Budget?
     var expenses: [Expense] = []
-    #warning("Update this name, Jake.")
-    var currentidk: Double?
-//    ? {
-//        didSet {
-////            updateSectionedExpenses()
-//            getExpectedBalance()
-////            expectedBalance()
-//        }
-//    }
+    var currentBalance: Double?
 
     // MARK: - Functions
     private func updateSectionedExpenses(complete: ()->Void) {
@@ -65,25 +56,14 @@ class ItemizationViewModel {
         guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
         let totalExpenses = sectionedExpenses.joined().map { $0.amount }.reduce(0.0, +)
         let expectedBalance = currentBudget - totalExpenses
-//        self.currentBalance?.amount = expectedBalance
-        currentidk = expectedBalance
+        currentBalance = expectedBalance
         print(expectedBalance)
     }
-
-//    func getExpectedBalance() -> Double {
-//        var total: Double = 0.0
-//        for section in sectionedExpenses {
-//            for expense in section {
-//                total += expense.amount
-//            }
-//        }
-//        guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return 0.0 }
-//        let expectedBalance = (currentBudget - total)
-//        print(String(expectedBalance))
-//        return expectedBalance
-//
-//    }
     
+    func addedExpense() {
+        
+    }
+
 //    func deleteExpense() {
 //        guard let expense = expense else { return }
 //        service.deleteExpense(expense: expense) { result in

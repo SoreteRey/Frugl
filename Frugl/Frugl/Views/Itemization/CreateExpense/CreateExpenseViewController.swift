@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol createExpenseViewControllerDelegate: AnyObject {
+    func modalDismissed()
+}
+
 class CreateExpenseViewController: UIViewController {
     
     
@@ -20,7 +24,7 @@ class CreateExpenseViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
-    
+    weak var delegate: createExpenseViewControllerDelegate?
     
     private var datePicker = UIDatePicker()
     private var firstAlertDatePickerInitialized = UIDatePicker()
@@ -156,6 +160,7 @@ class CreateExpenseViewController: UIViewController {
 
 extension CreateExpenseViewController: CreateExpenseViewModelDelegate {
     func expenseCreatedSuccessfully() {
+        delegate?.modalDismissed()
         self.dismiss(animated: true)
     }
 }

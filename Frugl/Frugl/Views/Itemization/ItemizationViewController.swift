@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class ItemizationViewController: UIViewController {
     
     // MARK: - Outlets
@@ -25,18 +24,18 @@ class ItemizationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        viewModel.fetchExpenses()
-//        updateUI()
+        viewModel.fetchExpenses()
     }
     
     // MARK: - Properties
     var viewModel: ItemizationViewModel!
+    var delegate: createExpenseViewControllerDelegate!
     
     // MARK: - Functions
     func updateUI() {
         if let budget = CurrentUser.shared.currentBudget {
             budgetTotalLabel.text = "$\(budget.amount)"
-            expectedBalanceLabel.text = "$\(viewModel.currentidk ?? 0)"
+            expectedBalanceLabel.text = "$\(viewModel.currentBalance ?? 0)"
         }
     }
 } // End of Class
@@ -78,6 +77,13 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
 extension ItemizationViewController: ItemizationViewModelDelegate {
     func expenseLoadedSuccessfully() {
         updateUI()
+        expensesTableView.reloadData()
+    }
+}
+
+extension ItemizationViewController: createExpenseViewControllerDelegate {
+    func modalDismissed() {
+        viewModel.fetchExpenses()
         expensesTableView.reloadData()
     }
 }
