@@ -29,7 +29,7 @@ class CalendarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateBudgetAmount()
-        viewModel.loadExpenses()
+        upcomingExpensesTableView.reloadData()
     }
     
     // MARK: - Properties
@@ -104,12 +104,12 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension CalendarViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.expenses.count
+        return viewModel.filterExpenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as? ExpenseTableViewCell else { return UITableViewCell() }
-        let expense = viewModel.expenses[indexPath.row]
+        let expense = viewModel.filterExpenses[indexPath.row]
         cell.updateUI(with: expense)
         return cell
     }
