@@ -14,10 +14,6 @@ class ItemizationViewController: UIViewController {
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var expectedBalanceLabel: UILabel!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateUI()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +22,15 @@ class ItemizationViewController: UIViewController {
         viewModel = ItemizationViewModel(delegate: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
+        viewModel.fetchExpenses()
+    }
+    
     // MARK: - Properties
     var viewModel: ItemizationViewModel!
+    
     
     // MARK: - Functions
     func updateUI() {
@@ -36,6 +39,7 @@ class ItemizationViewController: UIViewController {
         }
     }
 } // End of Class
+
 // MARK: - Extensions
 extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -53,18 +57,25 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        viewModel.sectionedExpenses[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as? ItemizationTableViewCell else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath)
+        
+        let expense = viewModel.sectionedExpenses[indexPath.section][indexPath.row]
+        
+        var config = cell.defaultContentConfiguration()
+        config.text = expense.name
+        config.secondaryText = String(expense.amount)
+        cell.contentConfiguration = config
         
         return cell
     }
 }
 
 extension ItemizationViewController: ItemizationViewModelDelegate {
-    func budgetLoadedSuccessfully() {
-        
+    func expenseLoadedSuccessfully() {
+        expensesTableView.reloadData()
     }
 }

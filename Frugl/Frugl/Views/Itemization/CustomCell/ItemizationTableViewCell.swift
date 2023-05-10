@@ -16,8 +16,12 @@ class ItemizationTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     var viewModel: ItemizationCellViewModel!
-    
+    var expense: Expense?
     // MARK: - Functions
 
-    
+    func configCell(expense: [Expense]) {
+        guard let expense = self.expense else { return }
+        expenseNameLabel.text = expense.name
+        expenseAmountLabel.text = "\(expense.amount)"
+    }
 }
