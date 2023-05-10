@@ -7,12 +7,7 @@
 
 import UIKit
 
-protocol createExpenseViewControllerDelegate: AnyObject {
-    func modalDismissed()
-}
-
 class CreateExpenseViewController: UIViewController {
-    
     
     // MARK: - Outlets
     @IBOutlet weak var expenseNameTextField: UITextField!
@@ -24,8 +19,7 @@ class CreateExpenseViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
-    weak var delegate: createExpenseViewControllerDelegate?
-    
+
     private var datePicker = UIDatePicker()
     private var firstAlertDatePickerInitialized = UIDatePicker()
     private var secondAlertDatePickerInitialized = UIDatePicker()
@@ -40,7 +34,6 @@ class CreateExpenseViewController: UIViewController {
     }
     
     // MARK: - Functions
-    
     func popUpConfig() {
         let closure = { (action: UIAction) in
             print(action.title)
@@ -160,7 +153,6 @@ class CreateExpenseViewController: UIViewController {
 
 extension CreateExpenseViewController: CreateExpenseViewModelDelegate {
     func expenseCreatedSuccessfully() {
-        delegate?.modalDismissed()
         self.dismiss(animated: true)
     }
 }

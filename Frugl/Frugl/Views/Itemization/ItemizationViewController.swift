@@ -29,7 +29,6 @@ class ItemizationViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: ItemizationViewModel!
-    var delegate: createExpenseViewControllerDelegate!
     
     // MARK: - Functions
     func updateUI() {
@@ -77,13 +76,6 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
 extension ItemizationViewController: ItemizationViewModelDelegate {
     func expenseLoadedSuccessfully() {
         updateUI()
-        expensesTableView.reloadData()
-    }
-}
-
-extension ItemizationViewController: createExpenseViewControllerDelegate {
-    func modalDismissed() {
-        viewModel.fetchExpenses()
         expensesTableView.reloadData()
     }
 }
