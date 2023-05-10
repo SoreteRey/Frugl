@@ -25,15 +25,15 @@ class CalendarViewModel {
     
     // MARK: - Functions
     func loadExpenses() {
-        service.loadExpense { [weak self] result in
+        guard let currentBudget = CurrentUser.shared.currentBudget else { return }
+        service.loadExpenses(forBudget: currentBudget) { result in
             switch result {
-                
             case .success(let expenses):
-                self?.expenses = expenses
-                self?.delegate?.expensesLoadedSuccessfully()
-            case .failure(let error):
-                print(error.localizedDescription)
+                self.expenses = expenses
+                self.delegate?.expensesLoadedSuccessfully()
+            case .failure(let failure):
+                print(failure.localizedDescription)
             }
         }
     }
-}
+} // End of class
