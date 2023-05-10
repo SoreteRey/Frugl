@@ -23,6 +23,7 @@
 		2381B2A02A02C029003A8AB3 /* ItemizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2381B29F2A02C029003A8AB3 /* ItemizationViewModel.swift */; };
 		23B1B5A02A041054004DA6EF /* GlobalSOT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1B59F2A041054004DA6EF /* GlobalSOT.swift */; };
 		23B1B5A22A04110C004DA6EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1B5A12A04110C004DA6EF /* User.swift */; };
+		23B5AEE52A0AF33D001B32F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5AEE42A0AF33D001B32F5 /* Constants.swift */; };
 		23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */; };
 		23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */; };
 		23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */; };
@@ -54,6 +55,7 @@
 		939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */; };
 		939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939B5A5E2A001DE700FC3D2E /* PieChartView.xib */; };
 		939B5A632A004D9D00FC3D2E /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A622A004D9D00FC3D2E /* FirebaseService.swift */; };
+		939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,7 @@
 		2381B29F2A02C029003A8AB3 /* ItemizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationViewModel.swift; sourceTree = "<group>"; };
 		23B1B59F2A041054004DA6EF /* GlobalSOT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSOT.swift; sourceTree = "<group>"; };
 		23B1B5A12A04110C004DA6EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23B5AEE42A0AF33D001B32F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		939B5A5E2A001DE700FC3D2E /* PieChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
 		939B5A622A004D9D00FC3D2E /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				34C433192A0018F000064959 /* DateExtension.swift */,
 				34D5292F2A0183010067B388 /* CalendarHelper.swift */,
 				23B1B59F2A041054004DA6EF /* GlobalSOT.swift */,
+				23B5AEE42A0AF33D001B32F5 /* Constants.swift */,
 			);
 			path = "Helper&Extensions";
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */,
+				939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				34D529302A0183010067B388 /* CalendarHelper.swift in Sources */,
 				34C433162A000F2000064959 /* Budget.swift in Sources */,
 				23B1B5A22A04110C004DA6EF /* User.swift in Sources */,
+				23B5AEE52A0AF33D001B32F5 /* Constants.swift in Sources */,
 				237063EE29F9C6800014B188 /* BudgetTableViewCell.swift in Sources */,
 				237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */,
 				237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */,
@@ -452,6 +459,7 @@
 				235F2E852A01859A0025E1AE /* ItemizationCellViewModel.swift in Sources */,
 				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
 				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
+				939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */,
 				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
 				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
 				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
