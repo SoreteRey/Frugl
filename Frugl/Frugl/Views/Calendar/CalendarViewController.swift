@@ -30,6 +30,7 @@ class CalendarViewController: UIViewController {
         super.viewWillAppear(animated)
         updateBudgetAmount()
         upcomingExpensesTableView.reloadData()
+        viewModel.loadExpenses()
     }
     
     // MARK: - Properties
@@ -104,12 +105,12 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension CalendarViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.filterExpenses.count
+        return viewModel.expenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as? ExpenseTableViewCell else { return UITableViewCell() }
-        let expense = viewModel.filterExpenses[indexPath.row]
+        let expense = viewModel.expenses[indexPath.row]
         cell.updateUI(with: expense)
         return cell
     }

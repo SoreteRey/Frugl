@@ -16,28 +16,21 @@ class CalendarViewModel {
     let service: FireBaseSyncable
     weak var delegate: CalendarViewModelDelegate?
     var expenses: [Expense] = []
-    var filterExpenses: [Expense] = []
     
     init(service: FireBaseSyncable = FirebaseService(), delegate: CalendarViewModelDelegate) {
         self.service = service
         self.delegate = delegate
-        self.loadExpenses()
     }
     
     // MARK: - Functions
     func loadExpenses() {
         guard let currentBudget = CurrentUser.shared.currentBudget else { return }
-        service.loadExpenses(forBudget: currentBudget) { result in
+        service.loadExpenses(forBudget: currentBudget) { [weak self] result in
             switch result {
             case .success(let expenses):
-                self.expenses = expenses
-                
-                for i in expenses {
-                    if i.dueDate != "" {
-                        self.filterExpenses.append(i)
-                    }
-                    self.delegate?.expensesLoadedSuccessfully()
-                }
+                self?.expenses = expenses
+                self?.expenses = expenses.filter { $0.dueDate != ""}
+                    self?.delegate?.expensesLoadedSuccessfully()
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
