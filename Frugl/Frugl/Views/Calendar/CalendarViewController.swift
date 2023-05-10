@@ -22,11 +22,20 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.delegate = self
         calendarCollectionView.dataSource = self
         setMonthView()
+        upcomingExpensesTableView.dataSource = self
+        viewModel = CalendarViewModel(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateBudgetAmount()
+        viewModel.loadExpenses()
     }
     
     // MARK: - Properties
     var selectedDate = Date()
     var totalSquares = [String]()
+    var viewModel: CalendarViewModel!
     
     // MARK: - Functions
     func setCellsView() {
@@ -70,6 +79,12 @@ class CalendarViewController: UIViewController {
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
         setMonthView()
     }
+    
+    func updateBudgetAmount() {
+        if let budget = CurrentUser.shared.currentBudget {
+            budgetAmountLabel.text = "\(budget.amount)"
+        }
+    }
 } // End of class
 
 // MARK: - Extensions
@@ -84,5 +99,24 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         cell.dayOfMonth.text = totalSquares[indexPath.item]
         
         return cell
+    }
+}
+
+extension CalendarViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.expenses.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as? ExpenseTableViewCell else { return UITableViewCell() }
+        let expense = viewModel.expenses[indexPath.row]
+        cell.updateUI(with: expense)
+        return cell
+    }
+}
+
+extension CalendarViewController: CalendarViewModelDelegate {
+    func expensesLoadedSuccessfully() {
+        upcomingExpensesTableView.reloadData()
     }
 }

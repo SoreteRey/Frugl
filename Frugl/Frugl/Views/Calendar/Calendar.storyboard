@@ -156,7 +156,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarCell" id="mgW-Ch-rIv" customClass="CalendarTableViewCell" customModule="Frugl" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="expenseCell" id="mgW-Ch-rIv" customClass="ExpenseTableViewCell" customModule="Frugl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71" width="377" height="52.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mgW-Ch-rIv" id="oeP-DJ-Wz3">
@@ -202,6 +202,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="URw-nY-Bwj" secondAttribute="bottom" constant="8" id="Z6D-ur-1qp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dueDateLabel" destination="1nG-fA-ZGU" id="QN2-02-clE"/>
+                                            <outlet property="expenseAmountLabel" destination="ZZR-4D-lQr" id="rTQ-Sv-5h5"/>
+                                            <outlet property="expenseNameLabel" destination="5HY-ZP-2fT" id="4IH-Ng-xL0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

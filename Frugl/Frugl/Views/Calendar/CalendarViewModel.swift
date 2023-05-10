@@ -20,10 +20,10 @@ class CalendarViewModel {
     init(service: FireBaseSyncable = FirebaseService(), delegate: CalendarViewModelDelegate) {
         self.service = service
         self.delegate = delegate
+        self.loadExpenses()
     }
     
     // MARK: - Functions
-    
     func loadExpenses() {
         service.loadExpense { [weak self] result in
             switch result {
