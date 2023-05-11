@@ -15,11 +15,9 @@ class ExpenseTableViewCell: UITableViewCell {
     @IBOutlet weak var expenseAmountLabel: UILabel!
     
     // MARK: - Functiones
-    
     func updateUI(with expense: Expense) {
         expenseNameLabel.text = expense.name
         dueDateLabel.text = expense.dueDate
         expenseAmountLabel.text = ("\(expense.amount)")
     }
-    
 }
