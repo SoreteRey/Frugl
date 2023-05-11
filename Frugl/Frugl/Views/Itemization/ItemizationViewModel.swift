@@ -52,27 +52,37 @@ class ItemizationViewModel {
         }
     }
     
+//    func expectedBalance() {
+//        guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
+//        let totalExpenses = sectionedExpenses.joined().map { $0.amount }.reduce(0.0, +)
+//        let expectedBalance = currentBudget - totalExpenses
+//        currentBalance = expectedBalance
+//        print(expectedBalance)
+//    }
+    
     func expectedBalance() {
         guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
-        let totalExpenses = sectionedExpenses.joined().map { $0.amount }.reduce(0.0, +)
-        let expectedBalance = currentBudget - totalExpenses
-        currentBalance = expectedBalance
-        print(expectedBalance)
+        var total: Double = 0.0
+        for section in sectionedExpenses {
+            for expense in section {
+                total += expense.amount
+            }
+            let expectedBalance = currentBudget - total
+            currentBalance = expectedBalance
+            print(expectedBalance)
+        }
     }
     
-    func addedExpense() {
-        
+    func deleteExpense(expense: Expense) {
+        service.deleteExpense(expense: expense) { result in
+            switch result {
+            case .success(_):
+                guard let indexOfExpense = self.expenses.firstIndex(of: expense) else { return }
+                self.expenses.remove(at: indexOfExpense)
+                self.delegate?.expenseLoadedSuccessfully()
+            case .failure(_):
+                print("Expense failed to delete.")
+            }
+        }
     }
-
-//    func deleteExpense() {
-//        guard let expense = expense else { return }
-//        service.deleteExpense(expense: expense) { result in
-//            switch result {
-//            case .success(_):
-//                self.delegate?.budgetLoadedSuccessfully()
-//            case .failure(let failure):
-//                print(failure.localizedDescription)
-//            }
-//        }
-//    }
 }

@@ -35,6 +35,7 @@ class ItemizationViewController: UIViewController {
         if let budget = CurrentUser.shared.currentBudget {
             budgetTotalLabel.text = "$\(budget.amount)"
             expectedBalanceLabel.text = "$\(viewModel.currentBalance ?? 0)"
+            expensesTableView.reloadData()
         }
     }
 } // End of Class
@@ -71,11 +72,27 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            let alertController = UIAlertController(title: "Delete Expense?", message: "You sure you want to delete this expense?", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(dismissAction)
+            let confirmAction = UIAlertAction(title: "Delete Expense", style: .destructive) { _ in
+                let expense = self.viewModel.sectionedExpenses[indexPath.section][indexPath.row]
+                guard let expense = self.viewModel.expenses.first(where: { $0.uuid == expense.uuid }) else { return }
+                self.viewModel.deleteExpense(expense: expense) 
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true)
+        }
+    }
 }
 
 extension ItemizationViewController: ItemizationViewModelDelegate {
     func expenseLoadedSuccessfully() {
         updateUI()
-        expensesTableView.reloadData()
     }
 }
