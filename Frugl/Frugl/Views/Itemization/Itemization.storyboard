@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" id="gA1-mZ-OaI">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7LF-Lt-ZK5">
                             <connections>
-                                <segue destination="o8t-h2-yYK" kind="presentation" id="O7n-fG-PbL"/>
+                                <segue destination="o8t-h2-yYK" kind="presentation" modalPresentationStyle="fullScreen" id="O7n-fG-PbL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,7 +110,9 @@
         <!--UIViewController-1u5-gS-7ys-->
         <scene sceneID="a4n-2k-vT8">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-1u5-gS-7ys" id="o8t-h2-yYK" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-1u5-gS-7ys" id="o8t-h2-yYK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AI2-cl-slb"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIj-Iv-wee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1375" y="1896"/>

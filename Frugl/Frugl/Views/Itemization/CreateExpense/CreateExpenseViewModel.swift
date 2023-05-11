@@ -18,7 +18,6 @@ class CreateExpenseViewModel {
     private var service: FireBaseSyncable
     var expense: Expense?
     
-    
     init(delegate: CreateExpenseViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.delegate = delegate
         self.service = service
