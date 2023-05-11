@@ -24,23 +24,23 @@
                                     <constraint firstAttribute="height" constant="337" id="cAs-th-DFE"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pieChartCell" rowHeight="80" id="T5z-Mj-RDd" customClass="PieChartTableViewCell" customModule="Frugl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="377" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pieChartCell" rowHeight="100" id="T5z-Mj-RDd" customClass="PieChartTableViewCell" customModule="Frugl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T5z-Mj-RDd" id="OVR-Oh-3P0">
-                                            <rect key="frame" x="0.0" y="0.0" width="377" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="Q4e-Te-kDL">
-                                                    <rect key="frame" x="10.333333333333343" y="30" width="356.66666666666663" height="20.333333333333329"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="k9D-0I-EKi">
+                                                    <rect key="frame" x="10" y="40" width="356.66666666666669" height="20.333333333333329"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(expenseName)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-Hv-nNc">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(expenseName)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-Hv-nNc">
                                                             <rect key="frame" x="0.0" y="0.0" width="120.66666666666667" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7d-QG-5ou">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7d-QG-5ou">
                                                             <rect key="frame" x="257.66666666666669" y="0.0" width="99" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -49,10 +49,6 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Q4e-Te-kDL" firstAttribute="centerY" secondItem="OVR-Oh-3P0" secondAttribute="centerY" id="NV7-aI-PqA"/>
-                                                <constraint firstItem="Q4e-Te-kDL" firstAttribute="centerX" secondItem="OVR-Oh-3P0" secondAttribute="centerX" id="s0T-KV-LyM"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="expenseNameTextLabel" destination="AWk-Hv-nNc" id="Sb2-th-RQ9"/>
@@ -98,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apL-Ah-lKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2220.6106870229005" y="1228.8732394366198"/>
+            <point key="canvasLocation" x="2219.0839694656488" y="1228.8732394366198"/>
         </scene>
     </scenes>
     <resources>

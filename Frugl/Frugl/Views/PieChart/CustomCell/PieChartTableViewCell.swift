@@ -14,13 +14,13 @@ class PieChartTableViewCell: UITableViewCell {
     @IBOutlet weak var expenseNameTextLabel: UILabel!
     @IBOutlet weak var expensePercentageTextLabel: UILabel!
     
-    func configure(with expenseName: String, expensePercentage: String) {
-         expenseNameTextLabel.text = expenseName
-         expensePercentageTextLabel.text = expensePercentage
-     }
-     
-     func configure(with percentage: CGFloat) {
-         let formattedPercentage = String(format: "%.0f%%", percentage * 100)
-         expenseNameTextLabel.text = formattedPercentage
-     }
- }
+    // MARK: - Properties
+    var expense: Expense?
+    var viewModel: PieChartViewModel!
+    
+    // MARK: - Functions
+    func configCell(expenseName: String, amount: String) {
+           expenseNameTextLabel.text = expenseName
+           expensePercentageTextLabel.text = amount
+    }
+}

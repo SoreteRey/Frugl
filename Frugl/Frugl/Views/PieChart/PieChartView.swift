@@ -10,6 +10,7 @@ import UIKit
 struct Slice {
     var percent: CGFloat
     var color: UIColor
+    var expenseName: String
 }
 
 class PieChartView: UIView {
