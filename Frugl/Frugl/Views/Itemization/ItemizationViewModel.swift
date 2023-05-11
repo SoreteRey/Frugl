@@ -9,6 +9,7 @@ import Foundation
 
 protocol ItemizationViewModelDelegate: AnyObject {
     func expenseLoadedSuccessfully()
+    func expenseDeletedSuccessfully()
 }
 
 class ItemizationViewModel {
@@ -17,6 +18,7 @@ class ItemizationViewModel {
     init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.delegate = delegate
         self.service = service
+        self.fetchExpenses()
     }
 
     // MARK: - Properties
@@ -24,17 +26,15 @@ class ItemizationViewModel {
     private var service: FireBaseSyncable
     var sectionedExpenses: [[Expense]] = [[], [], []] // 2D array
     var currentBudget: CurrentUser?
-    var expenses: [Expense]? {
-        didSet {
-            updateSectionedExpenses()
-        }
-    }
+    var expenses: [Expense] = []
+    var currentBalance: Double?
 
     // MARK: - Functions
-    private func updateSectionedExpenses() {
-        sectionedExpenses[0] = expenses?.filter { $0.type == .recurring } ?? []
-        sectionedExpenses[1] = expenses?.filter { $0.type == .individual } ?? []
-        sectionedExpenses[2] = expenses?.filter { $0.type == .savings } ?? []
+    private func updateSectionedExpenses(complete: ()->Void) {
+        sectionedExpenses[0] = expenses.filter { $0.type == .recurring }
+        sectionedExpenses[1] = expenses.filter { $0.type == .individual }
+        sectionedExpenses[2] = expenses.filter { $0.type == .savings }
+        complete()
     }
 
     func fetchExpenses() {
@@ -43,22 +43,40 @@ class ItemizationViewModel {
             switch result {
             case .success(let expenses):
                 self.expenses = expenses
-                self.delegate?.expenseLoadedSuccessfully()
+                self.updateSectionedExpenses {
+                    self.expectedBalance()
+                    self.delegate?.expenseLoadedSuccessfully()
+                }
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
         }
     }
     
-//    func deleteExpense() {
-//        guard let expense = expense else { return }
-//        service.deleteExpense(expense: expense) { result in
-//            switch result {
-//            case .success(_):
-//                self.delegate?.budgetLoadedSuccessfully()
-//            case .failure(let failure):
-//                print(failure.localizedDescription)
-//            }
-//        }
-//    }
+    func expectedBalance() {
+        guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
+        var total: Double = 0.0
+        for section in sectionedExpenses {
+            for expense in section {
+                total += expense.amount
+            }
+            let expectedBalance = currentBudget - total
+            currentBalance = expectedBalance
+            print(expectedBalance)
+        }
+    }
+    
+    func deleteExpense(expense: Expense, compeltion: @escaping() -> Void) {
+        service.deleteExpense(expense: expense) { result in
+            switch result {
+            case .success(_):
+                guard let indexOfExpense = self.expenses.firstIndex(of: expense) else { return }
+                self.expenses.remove(at: indexOfExpense)
+                self.delegate?.expenseDeletedSuccessfully()
+                compeltion()
+            case .failure(_):
+                print("Expense failed to delete.")
+            }
+        }
+    }
 }

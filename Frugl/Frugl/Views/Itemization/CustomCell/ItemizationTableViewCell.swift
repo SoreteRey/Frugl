@@ -22,6 +22,6 @@ class ItemizationTableViewCell: UITableViewCell {
     func configCell(expense: [Expense]) {
         guard let expense = self.expense else { return }
         expenseNameLabel.text = expense.name
-        expenseAmountLabel.text = "\(expense.amount)"
+        expenseAmountLabel.text = "$\(expense.amount)"
     }
 }

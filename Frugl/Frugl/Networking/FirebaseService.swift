@@ -101,8 +101,9 @@ struct FirebaseService: FireBaseSyncable {
     func deleteExpense(expense: Expense, completion: @escaping (Result<Bool, FirebaseError>) -> Void) {
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
+        guard let budget = CurrentUser.shared.currentBudget else { return }
         
-        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Expenses.collectionType).document(expense.uuid).delete() { error in
+        ref.collection(Constants.Global.usersFBCollection).document(userId).collection(Constants.Budget.collectionType).document(budget.uuid).collection(Constants.Expenses.collectionType).document(expense.uuid).delete() { error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
