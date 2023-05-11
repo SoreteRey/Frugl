@@ -9,6 +9,7 @@ import Foundation
 
 protocol ItemizationViewModelDelegate: AnyObject {
     func expenseLoadedSuccessfully()
+    func expenseDeletedSuccessfully()
 }
 
 class ItemizationViewModel {
@@ -17,7 +18,7 @@ class ItemizationViewModel {
     init(delegate: ItemizationViewModelDelegate, service: FireBaseSyncable = FirebaseService()) {
         self.delegate = delegate
         self.service = service
-        fetchExpenses()
+        self.fetchExpenses()
     }
 
     // MARK: - Properties
@@ -52,14 +53,6 @@ class ItemizationViewModel {
         }
     }
     
-//    func expectedBalance() {
-//        guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
-//        let totalExpenses = sectionedExpenses.joined().map { $0.amount }.reduce(0.0, +)
-//        let expectedBalance = currentBudget - totalExpenses
-//        currentBalance = expectedBalance
-//        print(expectedBalance)
-//    }
-    
     func expectedBalance() {
         guard let currentBudget = CurrentUser.shared.currentBudget?.amount else { return }
         var total: Double = 0.0
@@ -73,13 +66,14 @@ class ItemizationViewModel {
         }
     }
     
-    func deleteExpense(expense: Expense) {
+    func deleteExpense(expense: Expense, compeltion: @escaping() -> Void) {
         service.deleteExpense(expense: expense) { result in
             switch result {
             case .success(_):
                 guard let indexOfExpense = self.expenses.firstIndex(of: expense) else { return }
                 self.expenses.remove(at: indexOfExpense)
-                self.delegate?.expenseLoadedSuccessfully()
+                self.delegate?.expenseDeletedSuccessfully()
+                compeltion()
             case .failure(_):
                 print("Expense failed to delete.")
             }

@@ -81,7 +81,10 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
             let confirmAction = UIAlertAction(title: "Delete Expense", style: .destructive) { _ in
                 let expense = self.viewModel.sectionedExpenses[indexPath.section][indexPath.row]
                 guard let expense = self.viewModel.expenses.first(where: { $0.uuid == expense.uuid }) else { return }
-                self.viewModel.deleteExpense(expense: expense) 
+                self.viewModel.deleteExpense(expense: expense) {
+                    self.expensesTableView.reloadData()
+                    self.viewModel.fetchExpenses()
+                }
                 self.navigationController?.popViewController(animated: true)
             }
             
@@ -92,6 +95,11 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
 }
 
 extension ItemizationViewController: ItemizationViewModelDelegate {
+    func expenseDeletedSuccessfully() {
+        self.expensesTableView.reloadData()
+        updateUI()
+    }
+    
     func expenseLoadedSuccessfully() {
         updateUI()
     }
