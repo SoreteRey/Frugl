@@ -31,6 +31,9 @@ class CalendarViewController: UIViewController {
         updateBudgetAmount()
         upcomingExpensesTableView.reloadData()
         viewModel.loadExpenses()
+        viewModel.expensesAmount() {
+            self.expensesAmountLabel.text = ("Expenses: \(self.viewModel.allExpensesTotal ?? 0.0)")
+        }
     }
     
     // MARK: - Properties
@@ -83,7 +86,7 @@ class CalendarViewController: UIViewController {
     
     func updateBudgetAmount() {
         if let budget = CurrentUser.shared.currentBudget {
-            budgetAmountLabel.text = "\(budget.amount)"
+            budgetAmountLabel.text = "Budget: \(budget.amount)"
         }
     }
 } // End of class
