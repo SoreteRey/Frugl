@@ -9,7 +9,6 @@ import UIKit
 
 class CreateExpenseViewController: UIViewController {
     
-    
     // MARK: - Outlets
     @IBOutlet weak var expenseNameTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -20,8 +19,7 @@ class CreateExpenseViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
-    
-    
+
     private var datePicker = UIDatePicker()
     private var firstAlertDatePickerInitialized = UIDatePicker()
     private var secondAlertDatePickerInitialized = UIDatePicker()
@@ -36,7 +34,6 @@ class CreateExpenseViewController: UIViewController {
     }
     
     // MARK: - Functions
-    
     func popUpConfig() {
         let closure = { (action: UIAction) in
             print(action.title)
