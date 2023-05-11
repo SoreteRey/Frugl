@@ -266,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				23BCD24A2A0033F5002EC273 /* PieChart.storyboard */,
+				939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */,
 				23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */,
 				939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */,
 				939B5A5E2A001DE700FC3D2E /* PieChartView.xib */,
@@ -278,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */,
-				939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";

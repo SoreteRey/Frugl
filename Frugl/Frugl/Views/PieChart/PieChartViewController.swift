@@ -16,49 +16,83 @@ class PieChartViewController: UIViewController {
     @IBOutlet weak var pieChartTableView: UITableView!
     
     // MARK: - Properties
-    var viewModel = PieChartViewModel()
+    var viewModel: PieChartViewModel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       // Needs real data.
         pieChartTableView.dataSource = self
+    
+        viewModel = PieChartViewModel(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //TableView
+        budgetAmountLabel()
+        fetchDataforTableView()
+        //PieChart
+//        viewModel.calculateSlices()
+//        updatePieChart()
         
-        viewModel.fetchDataFromFirebase { [weak self] in
-            self?.pieChartView.slices = self?.viewModel.slices
-            self?.pieChartTableView.reloadData()
-            
-        }
-        
-        func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            
-            pieChartView.animateChart()
+    }
+    
+    func fetchDataforTableView() {
+        #warning("Ask yourself. Do I want to FETCH the data from Firestore everytime this view will appear? Or, is that too much.")
+        viewModel.fetchExpenses()
+
+    }
+    
+    func updatePieChart() {
+//        let slices = viewModel.slices
+//
+//        pieChartView.slices = slices.map { slice in
+//            return Slice(percent: slice.percent, color: slice.color, expenseName: slice.expenseName)
+//        }
+        pieChartView.slices = viewModel.slices
+        pieChartView.setNeedsDisplay()
+        pieChartView.animateChart()
+    }
+    
+    func budgetAmountLabel() {
+        if let budget = CurrentUser.shared.currentBudget {
+            monthlyBudgetGoalTextField.text = "$\(budget.amount)"
         }
     }
 }
+
+    // MARK: - UITableViewDataSource
 extension PieChartViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.slices.count
+        return viewModel.expenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pieChartCell", for: indexPath) as! PieChartTableViewCell
-        let slice = viewModel.slices[indexPath.row]
-        cell.configure(with: slice.percent)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "pieChartCell", for: indexPath) as? PieChartTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let expense = viewModel.expenses[indexPath.row]
+        if let budget = CurrentUser.shared.currentBudget {
+            
+            let formattedAmount = String(format: "%.2f%%", (expense.amount / budget.amount) * 100)
+            
+            cell.configCell(expenseName: expense.name, amount: formattedAmount)
+        }
+        
         return cell
     }
 }
-//        pieChartView.slices = [
-//            Slice(percent: 0.1, color: UIColor.systemGreen),
-//            Slice(percent: 0.1, color: UIColor.systemOrange),
-//            Slice(percent: 0.3, color: UIColor.systemGray),
-//            Slice(percent: 0.2, color: UIColor.systemYellow),
-//            Slice(percent: 0.1, color: UIColor.systemBlue),
-//            Slice(percent: 0.1, color: UIColor.systemPurple),
-//            //            Slice(percent: 0.1, color: UIColor.systemGreen),
-//            //            Slice(percent: 0.1, color: UIColor.systemBlue),
-//            //            Slice(percent: 0.1, color: UIColor.systemRed)
-//
-//        ]
+
+
+// MARK: - PieChartViewModelDelegate
+
+extension PieChartViewController: PieChartViewModelDelegate {
+    func loadExpensesSuccessfully() {
+        DispatchQueue.main.async { [weak self] in
+            self?.pieChartTableView.reloadData()
+            self?.updatePieChart()
+        }
+    }
+}
