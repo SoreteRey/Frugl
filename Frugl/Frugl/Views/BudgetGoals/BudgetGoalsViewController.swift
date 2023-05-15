@@ -23,6 +23,7 @@ class BudgetGoalsViewController: UIViewController {
         viewModel = BudgetGoalsViewModel(delegate: self)
         budgetTableView.dataSource = self
         viewModel.loadBudgets()
+        self.hideKeyboardWhenDone()
     }
     
     // MARK: - Helper Functions

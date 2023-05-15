@@ -19,6 +19,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SignInAccountViewModel(delegate: self)
+        self.hideKeyboardWhenDone()
     }
     
     func presentErrorAlertController(error: String) {

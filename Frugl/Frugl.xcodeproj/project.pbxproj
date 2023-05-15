@@ -39,6 +39,7 @@
 		23BCD2582A00364E002EC273 /* SignOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2572A00364E002EC273 /* SignOut.storyboard */; };
 		3498FAE02A0A9F5300962BA9 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */; };
 		3498FAE32A0AA64100962BA9 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498FAE22A0AA64100962BA9 /* ExpenseTableViewCell.swift */; };
+		34BED4352A1281DE003D455C /* UIViewControllersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BED4342A1281DE003D455C /* UIViewControllersExtension.swift */; };
 		34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C4330E29FAD1C600064959 /* GoogleService-Info.plist */; };
 		34C4331229FAD24700064959 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331129FAD24700064959 /* FirebaseAuth */; };
 		34C4331429FAD24700064959 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331329FAD24700064959 /* FirebaseFirestore */; };
@@ -91,6 +92,7 @@
 		23BCD2572A00364E002EC273 /* SignOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignOut.storyboard; sourceTree = "<group>"; };
 		3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		3498FAE22A0AA64100962BA9 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		34BED4342A1281DE003D455C /* UIViewControllersExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllersExtension.swift; sourceTree = "<group>"; };
 		34C4330E29FAD1C600064959 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34C433152A000F2000064959 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		34C433172A000F3800064959 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				34D5292F2A0183010067B388 /* CalendarHelper.swift */,
 				23B1B59F2A041054004DA6EF /* GlobalSOT.swift */,
 				23B5AEE42A0AF33D001B32F5 /* Constants.swift */,
+				34BED4342A1281DE003D455C /* UIViewControllersExtension.swift */,
 			);
 			path = "Helper&Extensions";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */,
 				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
 				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
+				34BED4352A1281DE003D455C /* UIViewControllersExtension.swift in Sources */,
 				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
 				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
 				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
