@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Expenses-->
         <scene sceneID="hJj-ea-glf">
             <objects>
                 <viewController id="9Io-aa-BaI" customClass="ItemizationViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,11 +89,11 @@
                             <constraint firstItem="qJI-JB-gAb" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="48" id="gdc-tw-yXo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Mge-FY-7Ce"/>
+                    <tabBarItem key="tabBarItem" title="Expenses" image="list.bullet.clipboard" catalog="system" selectedImage="list.bullet.clipboard.fill" id="Mge-FY-7Ce"/>
                     <navigationItem key="navigationItem" id="gA1-mZ-OaI">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7LF-Lt-ZK5">
                             <connections>
-                                <segue destination="o8t-h2-yYK" kind="presentation" modalPresentationStyle="fullScreen" id="O7n-fG-PbL"/>
+                                <segue destination="o8t-h2-yYK" kind="show" id="O7n-fG-PbL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -119,6 +119,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -18,38 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-nb-vcy">
-                                <rect key="frame" x="80" y="251.33333333333334" width="233" height="358.66666666666663"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-nb-vcy">
+                                <rect key="frame" x="80" y="318.66666666666669" width="233" height="330.00000000000006"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expense Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdp-2n-h3F">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="38.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-xz-dpm">
-                                        <rect key="frame" x="0.0" y="84.666666666666657" width="233" height="34"/>
+                                        <rect key="frame" x="0.0" y="74" width="233" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional Due Date..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-NE-8Fi">
-                                        <rect key="frame" x="0.0" y="164.66666666666666" width="233" height="34"/>
+                                        <rect key="frame" x="0.0" y="148" width="233" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional First Alert..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xy4-nW-Idy">
-                                        <rect key="frame" x="0.0" y="244.66666666666663" width="233" height="34"/>
+                                        <rect key="frame" x="0.0" y="221.99999999999994" width="233" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional Second Alert..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zbe-He-zz3">
-                                        <rect key="frame" x="0.0" y="324.66666666666663" width="233" height="34"/>
+                                        <rect key="frame" x="0.0" y="295.99999999999994" width="233" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd3-JR-hci">
-                                <rect key="frame" x="150.33333333333334" y="710" width="92.333333333333343" height="34.333333333333371"/>
+                                <rect key="frame" x="150.33333333333334" y="718.66666666666663" width="92.333333333333343" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add Item"/>
                                 <connections>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BfW-tR-G2U">
-                                <rect key="frame" x="40" y="177" width="313" height="34.333333333333343"/>
+                                <rect key="frame" x="40" y="234.33333333333334" width="313" height="34.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34.333333333333371" id="J57-du-vTA"/>
                                 </constraints>
@@ -77,12 +77,11 @@
                         <constraints>
                             <constraint firstItem="zd3-JR-hci" firstAttribute="centerX" secondItem="n5P-Cj-CSe" secondAttribute="centerX" id="1L7-ON-cU0"/>
                             <constraint firstItem="n5P-Cj-CSe" firstAttribute="trailing" secondItem="dBS-nb-vcy" secondAttribute="trailing" constant="80" id="9l3-l0-5xv"/>
-                            <constraint firstItem="dBS-nb-vcy" firstAttribute="top" secondItem="BfW-tR-G2U" secondAttribute="bottom" constant="40" id="L5Y-Xm-qws"/>
+                            <constraint firstItem="dBS-nb-vcy" firstAttribute="top" secondItem="BfW-tR-G2U" secondAttribute="bottom" constant="50" id="Bbe-Pl-kUs"/>
                             <constraint firstItem="BfW-tR-G2U" firstAttribute="centerX" secondItem="dBS-nb-vcy" secondAttribute="centerX" id="Or3-97-Dqg"/>
-                            <constraint firstItem="n5P-Cj-CSe" firstAttribute="bottom" secondItem="zd3-JR-hci" secondAttribute="bottom" constant="73.666666666666629" id="S3X-IW-7zn"/>
+                            <constraint firstItem="n5P-Cj-CSe" firstAttribute="bottom" secondItem="zd3-JR-hci" secondAttribute="bottom" constant="65" id="S3X-IW-7zn"/>
+                            <constraint firstItem="zd3-JR-hci" firstAttribute="top" secondItem="dBS-nb-vcy" secondAttribute="bottom" constant="70" id="XlS-KN-9VC"/>
                             <constraint firstItem="dBS-nb-vcy" firstAttribute="leading" secondItem="n5P-Cj-CSe" secondAttribute="leading" constant="80" id="b3O-SI-SNx"/>
-                            <constraint firstItem="BfW-tR-G2U" firstAttribute="top" secondItem="n5P-Cj-CSe" secondAttribute="top" constant="118" id="ePD-JR-sd4"/>
-                            <constraint firstItem="zd3-JR-hci" firstAttribute="top" secondItem="dBS-nb-vcy" secondAttribute="bottom" constant="100" id="fbQ-SB-qEE"/>
                             <constraint firstItem="BfW-tR-G2U" firstAttribute="leading" secondItem="n5P-Cj-CSe" secondAttribute="leading" constant="40" id="ihd-PR-W6f"/>
                         </constraints>
                     </view>
