@@ -21,6 +21,7 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CreateAccountViewModel(delegate: self)
+        self.hideKeyboardWhenDone()
     }
     
     // MARK: - Functions

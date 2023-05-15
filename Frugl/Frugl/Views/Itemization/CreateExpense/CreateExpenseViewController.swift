@@ -31,6 +31,7 @@ class CreateExpenseViewController: UIViewController {
         dueDateDatePicker()
         firstAlert()
         secondAlert()
+        self.hideKeyboardWhenDone()
     }
     
     // MARK: - Functions
