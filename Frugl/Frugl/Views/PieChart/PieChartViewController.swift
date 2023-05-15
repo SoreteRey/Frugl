@@ -10,7 +10,6 @@ import UIKit
 class PieChartViewController: UIViewController {
     
     // MARK: - Outlets
-    
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet weak var monthlyBudgetGoalTextField: UILabel!
     @IBOutlet weak var pieChartTableView: UITableView!
@@ -21,20 +20,15 @@ class PieChartViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       // Needs real data.
         pieChartTableView.dataSource = self
-    
         viewModel = PieChartViewModel(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //TableView
         budgetAmountLabel()
         fetchDataforTableView()
-        //PieChart
-//        viewModel.calculateSlices()
-//        updatePieChart()
+        updatePieChart()
         
     }
     
@@ -45,11 +39,6 @@ class PieChartViewController: UIViewController {
     }
     
     func updatePieChart() {
-//        let slices = viewModel.slices
-//
-//        pieChartView.slices = slices.map { slice in
-//            return Slice(percent: slice.percent, color: slice.color, expenseName: slice.expenseName)
-//        }
         pieChartView.slices = viewModel.slices
         pieChartView.setNeedsDisplay()
         pieChartView.animateChart()
@@ -84,7 +73,6 @@ extension PieChartViewController: UITableViewDataSource {
         return cell
     }
 }
-
 
 // MARK: - PieChartViewModelDelegate
 

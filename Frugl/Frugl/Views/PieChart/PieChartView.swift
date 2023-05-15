@@ -139,6 +139,7 @@ class PieChartView: UIView {
     /// Re-position and draw label such as "43%".
     ///
     /// - Parameter slice: Slice whose label is drawn.
+    /// // If you take in all the slices, can you just count them and htats how many lables you can create?
     func addLabel(_ slice: Slice) {
         let center = canvasView.center
         let labelCenter = getLabelCenter(currentPercent, currentPercent + slice.percent)
@@ -151,8 +152,6 @@ class PieChartView: UIView {
 
         let label = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10][sliceIndex]
         label?.isHidden = false //changed from true
-            
-            
         label?.text = String(format: "%d%%", Int(slice.percent * 100))
         
     }
