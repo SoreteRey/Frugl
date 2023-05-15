@@ -14,7 +14,7 @@ struct Slice {
 }
 
 class PieChartView: UIView {
-    
+
     static let ANIMATION_DURATION: CGFloat = 1.4
     
     @IBOutlet var canvasView: UIView!
@@ -151,7 +151,10 @@ class PieChartView: UIView {
 
         let label = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10][sliceIndex]
         label?.isHidden = false //changed from true
+            
+            
         label?.text = String(format: "%d%%", Int(slice.percent * 100))
+        
     }
     
     /// Call this to start pie chart animation.

@@ -21,6 +21,7 @@ protocol PieChartViewModelDelegate: AnyObject {
 class PieChartViewModel {
     
     // MARK: - Properties
+//    var expensesAmounts: Double?
     var slices: [Slice] = []
     var expenses: [Expense] = []
     private var service: FireBaseSyncable
@@ -47,9 +48,10 @@ class PieChartViewModel {
     }
     
      func calculateSlices() {
+         // Amounts is the debts,
         let amounts = expenses.map { $0.amount }
         let totalAmount = amounts.reduce(0, +)
-
+        
         self.slices = expenses.enumerated().map { index, expense in
             let amount = amounts[index]
             let percent = CGFloat(amount / totalAmount)
