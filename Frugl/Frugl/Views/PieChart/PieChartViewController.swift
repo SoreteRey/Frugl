@@ -28,14 +28,10 @@ class PieChartViewController: UIViewController {
         super.viewWillAppear(animated)
         budgetAmountLabel()
         fetchDataforTableView()
-        updatePieChart()
-        
     }
-    
-    func fetchDataforTableView() {
-        #warning("Ask yourself. Do I want to FETCH the data from Firestore everytime this view will appear? Or, is that too much.")
-        viewModel.fetchExpenses()
 
+    func fetchDataforTableView() {
+        viewModel.fetchExpenses()
     }
     
     func updatePieChart() {
@@ -46,7 +42,7 @@ class PieChartViewController: UIViewController {
     
     func budgetAmountLabel() {
         if let budget = CurrentUser.shared.currentBudget {
-            monthlyBudgetGoalTextField.text = "$\(budget.amount)"
+            monthlyBudgetGoalTextField.text = "Budget: $\(budget.amount)"
         }
     }
 }
@@ -75,7 +71,6 @@ extension PieChartViewController: UITableViewDataSource {
 }
 
 // MARK: - PieChartViewModelDelegate
-
 extension PieChartViewController: PieChartViewModelDelegate {
     func loadExpensesSuccessfully() {
         DispatchQueue.main.async { [weak self] in

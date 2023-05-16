@@ -12,16 +12,9 @@ protocol PieChartViewModelDelegate: AnyObject {
     func loadExpensesSuccessfully()
 }
 
-//struct PieSlice {
-//    var percent: CGFloat
-//    var color: UIColor
-//    var expenseName: String
-//}
-
 class PieChartViewModel {
     
     // MARK: - Properties
-    //    var expensesAmounts: Double?
     var slices: [Slice] = []
     var expenses: [Expense] = []
     private var service: FireBaseSyncable

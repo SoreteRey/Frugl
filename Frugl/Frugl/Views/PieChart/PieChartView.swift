@@ -14,7 +14,7 @@ struct Slice {
 }
 
 class PieChartView: UIView {
-
+    
     static let ANIMATION_DURATION: CGFloat = 1.4
     
     @IBOutlet var canvasView: UIView!
@@ -29,6 +29,16 @@ class PieChartView: UIView {
     @IBOutlet var label8: UILabel!
     @IBOutlet var label9: UILabel!
     @IBOutlet var label10: UILabel!
+    @IBOutlet var label11: UILabel!
+    @IBOutlet var label12: UILabel!
+    @IBOutlet var label13: UILabel!
+    @IBOutlet var label14: UILabel!
+    @IBOutlet var label15: UILabel!
+    @IBOutlet var label16: UILabel!
+    @IBOutlet var label17: UILabel!
+    @IBOutlet var label18: UILabel!
+    @IBOutlet var label19: UILabel!
+    @IBOutlet var label20: UILabel!
     
     @IBOutlet var label1XConst: NSLayoutConstraint!
     @IBOutlet var label2XConst: NSLayoutConstraint!
@@ -40,7 +50,17 @@ class PieChartView: UIView {
     @IBOutlet var label8XConst: NSLayoutConstraint!
     @IBOutlet var label9XConst: NSLayoutConstraint!
     @IBOutlet var label10XConst: NSLayoutConstraint!
-
+    @IBOutlet var label11XConst: NSLayoutConstraint!
+    @IBOutlet var label12XConst: NSLayoutConstraint!
+    @IBOutlet var label13XConst: NSLayoutConstraint!
+    @IBOutlet var label14XConst: NSLayoutConstraint!
+    @IBOutlet var label15XConst: NSLayoutConstraint!
+    @IBOutlet var label16XConst: NSLayoutConstraint!
+    @IBOutlet var label17XConst: NSLayoutConstraint!
+    @IBOutlet var label18XConst: NSLayoutConstraint!
+    @IBOutlet var label19XConst: NSLayoutConstraint!
+    @IBOutlet var label20XConst: NSLayoutConstraint!
+    
     @IBOutlet var label1YConst: NSLayoutConstraint!
     @IBOutlet var label2YConst: NSLayoutConstraint!
     @IBOutlet var label3YConst: NSLayoutConstraint!
@@ -51,6 +71,16 @@ class PieChartView: UIView {
     @IBOutlet var label8YConst: NSLayoutConstraint!
     @IBOutlet var label9YConst: NSLayoutConstraint!
     @IBOutlet var label10YConst: NSLayoutConstraint!
+    @IBOutlet var label11YConst: NSLayoutConstraint!
+    @IBOutlet var label12YConst: NSLayoutConstraint!
+    @IBOutlet var label13YConst: NSLayoutConstraint!
+    @IBOutlet var label14YConst: NSLayoutConstraint!
+    @IBOutlet var label15YConst: NSLayoutConstraint!
+    @IBOutlet var label16YConst: NSLayoutConstraint!
+    @IBOutlet var label17YConst: NSLayoutConstraint!
+    @IBOutlet var label18YConst: NSLayoutConstraint!
+    @IBOutlet var label19YConst: NSLayoutConstraint!
+    @IBOutlet var label20YConst: NSLayoutConstraint!
     
     var slices: [Slice]?
     var sliceIndex: Int = 0
@@ -61,11 +91,11 @@ class PieChartView: UIView {
         let view: UIView = Bundle.main.loadNibNamed("PieChartView", owner: self, options: nil)!.first as! UIView
         addSubview(view)
     }
-
+    
     override func draw(_ rect: CGRect) {
         subviews[0].frame = bounds
     }
-
+    
     /// Get an animation duration for the passed slice.
     /// If slice share is 40%, for example, it returns 40% of total animation duration.
     ///
@@ -87,7 +117,7 @@ class PieChartView: UIView {
         }
         return angle * CGFloat.pi / 180.0
     }
-
+    
     /// Add a slice CAShapeLayer to the canvas.
     ///
     /// - Parameter slice: Slice to be drawn.
@@ -149,7 +179,7 @@ class PieChartView: UIView {
         yConst?.constant = labelCenter.y - center.y
         canvasView.superview?.setNeedsUpdateConstraints()
         canvasView.superview?.layoutIfNeeded()
-
+        
         let label = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10][sliceIndex]
         label?.isHidden = false //changed from true
         label?.text = String(format: "%d%%", Int(slice.percent * 100))
@@ -158,6 +188,7 @@ class PieChartView: UIView {
     
     /// Call this to start pie chart animation.
     func animateChart() {
+        resetLabels()
         sliceIndex = 0
         currentPercent = 0.0
         canvasView.layer.sublayers = nil
@@ -167,6 +198,29 @@ class PieChartView: UIView {
             addLabel(firstSlice)
             addSlice(firstSlice)
         }
+    }
+    
+    func resetLabels() {
+        label1.text = nil
+        label2.text = nil
+        label3.text = nil
+        label4.text = nil
+        label5.text = nil
+        label6.text = nil
+        label7.text = nil
+        label8.text = nil
+        label9.text = nil
+        label10.text = nil
+        label11.text = nil
+        label12.text = nil
+        label13.text = nil
+        label14.text = nil
+        label15.text = nil
+        label16.text = nil
+        label17.text = nil
+        label18.text = nil
+        label19.text = nil
+        label20.text = nil
     }
 }
 
