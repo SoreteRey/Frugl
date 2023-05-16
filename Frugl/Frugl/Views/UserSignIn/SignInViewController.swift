@@ -22,6 +22,11 @@ class SignInViewController: UIViewController {
         self.hideKeyboardWhenDone()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.requestUserNotificationAuthorization()
+    }
+    
     func presentErrorAlertController(error: String) {
         let alertController = UIAlertController(title: "", message: error, preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
