@@ -37,7 +37,7 @@
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YmF-mw-9Ob">
                                 <rect key="frame" x="8" y="344" width="377" height="466"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" red="0.87018114329999996" green="0.88916999100000005" blue="0.97054427860000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="466" id="KzN-O3-7qJ"/>
                                 </constraints>
@@ -82,7 +82,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="JPN-hx-TT8" secondAttribute="trailing" constant="8" id="mgy-p2-isE"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="budgetAmountLabel" destination="MaS-4q-s6t" id="ULX-Dx-FVj"/>
                                             <outlet property="budgetNameLabel" destination="xZ2-sf-KYJ" id="MRB-OW-8KF"/>
@@ -101,7 +101,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JsQ-IA-dks"/>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <color key="backgroundColor" red="0.87072570300826635" green="0.88931096442922009" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SgS-qe-wo2" firstAttribute="centerX" secondItem="W1h-4c-QBE" secondAttribute="centerX" id="08D-SD-H7a"/>
                             <constraint firstItem="SgS-qe-wo2" firstAttribute="leading" secondItem="fGW-sz-jco" secondAttribute="leading" id="ApJ-MV-7an"/>
@@ -121,7 +121,7 @@
                             <constraint firstItem="W1h-4c-QBE" firstAttribute="top" secondItem="SgS-qe-wo2" secondAttribute="bottom" constant="25" id="ni9-lp-twt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="KYL-IQ-i2i"/>
+                    <tabBarItem key="tabBarItem" title="Budgets" image="dollarsign" catalog="system" id="KYL-IQ-i2i"/>
                     <navigationItem key="navigationItem" title="Budget Goals" id="8Hs-1v-aQ6"/>
                     <connections>
                         <outlet property="budgetAmountTextField" destination="SgS-qe-wo2" id="aAo-mh-jSW"/>
@@ -136,17 +136,9 @@
     </scenes>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="dollarsign" catalog="system" width="89" height="128"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
