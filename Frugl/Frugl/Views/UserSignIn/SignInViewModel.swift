@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import UserNotifications
 
 protocol SignInAccountViewModelDelegate: AnyObject {
     func signInSuccessfull()
@@ -33,6 +34,15 @@ struct SignInAccountViewModel {
                 print(user.uid)
                 completion(true, nil)
             }
+        }
+    }
+    
+    func requestUserNotificationAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { permissonGranted, error in
+            if let error = error {
+                print("Error Requestion Authroization for User Notifications", error)
+            }
+            print("Permission \(permissonGranted ? "was" : "was NOT") granted for user notifications")
         }
     }
 }

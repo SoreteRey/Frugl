@@ -47,11 +47,11 @@
             </objects>
             <point key="canvasLocation" x="598" y="1229"/>
         </scene>
-        <!--Item-->
+        <!--Calendar-->
         <scene sceneID="jNb-Oi-P6w">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVi-Mx-K3f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sKH-Mc-fOM"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="sKH-Mc-fOM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vNg-Fz-omh">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -139,4 +139,7 @@
             <point key="canvasLocation" x="4522.900763358778" y="1228.8732394366198"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+    </resources>
 </document>

@@ -19,7 +19,7 @@ class CreateExpenseViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: CreateExpenseViewModel!
-
+    
     private var datePicker = UIDatePicker()
     private var firstAlertDatePickerInitialized = UIDatePicker()
     private var secondAlertDatePickerInitialized = UIDatePicker()
@@ -94,7 +94,7 @@ class CreateExpenseViewController: UIViewController {
     @objc func donePressedAlert() {
         // Formatter for Date
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .full
         formatter.timeStyle = .none
         
         firstAlertDatePicker.text = formatter.string(from: firstAlertDatePickerInitialized.date)
@@ -120,7 +120,7 @@ class CreateExpenseViewController: UIViewController {
     @objc func donePressedSecondAlert() {
         // Formatter for Date
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .full
         formatter.timeStyle = .none
         
         secondAlertDatePicker.text = formatter.string(from: secondAlertDatePickerInitialized.date)
@@ -140,12 +140,21 @@ class CreateExpenseViewController: UIViewController {
         case "Recurring":
             let expense = Expense(type: .recurring, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
+            viewModel.scheduleNotification(with: expense)
+            viewModel.scheduleNotificationTwo(with: expense)
+            viewModel.scheduleNotificationDue(with: expense)
         case "Individual":
             let expense = Expense(type: .individual, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
+            viewModel.scheduleNotification(with: expense)
+            viewModel.scheduleNotificationTwo(with: expense)
+            viewModel.scheduleNotificationDue(with: expense)
         case "Savings":
             let expense = Expense(type: .savings, amount: amount, name: name, dueDate: dueDate, dueDateAlert: firstAlert, dueDateSecondAlert: secondAlert)
             viewModel.createExpense(expense: expense)
+            viewModel.scheduleNotification(with: expense)
+            viewModel.scheduleNotificationTwo(with: expense)
+            viewModel.scheduleNotificationDue(with: expense)
         default:
             return
         }
@@ -154,6 +163,6 @@ class CreateExpenseViewController: UIViewController {
 
 extension CreateExpenseViewController: CreateExpenseViewModelDelegate {
     func expenseCreatedSuccessfully() {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
