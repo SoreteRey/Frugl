@@ -12,12 +12,6 @@ protocol PieChartViewModelDelegate: AnyObject {
     func loadExpensesSuccessfully()
 }
 
-//struct PieSlice {
-//    var percent: CGFloat
-//    var color: UIColor
-//    var expenseName: String
-//}
-
 class PieChartViewModel {
     
     // MARK: - Properties
@@ -29,7 +23,7 @@ class PieChartViewModel {
     init(firebaseService: FireBaseSyncable = FirebaseService(), delegate: PieChartViewModelDelegate) {
         self.service = firebaseService
         self.delegate = delegate
-//        fetchExpenses() // This will fetch only ONCE - as we are only initializing the VM in the VDL
+        //        fetchExpenses() // This will fetch only ONCE - as we are only initializing the VM in the VDL
     }
     
     func fetchExpenses() {
@@ -38,7 +32,7 @@ class PieChartViewModel {
             switch result {
             case .success(let expenses):
                 self.expenses = expenses
-                self.calculateSlices()
+                self.calculateSlices(for: currentBudget)
                 self.delegate?.loadExpensesSuccessfully()
             case .failure(let failure):
                 print(failure.localizedDescription)
@@ -46,25 +40,31 @@ class PieChartViewModel {
         }
     }
     
-     func calculateSlices() {
-        let amounts = expenses.map { $0.amount }
-        let totalAmount = amounts.reduce(0, +)
-
-        self.slices = expenses.enumerated().map { index, expense in
-            let amount = amounts[index]
-            let percent = CGFloat(amount / totalAmount)
+    func calculateSlices(for budget: Budget) {
+        
+        let debts = expenses.map { $0.amount }
+        let totalDebt = debts.reduce(0, +)
+        
+        var tempSlices = expenses.enumerated().map { index, expense in
+            let amount = debts[index]
+            let percent = CGFloat(amount / budget.amount)
             let color = getRandomColor()
             let name = expense.name // Assuming the expense struct has a 'name' property
             return Slice(percent: percent, color: color, expenseName: name)
         }
+        let remainingBalance = budget.amount - totalDebt
+        let remainingBalancePercent = CGFloat(remainingBalance / budget.amount)
+        let remainingSlice = Slice(percent: remainingBalancePercent, color: .systemMint, expenseName: "Available")
+        tempSlices.append(remainingSlice)
+        self.slices = tempSlices
     }
     
-//     Helper function to generate random colors
+    //     Helper function to generate random colors
     private func getRandomColor() -> UIColor {
         let red = CGFloat.random(in: 0...1)
         let green = CGFloat.random(in: 0...1)
         let blue = CGFloat.random(in: 0...1)
-
+        
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
 }

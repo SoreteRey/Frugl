@@ -31,17 +31,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="377" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="k9D-0I-EKi">
-                                                    <rect key="frame" x="10" y="40" width="356.66666666666669" height="20.333333333333329"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="k9D-0I-EKi">
+                                                    <rect key="frame" x="8" y="40" width="361" height="20.333333333333329"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(expenseName)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-Hv-nNc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="120.66666666666667" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(expenseName)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-Hv-nNc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7d-QG-5ou">
-                                                            <rect key="frame" x="257.66666666666669" y="0.0" width="99" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="(percentage)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7d-QG-5ou">
+                                                            <rect key="frame" x="262" y="0.0" width="99" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -50,6 +50,12 @@
                                                 </stackView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="k9D-0I-EKi" firstAttribute="centerX" secondItem="T5z-Mj-RDd" secondAttribute="centerX" id="6zk-Bx-VoS"/>
+                                            <constraint firstItem="AWk-Hv-nNc" firstAttribute="leading" secondItem="T5z-Mj-RDd" secondAttribute="leading" constant="8" id="SVF-Ea-ZYk"/>
+                                            <constraint firstItem="k9D-0I-EKi" firstAttribute="centerY" secondItem="T5z-Mj-RDd" secondAttribute="centerY" id="ZDI-zO-MBE"/>
+                                            <constraint firstAttribute="trailing" secondItem="m7d-QG-5ou" secondAttribute="trailing" constant="8" id="jeU-NV-J1q"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="expenseNameTextLabel" destination="AWk-Hv-nNc" id="Sb2-th-RQ9"/>
                                             <outlet property="expensePercentageTextLabel" destination="m7d-QG-5ou" id="NCE-Lv-yGz"/>
