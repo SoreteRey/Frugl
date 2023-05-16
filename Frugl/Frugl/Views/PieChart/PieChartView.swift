@@ -98,7 +98,6 @@ class PieChartView: UIView {
     
     /// Get an animation duration for the passed slice.
     /// If slice share is 40%, for example, it returns 40% of total animation duration.
-    ///
     /// - Parameter slice: Slice struct
     /// - Returns: Animation duration
     func getDuration(_ slice: Slice) -> CFTimeInterval {
@@ -106,7 +105,6 @@ class PieChartView: UIView {
     }
     
     /// Convert slice percent to radian.
-    ///
     /// - Parameter percent: Slice percent (0.0 - 1.0).
     /// - Returns: Radian
     func percentToRadian(_ percent: CGFloat) -> CGFloat {
@@ -119,7 +117,6 @@ class PieChartView: UIView {
     }
     
     /// Add a slice CAShapeLayer to the canvas.
-    ///
     /// - Parameter slice: Slice to be drawn.
     func addSlice(_ slice: Slice) {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
@@ -149,7 +146,6 @@ class PieChartView: UIView {
     
     /// Get label's center position based on from and to percentages.
     /// This is always relative to canvasView's center.
-    ///
     /// - Parameters:
     ///   - fromPercent: End of previous slice.
     ///   - toPercent: End of current slice.
@@ -166,10 +162,8 @@ class PieChartView: UIView {
         return path.currentPoint
     }
     
-    /// Re-position and draw label such as "43%".
-    ///
     /// - Parameter slice: Slice whose label is drawn.
-    /// // If you take in all the slices, can you just count them and htats how many lables you can create?
+    /// // If you take in all the slices, can you just count them and thats how many lables you can create?
     func addLabel(_ slice: Slice) {
         let center = canvasView.center
         let labelCenter = getLabelCenter(currentPercent, currentPercent + slice.percent)
@@ -236,7 +230,7 @@ extension PieChartView: CAAnimationDelegate {
                 addSlice(nextSlice)
             } else {
                 //After animation is done, display all labels. Can be animated.
-                for label in [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10] {
+                for label in [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20] {
                     label?.isHidden = false
                 }
             }
