@@ -71,7 +71,6 @@ class SignInViewController: UIViewController {
                 }
             }
         }
-        
         return result
     }
     
@@ -120,6 +119,7 @@ class SignInViewController: UIViewController {
     }
 } // End of class
 
+// MARK: - Extension
 extension SignInViewController: SignInAccountViewModelDelegate {
     func signInSuccessfull() {
     }
@@ -131,11 +131,7 @@ extension SignInViewController: ASAuthorizationControllerPresentationContextProv
     }
 }
 extension SignInViewController: ASAuthorizationControllerDelegate {
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        
-    }
-    
+
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         
         if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
@@ -149,13 +145,12 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             }
             guard let idTokenString = String(data: appleIdToken, encoding: .utf8) else { print("No ID Token"); return}
             let firebaseCredential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-            Auth.auth().signIn(with: firebaseCredential) { [weak self] authResult, error in
+            Auth.auth().signIn(with: firebaseCredential) { _ , error in
                 // Do something after firebase sign in has completed
                 if let error = error {
                     print(error.localizedDescription)
                     return
                 }
-                
             }
         }
     }
