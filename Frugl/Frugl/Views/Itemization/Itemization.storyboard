@@ -93,7 +93,6 @@
                     <navigationItem key="navigationItem" id="gA1-mZ-OaI">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7LF-Lt-ZK5">
                             <connections>
-                                <action selector="addButtonTapped:" destination="9Io-aa-BaI" id="lnw-Nc-FQn"/>
                                 <segue destination="o8t-h2-yYK" kind="show" identifier="toCreateExpense" id="O7n-fG-PbL"/>
                             </connections>
                         </barButtonItem>
