@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -42,19 +43,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trying to get frugl?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-QR-M9V">
-                                <rect key="frame" x="114.33333333333333" y="453.33333333333331" width="164.66666666666669" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="109.66666666666669" y="483.33333333333331" width="174" height="28.999999999999943"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYv-KD-5MA">
-                                <rect key="frame" x="100" y="572.33333333333337" width="193" height="34.333333333333371"/>
+                                <rect key="frame" x="100" y="607.33333333333337" width="193" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Account"/>
                                 <connections>
                                     <segue destination="i0R-fl-3A1" kind="presentation" id="Sws-MD-G66"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frugl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-Ny-6PB">
+                                <rect key="frame" x="100" y="89" width="193" height="64.666666666666686"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="54"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LxP-9R-uET"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,13 +69,16 @@
                             <constraint firstItem="jYv-KD-5MA" firstAttribute="top" secondItem="pmf-QR-M9V" secondAttribute="bottom" constant="95" id="63e-NP-5JB"/>
                             <constraint firstItem="Oal-26-iAW" firstAttribute="centerX" secondItem="LxP-9R-uET" secondAttribute="centerX" id="702-BU-MlL"/>
                             <constraint firstItem="LxP-9R-uET" firstAttribute="trailing" secondItem="jYv-KD-5MA" secondAttribute="trailing" constant="100" id="AjK-Gs-L7E"/>
+                            <constraint firstItem="kMr-Ny-6PB" firstAttribute="top" secondItem="LxP-9R-uET" secondAttribute="top" constant="30" id="Eod-qf-RKk"/>
                             <constraint firstItem="LxP-9R-uET" firstAttribute="trailing" secondItem="at4-LY-KvN" secondAttribute="trailing" constant="90" id="Mvq-6A-dGM"/>
                             <constraint firstItem="Oal-26-iAW" firstAttribute="leading" secondItem="LxP-9R-uET" secondAttribute="leading" constant="100" id="Nlc-KB-tqs"/>
                             <constraint firstItem="LxP-9R-uET" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oal-26-iAW" secondAttribute="trailing" id="WOd-Ke-4TB"/>
                             <constraint firstItem="at4-LY-KvN" firstAttribute="leading" secondItem="LxP-9R-uET" secondAttribute="leading" constant="90" id="ZUA-xI-aGz"/>
                             <constraint firstItem="Oal-26-iAW" firstAttribute="top" secondItem="at4-LY-KvN" secondAttribute="bottom" constant="50" id="Zxo-Ag-MXO"/>
+                            <constraint firstItem="kMr-Ny-6PB" firstAttribute="leading" secondItem="LxP-9R-uET" secondAttribute="leading" constant="100" id="ahq-9n-490"/>
                             <constraint firstItem="pmf-QR-M9V" firstAttribute="centerX" secondItem="LxP-9R-uET" secondAttribute="centerX" id="dBG-J0-dFc"/>
-                            <constraint firstItem="pmf-QR-M9V" firstAttribute="top" secondItem="Oal-26-iAW" secondAttribute="bottom" constant="70" id="eRe-FW-VxQ"/>
+                            <constraint firstItem="pmf-QR-M9V" firstAttribute="top" secondItem="Oal-26-iAW" secondAttribute="bottom" constant="100" id="eRe-FW-VxQ"/>
+                            <constraint firstItem="LxP-9R-uET" firstAttribute="trailing" secondItem="kMr-Ny-6PB" secondAttribute="trailing" constant="100" id="hZK-vK-2em"/>
                             <constraint firstItem="at4-LY-KvN" firstAttribute="top" secondItem="LxP-9R-uET" secondAttribute="top" constant="140" id="pts-dD-FmH"/>
                             <constraint firstItem="jYv-KD-5MA" firstAttribute="leading" secondItem="LxP-9R-uET" secondAttribute="leading" constant="100" id="si4-qd-d1Q"/>
                         </constraints>
