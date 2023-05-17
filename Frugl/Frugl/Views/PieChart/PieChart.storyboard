@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6QY-mt-aMe">
-                                <rect key="frame" x="8" y="474" width="377" height="337"/>
+                                <rect key="frame" x="8" y="497" width="377" height="314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="337" id="cAs-th-DFE"/>
+                                    <constraint firstAttribute="height" constant="314" id="cAs-th-DFE"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pieChartCell" rowHeight="100" id="T5z-Mj-RDd" customClass="PieChartTableViewCell" customModule="Frugl" customModuleProvider="target">
@@ -64,7 +64,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Monthly Budget Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-vd-JN0">
-                                <rect key="frame" x="110.33333333333333" y="435.66666666666669" width="172.33333333333337" height="20.333333333333314"/>
+                                <rect key="frame" x="8" y="445" width="188.33333333333334" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -77,23 +77,53 @@
                                     <constraint firstAttribute="width" constant="240" id="h83-5P-TiN"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Overdue Budget)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Qs-tLB">
+                                <rect key="frame" x="248.33333333333337" y="444" width="136.66666666666663" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Overdue percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-0N-TVj">
+                                <rect key="frame" x="248" y="468" width="168.33333333333337" height="22.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(budget amount left)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDn-Mi-eaE">
+                                <rect key="frame" x="8" y="469" width="188.33333333333334" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v8T-80-sfZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WDn-Mi-eaE" firstAttribute="trailing" secondItem="MMb-vd-JN0" secondAttribute="trailing" id="7hC-Nz-UZx"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="bottom" secondItem="6QY-mt-aMe" secondAttribute="bottom" constant="7" id="EDL-SL-ab3"/>
-                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="MMb-vd-JN0" secondAttribute="bottom" constant="18" id="H5j-Q1-zGd"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="MMb-vd-JN0" secondAttribute="bottom" constant="31.666666666666686" id="H5j-Q1-zGd"/>
+                            <constraint firstItem="MMb-vd-JN0" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="8" id="OZx-U8-lS3"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="centerX" secondItem="v8T-80-sfZ" secondAttribute="centerX" id="Sxq-lc-eAf"/>
-                            <constraint firstItem="6QY-mt-aMe" firstAttribute="centerX" secondItem="MMb-vd-JN0" secondAttribute="centerX" id="Xaz-dR-e98"/>
+                            <constraint firstItem="dLA-0N-TVj" firstAttribute="firstBaseline" secondItem="U10-Qs-tLB" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="TDx-bN-0OG"/>
+                            <constraint firstItem="WDn-Mi-eaE" firstAttribute="firstBaseline" secondItem="MMb-vd-JN0" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="UJa-Up-Lwq"/>
+                            <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="U10-Qs-tLB" secondAttribute="trailing" constant="8" id="X2K-5V-Acg"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="centerX" secondItem="MMb-vd-JN0" secondAttribute="centerX" constant="94.333333333333314" id="Xaz-dR-e98"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="6QY-mt-aMe" secondAttribute="trailing" constant="8" id="dPE-7K-pqF"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="top" secondItem="v8T-80-sfZ" secondAttribute="top" constant="40" id="gQ5-kZ-fys"/>
+                            <constraint firstItem="WDn-Mi-eaE" firstAttribute="centerY" secondItem="dLA-0N-TVj" secondAttribute="centerY" id="kKH-ZS-Ar4"/>
+                            <constraint firstItem="dLA-0N-TVj" firstAttribute="leading" secondItem="WDn-Mi-eaE" secondAttribute="trailing" constant="51.666666666666657" id="mci-lx-DAz"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="nSp-aV-cVY"/>
+                            <constraint firstItem="WDn-Mi-eaE" firstAttribute="leading" secondItem="MMb-vd-JN0" secondAttribute="leading" id="qdG-TE-4dp"/>
                             <constraint firstItem="6QY-mt-aMe" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="8" id="wuU-iO-WmX"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="U10-Qs-tLB" secondAttribute="bottom" constant="32.666666666666686" id="wxP-9K-Wqx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pie" image="chart.pie" catalog="system" id="jDZ-bo-dRt"/>
                     <connections>
+                        <outlet property="budgetAmountLeftTextField" destination="WDn-Mi-eaE" id="XeA-YY-zMS"/>
                         <outlet property="monthlyBudgetGoalTextField" destination="MMb-vd-JN0" id="KRl-YX-G7J"/>
+                        <outlet property="overdueBudgetTextField" destination="U10-Qs-tLB" id="nh1-Rj-J3K"/>
+                        <outlet property="percentageLeftTextField" destination="dLA-0N-TVj" id="eYY-BS-ibB"/>
                         <outlet property="pieChartTableView" destination="6QY-mt-aMe" id="XCu-nM-JqK"/>
                         <outlet property="pieChartView" destination="sWj-bh-hvH" id="vTY-4I-dwh"/>
                     </connections>
