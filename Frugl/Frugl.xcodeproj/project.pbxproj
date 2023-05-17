@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		235F2E832A016BA50025E1AE /* CreateExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */; };
-		235F2E852A01859A0025E1AE /* ItemizationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235F2E842A01859A0025E1AE /* ItemizationCellViewModel.swift */; };
 		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
 		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
 		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
@@ -16,7 +15,6 @@
 		237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */; };
 		237063EE29F9C6800014B188 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063ED29F9C6800014B188 /* BudgetTableViewCell.swift */; };
 		237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F129F9CCF30014B188 /* ItemizationViewController.swift */; };
-		237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */; };
 		237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */; };
 		237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889F929FB0B280044F6E1 /* SignOutViewController.swift */; };
 		237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */; };
@@ -61,7 +59,6 @@
 
 /* Begin PBXFileReference section */
 		235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExpenseViewModel.swift; sourceTree = "<group>"; };
-		235F2E842A01859A0025E1AE /* ItemizationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationCellViewModel.swift; sourceTree = "<group>"; };
 		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsViewController.swift; sourceTree = "<group>"; };
 		237063ED29F9C6800014B188 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		237063F129F9CCF30014B188 /* ItemizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationViewController.swift; sourceTree = "<group>"; };
-		237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationTableViewCell.swift; sourceTree = "<group>"; };
 		237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsViewModel.swift; sourceTree = "<group>"; };
 		237889F929FB0B280044F6E1 /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewModel.swift; sourceTree = "<group>"; };
@@ -224,19 +220,9 @@
 				237063F129F9CCF30014B188 /* ItemizationViewController.swift */,
 				2381B29F2A02C029003A8AB3 /* ItemizationViewModel.swift */,
 				23BCD2462A003344002EC273 /* Itemization.storyboard */,
-				237063F329F9CD180014B188 /* CustomCell */,
 				23BCD2432A0032DC002EC273 /* CreateExpense */,
 			);
 			path = Itemization;
-			sourceTree = "<group>";
-		};
-		237063F329F9CD180014B188 /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				237063F429F9CD2D0014B188 /* ItemizationTableViewCell.swift */,
-				235F2E842A01859A0025E1AE /* ItemizationCellViewModel.swift */,
-			);
-			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		237889FD29FB0BE80044F6E1 /* SignOut */ = {
@@ -441,7 +427,6 @@
 				23B1B5A02A041054004DA6EF /* GlobalSOT.swift in Sources */,
 				34C433182A000F3800064959 /* Expense.swift in Sources */,
 				939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */,
-				237063F529F9CD2D0014B188 /* ItemizationTableViewCell.swift in Sources */,
 				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
 				34D529302A0183010067B388 /* CalendarHelper.swift in Sources */,
 				34C433162A000F2000064959 /* Budget.swift in Sources */,
@@ -459,7 +444,6 @@
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
 				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
 				237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */,
-				235F2E852A01859A0025E1AE /* ItemizationCellViewModel.swift in Sources */,
 				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
 				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
 				939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */,

@@ -4,8 +4,7 @@
 //
 //  Created by Jake Gloschat on 5/3/23.
 //
-
-import Foundation
+import UIKit
 
 protocol ItemizationViewModelDelegate: AnyObject {
     func expenseLoadedSuccessfully()
