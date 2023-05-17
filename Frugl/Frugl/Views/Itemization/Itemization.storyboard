@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="157" translatesAutoresizingMaskIntoConstraints="NO" id="qJI-JB-gAb">
-                                <rect key="frame" x="48" y="119.99999999999999" width="321" height="20.333333333333329"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qJI-JB-gAb">
+                                <rect key="frame" x="8" y="128" width="377" height="27.666666666666657"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-pg-r62">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-pg-r62">
+                                        <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Total)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-1y-urf">
-                                        <rect key="frame" x="212.33333333333329" y="0.0" width="108.66666666666666" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Total)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-1y-urf">
+                                        <rect key="frame" x="203.66666666666663" y="0.0" width="173.33333333333337" height="27.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -35,8 +35,8 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vx1-IU-U3v">
-                                <rect key="frame" x="8" y="160.33333333333331" width="377" height="587.33333333333348"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="8" y="165.66666666666663" width="377" height="578"/>
+                                <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="expenseCell" textLabel="7y7-KO-d4m" rowHeight="100" style="IBUITableViewCellStyleDefault" id="inY-Lg-dx9">
                                         <rect key="frame" x="0.0" y="50" width="377" height="100"/>
@@ -48,6 +48,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7y7-KO-d4m">
                                                     <rect key="frame" x="20" y="0.0" width="337" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,36 +58,50 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-ZK-3xA">
-                                <rect key="frame" x="8" y="755.66666666666663" width="377" height="20.333333333333371"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-ZK-3xA">
+                                <rect key="frame" x="8" y="751.66666666666663" width="377" height="24.333333333333371"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Expected Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-mZ-YRH">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Expected Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-mZ-YRH">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="24.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($um Number)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-X9-y7k">
-                                        <rect key="frame" x="265" y="0.0" width="112" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($um Number)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-X9-y7k">
+                                        <rect key="frame" x="192.66666666666663" y="0.0" width="184.33333333333337" height="24.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-2d-44z">
+                                <rect key="frame" x="100" y="59" width="193" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="lYy-yV-p4t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eb6-Aw-Fis"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="2BH-ZK-3xA" secondAttribute="trailing" constant="8" id="2HF-Pa-aed"/>
                             <constraint firstItem="eb6-Aw-Fis" firstAttribute="bottom" secondItem="2BH-ZK-3xA" secondAttribute="bottom" constant="42" id="5nP-OE-1yJ"/>
                             <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="Vx1-IU-U3v" secondAttribute="trailing" constant="8" id="7eP-j6-dQ7"/>
                             <constraint firstItem="2BH-ZK-3xA" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="8" id="AjD-fT-Ocx"/>
-                            <constraint firstItem="Vx1-IU-U3v" firstAttribute="top" secondItem="qJI-JB-gAb" secondAttribute="bottom" constant="20" id="HFj-e2-aKZ"/>
+                            <constraint firstItem="Vx1-IU-U3v" firstAttribute="top" secondItem="qJI-JB-gAb" secondAttribute="bottom" constant="10" id="HFj-e2-aKZ"/>
+                            <constraint firstItem="iJ3-2d-44z" firstAttribute="centerX" secondItem="eb6-Aw-Fis" secondAttribute="centerX" id="HK7-5f-6FY"/>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="iJ3-2d-44z" secondAttribute="trailing" constant="100" id="NYf-aD-giT"/>
+                            <constraint firstItem="iJ3-2d-44z" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="100" id="RhV-nt-C6L"/>
                             <constraint firstItem="Vx1-IU-U3v" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="8" id="Rlo-Cq-7g6"/>
-                            <constraint firstItem="qJI-JB-gAb" firstAttribute="top" secondItem="4sN-WQ-7ec" secondAttribute="top" constant="120" id="XcA-Ag-i50"/>
+                            <constraint firstItem="qJI-JB-gAb" firstAttribute="top" secondItem="iJ3-2d-44z" secondAttribute="top" constant="69" id="XcA-Ag-i50"/>
                             <constraint firstItem="2BH-ZK-3xA" firstAttribute="top" secondItem="Vx1-IU-U3v" secondAttribute="bottom" constant="8" id="ZwH-Qn-CcK"/>
-                            <constraint firstItem="qJI-JB-gAb" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="48" id="gdc-tw-yXo"/>
+                            <constraint firstItem="iJ3-2d-44z" firstAttribute="top" secondItem="eb6-Aw-Fis" secondAttribute="top" id="bhP-WQ-VUo"/>
+                            <constraint firstItem="qJI-JB-gAb" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="8" id="gdc-tw-yXo"/>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="qJI-JB-gAb" secondAttribute="trailing" constant="8" id="lrk-YY-1V5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Expenses" image="list.bullet.clipboard" catalog="system" selectedImage="list.bullet.clipboard.fill" id="Mge-FY-7Ce"/>

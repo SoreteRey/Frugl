@@ -49,7 +49,7 @@ class ItemizationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateExpense" {
             if self.viewModel.expenses.count <= 19 {
-               guard let destinationVC = segue.destination as? CreateExpenseViewController else { return }
+                guard segue.destination is CreateExpenseViewController else { return }
             } else {
                 presentExpenseAlert()
             }
