@@ -77,14 +77,14 @@
                                     <constraint firstAttribute="width" constant="240" id="h83-5P-TiN"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Overdue Budget)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Qs-tLB">
-                                <rect key="frame" x="248.33333333333337" y="444" width="136.66666666666663" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage of Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Qs-tLB">
+                                <rect key="frame" x="218.66666666666663" y="444" width="166.33333333333337" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Overdue percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-0N-TVj">
-                                <rect key="frame" x="248" y="468" width="168.33333333333337" height="22.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-0N-TVj">
+                                <rect key="frame" x="248" y="468" width="137" height="22.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,6 +109,7 @@
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="U10-Qs-tLB" secondAttribute="trailing" constant="8" id="X2K-5V-Acg"/>
                             <constraint firstItem="6QY-mt-aMe" firstAttribute="centerX" secondItem="MMb-vd-JN0" secondAttribute="centerX" constant="94.333333333333314" id="Xaz-dR-e98"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="6QY-mt-aMe" secondAttribute="trailing" constant="8" id="dPE-7K-pqF"/>
+                            <constraint firstAttribute="trailing" secondItem="dLA-0N-TVj" secondAttribute="trailing" constant="8" id="fJ4-6b-riZ"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="top" secondItem="v8T-80-sfZ" secondAttribute="top" constant="40" id="gQ5-kZ-fys"/>
                             <constraint firstItem="WDn-Mi-eaE" firstAttribute="centerY" secondItem="dLA-0N-TVj" secondAttribute="centerY" id="kKH-ZS-Ar4"/>
                             <constraint firstItem="dLA-0N-TVj" firstAttribute="leading" secondItem="WDn-Mi-eaE" secondAttribute="trailing" constant="51.666666666666657" id="mci-lx-DAz"/>
@@ -122,8 +123,7 @@
                     <connections>
                         <outlet property="budgetAmountLeftTextField" destination="WDn-Mi-eaE" id="XeA-YY-zMS"/>
                         <outlet property="monthlyBudgetGoalTextField" destination="MMb-vd-JN0" id="KRl-YX-G7J"/>
-                        <outlet property="overdueBudgetTextField" destination="U10-Qs-tLB" id="nh1-Rj-J3K"/>
-                        <outlet property="percentageLeftTextField" destination="dLA-0N-TVj" id="eYY-BS-ibB"/>
+                        <outlet property="percentageLeftTextField" destination="dLA-0N-TVj" id="jIQ-5f-WCY"/>
                         <outlet property="pieChartTableView" destination="6QY-mt-aMe" id="XCu-nM-JqK"/>
                         <outlet property="pieChartView" destination="sWj-bh-hvH" id="vTY-4I-dwh"/>
                     </connections>

@@ -13,10 +13,8 @@ class PieChartViewController: UIViewController {
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet weak var monthlyBudgetGoalTextField: UILabel!
     @IBOutlet weak var pieChartTableView: UITableView!
-    @IBOutlet weak var overdueBudgetTextField: UILabel!
     @IBOutlet weak var budgetAmountLeftTextField: UILabel!
     @IBOutlet weak var percentageLeftTextField: UILabel!
-    
     
     // MARK: - Properties
     var viewModel: PieChartViewModel!
@@ -52,16 +50,30 @@ class PieChartViewController: UIViewController {
     
     func budgetAmountLeftOver() {
         guard let budget = CurrentUser.shared.currentBudget else { return }
-        //        let newBudget = viewModel.newBudgetAmount
         let totalExpenses = viewModel.allExpensesTotal ?? 0.0
         let remainingBalance = budget.amount - totalExpenses
-        print("expenses", totalExpenses)
         
         if remainingBalance > 0 {
             budgetAmountLeftTextField.text = "Left Over: $\(remainingBalance)"
             
         } else {
-            budgetAmountLeftTextField.text = "Over Budget: $\(remainingBalance)"
+            budgetAmountLeftTextField.text = "Over Budget: -$\(remainingBalance * -1)"
+        }
+    }
+    
+    func budgetPercentage() { //need help finding the right percentage my brain is no longer working
+        guard let budget = CurrentUser.shared.currentBudget else { return }
+        let budgetAmount = budget.amount
+        let totalExpenses = viewModel.allExpensesTotal ?? 0.0
+
+        let remainingBalance = budgetAmount - totalExpenses
+        let percentageUsed = (totalExpenses / budgetAmount) * 100
+        let percentageRemaining = 100 - percentageUsed
+
+        if remainingBalance >= 0 {
+            percentageLeftTextField.text = "\(percentageRemaining)%"
+        } else {
+           
         }
     }
 }
@@ -81,8 +93,6 @@ extension PieChartViewController: UITableViewDataSource {
         let budget = CurrentUser.shared.currentBudget
         let budgetAmount = budget?.amount ?? 0.0
         let newBudget = viewModel.newBudgetAmount ?? 0.0
-        print("New", newBudget)
-        print("Old", budgetAmount)
         
         if newBudget == 0 {
             
@@ -106,6 +116,7 @@ extension PieChartViewController: PieChartViewModelDelegate {
     func loadExpensesSuccessfully() {
         DispatchQueue.main.async { [weak self] in
             self?.budgetAmountLeftOver()
+            self?.budgetPercentage()
             self?.pieChartTableView.reloadData()
             self?.updatePieChart()
         }
