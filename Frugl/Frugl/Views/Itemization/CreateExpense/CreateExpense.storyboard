@@ -23,26 +23,31 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expense Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdp-2n-h3F">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-xz-dpm">
                                         <rect key="frame" x="0.0" y="74" width="233" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional Due Date..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-NE-8Fi">
                                         <rect key="frame" x="0.0" y="148" width="233" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional First Alert..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xy4-nW-Idy">
                                         <rect key="frame" x="0.0" y="221.99999999999994" width="233" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional Second Alert..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zbe-He-zz3">
                                         <rect key="frame" x="0.0" y="295.99999999999994" width="233" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -71,18 +76,29 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38E-Rd-AAT">
+                                <rect key="frame" x="112.66666666666667" y="79" width="167.66666666666663" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="xxQ-7K-PLH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n5P-Cj-CSe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87409847969999999" green="0.88963216540000001" blue="0.96484857800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zd3-JR-hci" firstAttribute="centerX" secondItem="n5P-Cj-CSe" secondAttribute="centerX" id="1L7-ON-cU0"/>
                             <constraint firstItem="n5P-Cj-CSe" firstAttribute="trailing" secondItem="dBS-nb-vcy" secondAttribute="trailing" constant="80" id="9l3-l0-5xv"/>
                             <constraint firstItem="dBS-nb-vcy" firstAttribute="top" secondItem="BfW-tR-G2U" secondAttribute="bottom" constant="50" id="Bbe-Pl-kUs"/>
                             <constraint firstItem="BfW-tR-G2U" firstAttribute="centerX" secondItem="dBS-nb-vcy" secondAttribute="centerX" id="Or3-97-Dqg"/>
                             <constraint firstItem="n5P-Cj-CSe" firstAttribute="bottom" secondItem="zd3-JR-hci" secondAttribute="bottom" constant="65" id="S3X-IW-7zn"/>
+                            <constraint firstItem="38E-Rd-AAT" firstAttribute="centerX" secondItem="n5P-Cj-CSe" secondAttribute="centerX" id="U8k-0T-6aZ"/>
                             <constraint firstItem="zd3-JR-hci" firstAttribute="top" secondItem="dBS-nb-vcy" secondAttribute="bottom" constant="70" id="XlS-KN-9VC"/>
                             <constraint firstItem="dBS-nb-vcy" firstAttribute="leading" secondItem="n5P-Cj-CSe" secondAttribute="leading" constant="80" id="b3O-SI-SNx"/>
                             <constraint firstItem="BfW-tR-G2U" firstAttribute="leading" secondItem="n5P-Cj-CSe" secondAttribute="leading" constant="40" id="ihd-PR-W6f"/>
+                            <constraint firstItem="38E-Rd-AAT" firstAttribute="top" secondItem="n5P-Cj-CSe" secondAttribute="top" constant="20" id="zp4-c3-sfE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -100,8 +116,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
