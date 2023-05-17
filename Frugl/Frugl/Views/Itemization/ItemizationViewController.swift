@@ -38,6 +38,23 @@ class ItemizationViewController: UIViewController {
             expensesTableView.reloadData()
         }
     }
+    
+    func presentExpenseAlert() {
+        let alertController = UIAlertController(title: "Limit Reached", message: "You have reached your limit of 20 expenses", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(dismissAction)
+        self.present(alertController, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateExpense" {
+            if self.viewModel.expenses.count <= 19 {
+               guard let destinationVC = segue.destination as? CreateExpenseViewController else { return }
+            } else {
+                presentExpenseAlert()
+            }
+        }
+    }
 } // End of Class
 
 // MARK: - Extensions
