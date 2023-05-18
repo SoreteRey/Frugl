@@ -54,10 +54,23 @@ class PieChartViewController: UIViewController {
         let remainingBalance = budget.amount - totalExpenses
         
         if remainingBalance > 0 {
-            budgetAmountLeftTextField.text = "Left Over: $\(remainingBalance)"
-            
+            let remainingBalanceText = "Left Over: $\(remainingBalance)"
+            let attributedString = NSMutableAttributedString(string: remainingBalanceText)
+//            let darkGreen = UIColor(red: 0.0, green: 0.5, blue: 0.0, alpha: 1.0) insert into value if we want a differente color
+
+            let range = (remainingBalanceText as NSString).range(of: "\(remainingBalance)")
+            attributedString.addAttribute(.foregroundColor, value: UIColor.systemGreen, range: range)
+
+            budgetAmountLeftTextField.attributedText = attributedString
+
         } else {
-            budgetAmountLeftTextField.text = "Over Budget: -$\(remainingBalance * -1)"
+            let remainingBalanceText = "Over Budget: $\(remainingBalance * -1)"
+            let attributedString = NSMutableAttributedString(string: remainingBalanceText)
+
+            let range = (remainingBalanceText as NSString).range(of: "\(remainingBalance * -1)")
+            attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+
+            budgetAmountLeftTextField.attributedText = attributedString
         }
     }
     
