@@ -18,23 +18,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budgets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6C-5x-O5V">
-                                <rect key="frame" x="100" y="59" width="193" height="33.666666666666657"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="100" y="59" width="193" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="AZS-FV-YFY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGW-sz-jco">
-                                <rect key="frame" x="20" y="132.66666666666666" width="353" height="34"/>
+                                <rect key="frame" x="20" y="154" width="353" height="34"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="5he-bF-Ag8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Your Budget..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-qe-wo2">
-                                <rect key="frame" x="20" y="186.66666666666666" width="353" height="34"/>
+                                <rect key="frame" x="20" y="208" width="353" height="34"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="wEd-SH-QxY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-4c-QBE">
+                                <rect key="frame" x="139.33333333333334" y="267" width="114.33333333333334" height="13"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Add Budget"/>
+                                <connections>
+                                    <action selector="addBudgetButtonTapped:" destination="ztZ-mf-VA6" eventType="touchUpInside" id="tFj-iD-iDY"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YmF-mw-9Ob">
                                 <rect key="frame" x="8" y="344" width="377" height="466"/>
                                 <color key="backgroundColor" red="0.87018114329999996" green="0.88916999100000005" blue="0.97054427860000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,15 +78,15 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-sf-KYJ">
-                                                            <rect key="frame" x="57.666666666666664" y="0.0" width="116.66666666666669" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="57.666666666666664" y="0.0" width="121.66666666666669" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Amount)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-4q-s6t">
-                                                            <rect key="frame" x="182.33333333333337" y="0.0" width="138.66666666666663" height="30"/>
+                                                            <rect key="frame" x="187.33333333333337" y="0.0" width="133.66666666666663" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -91,31 +108,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-4c-QBE">
-                                <rect key="frame" x="120" y="245.66666666666666" width="153" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Add Budget"/>
-                                <connections>
-                                    <action selector="addBudgetButtonTapped:" destination="ztZ-mf-VA6" eventType="touchUpInside" id="tFj-iD-iDY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JsQ-IA-dks"/>
                         <color key="backgroundColor" red="0.87072570300826635" green="0.88931096442922009" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SgS-qe-wo2" firstAttribute="centerX" secondItem="W1h-4c-QBE" secondAttribute="centerX" id="08D-SD-H7a"/>
                             <constraint firstItem="SgS-qe-wo2" firstAttribute="leading" secondItem="fGW-sz-jco" secondAttribute="leading" id="ApJ-MV-7an"/>
                             <constraint firstItem="W6C-5x-O5V" firstAttribute="centerX" secondItem="JsQ-IA-dks" secondAttribute="centerX" id="IKg-ch-RSb"/>
                             <constraint firstItem="JsQ-IA-dks" firstAttribute="bottom" secondItem="YmF-mw-9Ob" secondAttribute="bottom" constant="8" id="IdU-jY-1RU"/>
+                            <constraint firstItem="YmF-mw-9Ob" firstAttribute="top" secondItem="W1h-4c-QBE" secondAttribute="bottom" constant="64" id="LYf-kQ-iex"/>
                             <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="fGW-sz-jco" secondAttribute="trailing" constant="20" id="MD4-7f-gDA"/>
                             <constraint firstItem="fGW-sz-jco" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="20" id="MXB-AQ-He7"/>
-                            <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="W1h-4c-QBE" secondAttribute="trailing" constant="120" id="Mcf-fR-MAE"/>
                             <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="YmF-mw-9Ob" secondAttribute="trailing" constant="8" id="NoG-J6-RTb"/>
                             <constraint firstItem="SgS-qe-wo2" firstAttribute="top" secondItem="fGW-sz-jco" secondAttribute="bottom" constant="20" id="Q6k-Py-Fc5"/>
                             <constraint firstItem="SgS-qe-wo2" firstAttribute="trailing" secondItem="fGW-sz-jco" secondAttribute="trailing" id="UKe-1M-3x9"/>
+                            <constraint firstItem="W1h-4c-QBE" firstAttribute="centerX" secondItem="JsQ-IA-dks" secondAttribute="centerX" id="Wcs-d9-m30"/>
                             <constraint firstItem="W6C-5x-O5V" firstAttribute="top" secondItem="JsQ-IA-dks" secondAttribute="top" id="ZY2-sV-7VS"/>
+                            <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="W6C-5x-O5V" secondAttribute="trailing" constant="100" id="aC0-S6-CO9"/>
                             <constraint firstItem="W6C-5x-O5V" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="100" id="bnE-eo-qdO"/>
-                            <constraint firstItem="W1h-4c-QBE" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="120" id="eaI-xR-Vbg"/>
                             <constraint firstItem="YmF-mw-9Ob" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="8" id="fVZ-Hs-7mJ"/>
                             <constraint firstItem="fGW-sz-jco" firstAttribute="top" secondItem="W6C-5x-O5V" secondAttribute="bottom" constant="40" id="iY3-Mw-zeq"/>
                             <constraint firstItem="W1h-4c-QBE" firstAttribute="top" secondItem="SgS-qe-wo2" secondAttribute="bottom" constant="25" id="ni9-lp-twt"/>

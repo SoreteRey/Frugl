@@ -49,7 +49,7 @@ class ItemizationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateExpense" {
             if self.viewModel.expenses.count <= 19 {
-               guard let destinationVC = segue.destination as? CreateExpenseViewController else { return }
+                guard segue.destination is CreateExpenseViewController else { return }
             } else {
                 presentExpenseAlert()
             }
@@ -71,6 +71,15 @@ extension ItemizationViewController: UITableViewDataSource, UITableViewDelegate 
         case 2: return "Savings"
         default: return nil
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        
+        header.textLabel?.textColor = .black
+        header.textLabel?.font = .boldSystemFont(ofSize: 18)
+        header.textLabel?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100)
+        header.textLabel?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 100)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

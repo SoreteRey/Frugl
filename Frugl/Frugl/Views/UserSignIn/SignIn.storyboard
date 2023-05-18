@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="66" width="213" height="34"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -43,28 +43,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trying to get frugl?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-QR-M9V">
-                                <rect key="frame" x="109.66666666666669" y="483.33333333333331" width="174" height="28.999999999999943"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="98.666666666666671" y="483.33333333333331" width="195.66666666666663" height="32.666666666666686"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="27"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYv-KD-5MA">
-                                <rect key="frame" x="100" y="607.33333333333337" width="193" height="34.333333333333371"/>
+                                <rect key="frame" x="100" y="611" width="193" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Account"/>
                                 <connections>
                                     <segue destination="i0R-fl-3A1" kind="presentation" id="Sws-MD-G66"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frugl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-Ny-6PB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frugl." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-Ny-6PB">
                                 <rect key="frame" x="100" y="89" width="193" height="64.666666666666686"/>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="54"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LxP-9R-uET"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="jYv-KD-5MA" firstAttribute="top" secondItem="pmf-QR-M9V" secondAttribute="bottom" constant="95" id="63e-NP-5JB"/>
                             <constraint firstItem="Oal-26-iAW" firstAttribute="centerX" secondItem="LxP-9R-uET" secondAttribute="centerX" id="702-BU-MlL"/>
@@ -104,9 +104,6 @@
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
