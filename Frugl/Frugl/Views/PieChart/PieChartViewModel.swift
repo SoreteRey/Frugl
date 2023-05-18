@@ -55,10 +55,9 @@ class PieChartViewModel {
         if totalDebt <= budget.amount {
             var tempSlices = expenses.enumerated().map { index, expense in
                 let amount = debts[index]
-                print(amount)
                 let percent = CGFloat(amount / budget.amount)
                 let color = getRandomColor()
-                let name = expense.name // Assuming the expense struct has a 'name' property
+                let name = expense.name
                 return Slice(percent: percent, color: color, expenseName: name)
             }
             // green
@@ -72,17 +71,15 @@ class PieChartViewModel {
             self.newBudgetAmount = (remainingBalance * -1) + budget.amount
             var tempSlices = expenses.enumerated().map { index, expense in
                 let amount = debts[index]
-                print(amount)
                 let percent = CGFloat(amount / newBudgetAmount!)
                 let color = getRandomColor()
-                let name = expense.name // Assuming the expense struct has a 'name' property
+                let name = expense.name
                 return Slice(percent: percent, color: color, expenseName: name)
             }
             self.slices = tempSlices
         }
     }
     
-        //     Helper function to generate random colors
         private func getRandomColor() -> UIColor {
 //            let red = CGFloat.random(in: 0...0.7)
             let green = CGFloat.random(in: 0...0.6)

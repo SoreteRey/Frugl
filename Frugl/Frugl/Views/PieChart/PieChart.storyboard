@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6QY-mt-aMe">
                                 <rect key="frame" x="8" y="497" width="377" height="314"/>
-                                <color key="backgroundColor" red="0.61006927489999996" green="0.82681071760000002" blue="0.84370785950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.79250162840000005" green="0.80841249230000001" blue="0.88388162849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="314" id="cAs-th-DFE"/>
                                 </constraints>
