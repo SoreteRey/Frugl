@@ -82,7 +82,6 @@
                                     <constraint firstAttribute="height" constant="55" id="xxQ-7K-PLH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="45"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
