@@ -61,19 +61,19 @@ class PieChartViewController: UIViewController {
         }
     }
     
-    func budgetPercentage() { //need help finding the right percentage my brain is no longer working
+    func budgetPercentage() {
         guard let budget = CurrentUser.shared.currentBudget else { return }
         let budgetAmount = budget.amount
         let totalExpenses = viewModel.allExpensesTotal ?? 0.0
 
-        let remainingBalance = budgetAmount - totalExpenses
-        let percentageUsed = (totalExpenses / budgetAmount) * 100
-        let percentageRemaining = 100 - percentageUsed
-
-        if remainingBalance >= 0 {
-            percentageLeftTextField.text = "\(percentageRemaining)%"
+        if totalExpenses <= budgetAmount {
+            let percentageUsed = (totalExpenses / budgetAmount) * 100
+            let formattedPercentage = String(format: "%.2f%%", percentageUsed)
+            percentageLeftTextField.text = formattedPercentage
         } else {
-           
+            let overBudgetPercentage = ((totalExpenses - budgetAmount) / budgetAmount) * 100 + 100
+            let formattedPercentage = String(format: "%.2f%%", overBudgetPercentage)
+            percentageLeftTextField.text = formattedPercentage
         }
     }
 }
