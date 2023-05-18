@@ -13,9 +13,12 @@ class PieChartViewController: UIViewController {
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet weak var monthlyBudgetGoalTextField: UILabel!
     @IBOutlet weak var pieChartTableView: UITableView!
+    @IBOutlet weak var budgetAmountLeftTextField: UILabel!
+    @IBOutlet weak var percentageLeftTextField: UILabel!
     
     // MARK: - Properties
     var viewModel: PieChartViewModel!
+    var allExpenses: [Expense] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,10 +29,10 @@ class PieChartViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        budgetAmountLabel()
         fetchDataforTableView()
+        budgetAmountLabel()
     }
-
+    
     func fetchDataforTableView() {
         viewModel.fetchExpenses()
     }
@@ -41,13 +44,41 @@ class PieChartViewController: UIViewController {
     }
     
     func budgetAmountLabel() {
-        if let budget = CurrentUser.shared.currentBudget {
-            monthlyBudgetGoalTextField.text = "Budget: $\(budget.amount)"
+        guard let budget = CurrentUser.shared.currentBudget else { return }
+        monthlyBudgetGoalTextField.text = "Budget: $\(budget.amount)"
+    }
+    
+    func budgetAmountLeftOver() {
+        guard let budget = CurrentUser.shared.currentBudget else { return }
+        let totalExpenses = viewModel.allExpensesTotal ?? 0.0
+        let remainingBalance = budget.amount - totalExpenses
+        
+        if remainingBalance > 0 {
+            budgetAmountLeftTextField.text = "Left Over: $\(remainingBalance)"
+            
+        } else {
+            budgetAmountLeftTextField.text = "Over Budget: -$\(remainingBalance * -1)"
+        }
+    }
+    
+    func budgetPercentage() {
+        guard let budget = CurrentUser.shared.currentBudget else { return }
+        let budgetAmount = budget.amount
+        let totalExpenses = viewModel.allExpensesTotal ?? 0.0
+
+        if totalExpenses <= budgetAmount {
+            let percentageUsed = (totalExpenses / budgetAmount) * 100
+            let formattedPercentage = String(format: "%.2f%%", percentageUsed)
+            percentageLeftTextField.text = formattedPercentage
+        } else {
+            let overBudgetPercentage = ((totalExpenses - budgetAmount) / budgetAmount) * 100 + 100
+            let formattedPercentage = String(format: "%.2f%%", overBudgetPercentage)
+            percentageLeftTextField.text = formattedPercentage
         }
     }
 }
 
-    // MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension PieChartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.expenses.count
@@ -59,11 +90,21 @@ extension PieChartViewController: UITableViewDataSource {
         }
         
         let expense = viewModel.expenses[indexPath.row]
-        if let budget = CurrentUser.shared.currentBudget {
+        let budget = CurrentUser.shared.currentBudget
+        let budgetAmount = budget?.amount ?? 0.0
+        let newBudget = viewModel.newBudgetAmount ?? 0.0
+        
+        if newBudget == 0 {
             
-            let formattedAmount = String(format: "%.2f%%", (expense.amount / budget.amount) * 100)
+            let formattedAmount = String(format: "%.2f%%", (expense.amount / budgetAmount) * 100)
             
             cell.configCell(expenseName: expense.name, amount: formattedAmount)
+            
+        } else if newBudget != budgetAmount  {
+            
+            let newFormattedAmount = String(format: "%.2f%%", (expense.amount / newBudget) * 100)
+            
+            cell.configCell(expenseName: expense.name, amount: newFormattedAmount)
         }
         
         return cell
@@ -74,6 +115,8 @@ extension PieChartViewController: UITableViewDataSource {
 extension PieChartViewController: PieChartViewModelDelegate {
     func loadExpensesSuccessfully() {
         DispatchQueue.main.async { [weak self] in
+            self?.budgetAmountLeftOver()
+            self?.budgetPercentage()
             self?.pieChartTableView.reloadData()
             self?.updatePieChart()
         }
