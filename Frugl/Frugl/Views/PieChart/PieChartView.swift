@@ -19,6 +19,7 @@ class PieChartView: UIView {
     
     @IBOutlet var canvasView: UIView!
     
+    // MARK: - Outlets Labels
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var label3: UILabel!
@@ -41,6 +42,7 @@ class PieChartView: UIView {
     @IBOutlet var label20: UILabel!
     @IBOutlet var label21: UILabel!
     
+    // MARK: - Outlets X
     @IBOutlet var label1XConst: NSLayoutConstraint!
     @IBOutlet var label2XConst: NSLayoutConstraint!
     @IBOutlet var label3XConst: NSLayoutConstraint!
@@ -63,6 +65,7 @@ class PieChartView: UIView {
     @IBOutlet var label20XConst: NSLayoutConstraint!
     @IBOutlet var label21XConst: NSLayoutConstraint!
     
+    // MARK: - Outlets Y
     @IBOutlet var label1YConst: NSLayoutConstraint!
     @IBOutlet var label2YConst: NSLayoutConstraint!
     @IBOutlet var label3YConst: NSLayoutConstraint!
@@ -85,6 +88,7 @@ class PieChartView: UIView {
     @IBOutlet var label20YConst: NSLayoutConstraint!
     @IBOutlet var label21YConst: NSLayoutConstraint!
     
+    // MARK: - Properties
     var slices: [Slice]?
     var sliceIndex: Int = 0
     var currentPercent: CGFloat = 0.0
@@ -98,18 +102,11 @@ class PieChartView: UIView {
     override func draw(_ rect: CGRect) {
         subviews[0].frame = bounds
     }
-    
-    /// Get an animation duration for the passed slice.
-    /// If slice share is 40%, for example, it returns 40% of total animation duration.
-    /// - Parameter slice: Slice struct
-    /// - Returns: Animation duration
+
     func getDuration(_ slice: Slice) -> CFTimeInterval {
         return CFTimeInterval(slice.percent / 1.0 * PieChartView.ANIMATION_DURATION)
     }
-    
-    /// Convert slice percent to radian.
-    /// - Parameter percent: Slice percent (0.0 - 1.0).
-    /// - Returns: Radian
+
     func percentToRadian(_ percent: CGFloat) -> CGFloat {
         //Because angle starts wtih X positive axis, add 270 degrees to rotate it to Y positive axis.
         var angle = 270 + percent * 360
@@ -118,9 +115,7 @@ class PieChartView: UIView {
         }
         return angle * CGFloat.pi / 180.0
     }
-    
-    /// Add a slice CAShapeLayer to the canvas.
-    /// - Parameter slice: Slice to be drawn.
+
     func addSlice(_ slice: Slice) {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
@@ -147,12 +142,6 @@ class PieChartView: UIView {
         canvasView.layer.addSublayer(sliceLayer)
     }
     
-    /// Get label's center position based on from and to percentages.
-    /// This is always relative to canvasView's center.
-    /// - Parameters:
-    ///   - fromPercent: End of previous slice.
-    ///   - toPercent: End of current slice.
-    /// - Returns: Center point for label.
     func getLabelCenter(_ fromPercent: CGFloat, _ toPercent: CGFloat) -> CGPoint {
         let radius = canvasView.frame.width * 4 / 8
         let labelAngle = percentToRadian((toPercent - fromPercent) / 2 + fromPercent)
@@ -165,8 +154,6 @@ class PieChartView: UIView {
         return path.currentPoint
     }
     
-    /// - Parameter slice: Slice whose label is drawn.
-    /// // If you take in all the slices, can you just count them and thats how many lables you can create?
     func addLabel(_ slice: Slice) {
         let center = canvasView.center
         let labelCenter = getLabelCenter(currentPercent, currentPercent + slice.percent)
@@ -181,20 +168,18 @@ class PieChartView: UIView {
         let label = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20, label21][sliceIndex]
         label?.isHidden = false //changed from true
         label?.text = String(format: "%d%%", Int(slice.percent * 100))
-        
     }
     
-    /// Call this to start pie chart animation.
     func animateChart() {
         resetLabels()
         sliceIndex = 0
         currentPercent = 0.0
         canvasView.layer.sublayers = nil
-        
+
         if slices != nil && slices!.count > 0 {
             let firstSlice = slices![0]
-            addLabel(firstSlice)
             addSlice(firstSlice)
+            addLabel(firstSlice)
         }
     }
     

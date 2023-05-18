@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6QY-mt-aMe">
                                 <rect key="frame" x="8" y="497" width="377" height="314"/>
-                                <color key="backgroundColor" red="0.79250162840000005" green="0.80841249230000001" blue="0.88388162849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.61006927489999996" green="0.82681071760000002" blue="0.84370785950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="314" id="cAs-th-DFE"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </stackView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.74586264096270161" green="0.75818259684665268" blue="0.83972916637878781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.79250162840000005" green="0.80841249230000001" blue="0.88388162849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="k9D-0I-EKi" firstAttribute="centerX" secondItem="T5z-Mj-RDd" secondAttribute="centerX" id="6zk-Bx-VoS"/>
                                             <constraint firstItem="AWk-Hv-nNc" firstAttribute="leading" secondItem="T5z-Mj-RDd" secondAttribute="leading" constant="8" id="SVF-Ea-ZYk"/>
@@ -77,8 +77,8 @@
                                     <constraint firstAttribute="width" constant="240" id="h83-5P-TiN"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage of Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Qs-tLB">
-                                <rect key="frame" x="218.66666666666663" y="444" width="166.33333333333337" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Spent %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Qs-tLB">
+                                <rect key="frame" x="260.66666666666669" y="444" width="124.33333333333331" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v8T-80-sfZ"/>
-                        <color key="backgroundColor" red="0.79250162840000005" green="0.80841249230000001" blue="0.88388162849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33873175588542159" green="0.56544986684965703" blue="0.75695924084595956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WDn-Mi-eaE" firstAttribute="trailing" secondItem="MMb-vd-JN0" secondAttribute="trailing" id="7hC-Nz-UZx"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="bottom" secondItem="6QY-mt-aMe" secondAttribute="bottom" constant="7" id="EDL-SL-ab3"/>

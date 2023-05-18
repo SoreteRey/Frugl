@@ -60,7 +60,7 @@ class PieChartViewController: UIViewController {
             let darkGreen = UIColor(red: 0.0, green: 0.5, blue: 0.0, alpha: 1.0)
 
             let range = (remainingBalanceText as NSString).range(of: "\(remainingBalance)")
-            attributedString.addAttribute(.foregroundColor, value: darkGreen, range: range)
+            attributedString.addAttribute(.foregroundColor, value: UIColor.systemGreen, range: range)
 
             budgetAmountLeftTextField.attributedText = attributedString
 
