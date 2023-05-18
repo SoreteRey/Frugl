@@ -61,16 +61,16 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-ZK-3xA">
-                                <rect key="frame" x="8" y="770.33333333333337" width="377" height="27.666666666666629"/>
+                                <rect key="frame" x="20" y="770.33333333333337" width="365" height="27.666666666666629"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Expected Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-mZ-YRH">
-                                        <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="27.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Expected Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-mZ-YRH">
+                                        <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="27.666666666666668"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="23"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($um Number)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-X9-y7k">
-                                        <rect key="frame" x="192.66666666666663" y="0.0" width="184.33333333333337" height="27.666666666666668"/>
+                                        <rect key="frame" x="186.66666666666663" y="0.0" width="178.33333333333337" height="27.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                         <constraints>
                             <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="2BH-ZK-3xA" secondAttribute="trailing" constant="8" id="2HF-Pa-aed"/>
                             <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="Vx1-IU-U3v" secondAttribute="trailing" constant="8" id="7eP-j6-dQ7"/>
-                            <constraint firstItem="2BH-ZK-3xA" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="8" id="AjD-fT-Ocx"/>
+                            <constraint firstItem="2BH-ZK-3xA" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="20" id="AjD-fT-Ocx"/>
                             <constraint firstItem="2BH-ZK-3xA" firstAttribute="top" secondItem="Vx1-IU-U3v" secondAttribute="bottom" constant="20" id="GFA-wd-oeh"/>
                             <constraint firstItem="Vx1-IU-U3v" firstAttribute="top" secondItem="qJI-JB-gAb" secondAttribute="bottom" constant="10" id="HFj-e2-aKZ"/>
                             <constraint firstItem="iJ3-2d-44z" firstAttribute="centerX" secondItem="eb6-Aw-Fis" secondAttribute="centerX" id="HK7-5f-6FY"/>

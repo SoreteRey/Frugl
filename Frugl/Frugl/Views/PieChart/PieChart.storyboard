@@ -18,27 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-bh-hvH" customClass="PieChartView" customModule="Frugl" customModuleProvider="target">
-                                <rect key="frame" x="76.666666666666686" y="99" width="240" height="240"/>
+                                <rect key="frame" x="70" y="99" width="253" height="253"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="6CQ-fi-7aF"/>
-                                    <constraint firstAttribute="width" constant="240" id="h83-5P-TiN"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Spent %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Qs-tLB">
-                                <rect key="frame" x="260.66666666666669" y="444" width="124.33333333333331" height="20.333333333333314"/>
+                                <rect key="frame" x="260.66666666666669" y="437" width="124.33333333333331" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-0N-TVj">
-                                <rect key="frame" x="286" y="468" width="99" height="20.333333333333314"/>
+                                <rect key="frame" x="286" y="461" width="99" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(budget amount left)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDn-Mi-eaE">
-                                <rect key="frame" x="8" y="468" width="188.33333333333334" height="20.333333333333314"/>
+                                <rect key="frame" x="8" y="461" width="188.33333333333334" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188.33333333333326" id="G5N-xc-0Ak"/>
                                 </constraints>
@@ -47,11 +46,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6QY-mt-aMe">
-                                <rect key="frame" x="8" y="497" width="377" height="314"/>
+                                <rect key="frame" x="8" y="489.33333333333326" width="377" height="321.66666666666674"/>
                                 <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="314" id="cAs-th-DFE"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pieChartCell" rowHeight="100" id="T5z-Mj-RDd" customClass="PieChartTableViewCell" customModule="Frugl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="377" height="100"/>
@@ -94,7 +90,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Monthly Budget Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-vd-JN0">
-                                <rect key="frame" x="8" y="439" width="191.33333333333334" height="23"/>
+                                <rect key="frame" x="8" y="432" width="191.33333333333334" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -103,20 +99,24 @@
                         <viewLayoutGuide key="safeArea" id="v8T-80-sfZ"/>
                         <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="sWj-bh-hvH" secondAttribute="trailing" constant="70" id="10Q-pB-xGL"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="WDn-Mi-eaE" secondAttribute="bottom" constant="32" id="BMU-Ad-4Xx"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="bottom" secondItem="6QY-mt-aMe" secondAttribute="bottom" constant="7" id="EDL-SL-ab3"/>
                             <constraint firstItem="WDn-Mi-eaE" firstAttribute="leading" secondItem="MMb-vd-JN0" secondAttribute="leading" id="NTy-oV-wNX"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="centerX" secondItem="v8T-80-sfZ" secondAttribute="centerX" id="Sxq-lc-eAf"/>
                             <constraint firstItem="dLA-0N-TVj" firstAttribute="firstBaseline" secondItem="U10-Qs-tLB" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="TDx-bN-0OG"/>
                             <constraint firstItem="MMb-vd-JN0" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="8" id="UW7-Bb-gVk"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="U10-Qs-tLB" secondAttribute="trailing" constant="8" id="X2K-5V-Acg"/>
+                            <constraint firstItem="MMb-vd-JN0" firstAttribute="top" secondItem="sWj-bh-hvH" secondAttribute="bottom" constant="80" id="Zdv-nw-v42"/>
                             <constraint firstItem="v8T-80-sfZ" firstAttribute="trailing" secondItem="6QY-mt-aMe" secondAttribute="trailing" constant="8" id="dPE-7K-pqF"/>
                             <constraint firstAttribute="trailing" secondItem="dLA-0N-TVj" secondAttribute="trailing" constant="8" id="fJ4-6b-riZ"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="top" secondItem="v8T-80-sfZ" secondAttribute="top" constant="40" id="gQ5-kZ-fys"/>
                             <constraint firstItem="WDn-Mi-eaE" firstAttribute="top" secondItem="MMb-vd-JN0" secondAttribute="bottom" constant="6" id="h9V-Au-uD1"/>
+                            <constraint firstItem="sWj-bh-hvH" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="70" id="hht-co-oRS"/>
                             <constraint firstItem="WDn-Mi-eaE" firstAttribute="centerY" secondItem="dLA-0N-TVj" secondAttribute="centerY" id="kKH-ZS-Ar4"/>
                             <constraint firstItem="sWj-bh-hvH" firstAttribute="width" secondItem="sWj-bh-hvH" secondAttribute="height" multiplier="1:1" id="nSp-aV-cVY"/>
                             <constraint firstItem="6QY-mt-aMe" firstAttribute="leading" secondItem="v8T-80-sfZ" secondAttribute="leading" constant="8" id="wuU-iO-WmX"/>
-                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="U10-Qs-tLB" secondAttribute="bottom" constant="32.666666666666686" id="wxP-9K-Wqx"/>
+                            <constraint firstItem="6QY-mt-aMe" firstAttribute="top" secondItem="U10-Qs-tLB" secondAttribute="bottom" constant="32" id="wxP-9K-Wqx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pie" image="chart.pie" catalog="system" id="jDZ-bo-dRt"/>
