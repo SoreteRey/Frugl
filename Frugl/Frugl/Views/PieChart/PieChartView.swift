@@ -39,6 +39,7 @@ class PieChartView: UIView {
     @IBOutlet var label18: UILabel!
     @IBOutlet var label19: UILabel!
     @IBOutlet var label20: UILabel!
+    @IBOutlet var label21: UILabel!
     
     @IBOutlet var label1XConst: NSLayoutConstraint!
     @IBOutlet var label2XConst: NSLayoutConstraint!
@@ -60,6 +61,7 @@ class PieChartView: UIView {
     @IBOutlet var label18XConst: NSLayoutConstraint!
     @IBOutlet var label19XConst: NSLayoutConstraint!
     @IBOutlet var label20XConst: NSLayoutConstraint!
+    @IBOutlet var label21XConst: NSLayoutConstraint!
     
     @IBOutlet var label1YConst: NSLayoutConstraint!
     @IBOutlet var label2YConst: NSLayoutConstraint!
@@ -81,6 +83,7 @@ class PieChartView: UIView {
     @IBOutlet var label18YConst: NSLayoutConstraint!
     @IBOutlet var label19YConst: NSLayoutConstraint!
     @IBOutlet var label20YConst: NSLayoutConstraint!
+    @IBOutlet var label21YConst: NSLayoutConstraint!
     
     var slices: [Slice]?
     var sliceIndex: Int = 0
@@ -167,15 +170,15 @@ class PieChartView: UIView {
     func addLabel(_ slice: Slice) {
         let center = canvasView.center
         let labelCenter = getLabelCenter(currentPercent, currentPercent + slice.percent)
-        let xConst = [label1XConst, label2XConst, label3XConst, label4XConst, label5XConst, label6XConst, label7XConst, label8XConst, label9XConst, label10XConst, label11XConst, label12XConst, label13XConst, label14XConst, label15XConst, label16XConst, label17XConst, label18XConst, label19XConst, label20XConst][sliceIndex]
+        let xConst = [label1XConst, label2XConst, label3XConst, label4XConst, label5XConst, label6XConst, label7XConst, label8XConst, label9XConst, label10XConst, label11XConst, label12XConst, label13XConst, label14XConst, label15XConst, label16XConst, label17XConst, label18XConst, label19XConst, label20XConst, label21XConst][sliceIndex]
         
-        let yConst = [label1YConst, label2YConst, label3YConst, label4YConst, label5YConst, label6YConst, label7YConst, label8YConst, label9YConst, label10YConst, label11YConst, label12YConst, label13YConst, label14YConst, label15YConst, label16YConst, label17YConst, label18YConst, label19YConst, label20YConst][sliceIndex]
+        let yConst = [label1YConst, label2YConst, label3YConst, label4YConst, label5YConst, label6YConst, label7YConst, label8YConst, label9YConst, label10YConst, label11YConst, label12YConst, label13YConst, label14YConst, label15YConst, label16YConst, label17YConst, label18YConst, label19YConst, label20YConst, label21YConst][sliceIndex]
         xConst?.constant = labelCenter.x - center.x
         yConst?.constant = labelCenter.y - center.y
         canvasView.superview?.setNeedsUpdateConstraints()
         canvasView.superview?.layoutIfNeeded()
         
-        let label = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20][sliceIndex]
+        let label = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20, label21][sliceIndex]
         label?.isHidden = false //changed from true
         label?.text = String(format: "%d%%", Int(slice.percent * 100))
         
@@ -216,6 +219,7 @@ class PieChartView: UIView {
         label18.text = nil
         label19.text = nil
         label20.text = nil
+        label21.text = nil
     }
 }
 
@@ -230,7 +234,7 @@ extension PieChartView: CAAnimationDelegate {
                 addSlice(nextSlice)
             } else {
                 //After animation is done, display all labels. Can be animated.
-                for label in [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20] {
+                for label in [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20, label21] {
                     label?.isHidden = false
                 }
             }
