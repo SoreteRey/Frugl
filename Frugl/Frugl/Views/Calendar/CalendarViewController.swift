@@ -104,6 +104,10 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         
         return cell
     }
+    
+    func collectionView(_: UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
+            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+    }
 }
 
 extension CalendarViewController: UITableViewDataSource {
