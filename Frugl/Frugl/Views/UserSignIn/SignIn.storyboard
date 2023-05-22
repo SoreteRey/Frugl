@@ -86,6 +86,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="qFc-cx-WcB" id="3KI-JM-qVb"/>
                         <outlet property="passwordTextField" destination="y6l-PC-0qT" id="8qH-gy-Xg0"/>
+                        <outlet property="signInbutton" destination="Oal-26-iAW" id="IwF-sN-gIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzS-fW-h4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

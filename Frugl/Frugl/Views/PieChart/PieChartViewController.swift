@@ -103,23 +103,13 @@ extension PieChartViewController: UITableViewDataSource {
         }
         
         let expense = viewModel.expenses[indexPath.row]
-        let budget = CurrentUser.shared.currentBudget
-        let budgetAmount = budget?.amount ?? 0.0
-        let newBudget = viewModel.newBudgetAmount ?? 0.0
+        guard let budget = CurrentUser.shared.currentBudget?.amount else { return UITableViewCell()}
         
-        if newBudget == 0 {
             
-            let formattedAmount = String(format: "%.2f%%", (expense.amount / budgetAmount) * 100)
+            let formattedAmount = String(format: "%.2f%%", (expense.amount / budget) * 100)
             
             cell.configCell(expenseName: expense.name, amount: formattedAmount)
-            
-        } else if newBudget != budgetAmount  {
-            
-            let newFormattedAmount = String(format: "%.2f%%", (expense.amount / newBudget) * 100)
-            
-            cell.configCell(expenseName: expense.name, amount: newFormattedAmount)
-        }
-        
+
         return cell
     }
 }

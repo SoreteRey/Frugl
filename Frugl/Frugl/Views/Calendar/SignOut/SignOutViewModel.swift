@@ -30,4 +30,16 @@ struct SignOutViewModel {
             print("Error Signing Out: %@", signOuterror)
         }
     }
+    
+    func deleteUser() {
+        let user = Auth.auth().currentUser
+
+        user?.delete { error in
+          if let error = error {
+            // An error happened.
+          } else {
+            // Account deleted.
+          }
+        }
+    }
 }

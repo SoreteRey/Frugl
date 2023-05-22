@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInbutton: UIButton!
     
     // MARK: - Properties
     var viewModel: SignInAccountViewModel!
@@ -30,7 +31,7 @@ class SignInViewController: UIViewController {
         NSLayoutConstraint.activate([
             signInWithApple.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
             signInWithApple.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -100),
-            signInWithApple.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -380),
+            signInWithApple.topAnchor.constraint(equalTo: signInbutton.bottomAnchor, constant: 20),
             signInWithApple.heightAnchor.constraint(equalToConstant: 38)
         ])
         signInWithApple.addTarget(self, action: #selector(appleSignInButtonTapped), for: .touchUpInside)
