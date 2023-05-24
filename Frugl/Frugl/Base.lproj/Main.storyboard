@@ -1,24 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XxF-WA-KEL">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="yFx-LR-vyR">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="navigation" id="XxF-WA-KEL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hXk-RT-AMc"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="iYe-O8-aar">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DD8-I2-alv" kind="relationship" relationship="viewControllers" id="lnd-h8-ADg"/>
+                        <segue destination="4zY-4S-y8Y" kind="relationship" relationship="viewControllers" id="CIs-62-aJ4"/>
+                        <segue destination="e61-HZ-y9G" kind="relationship" relationship="viewControllers" id="rXT-cQ-07R"/>
+                        <segue destination="AVi-Mx-K3f" kind="relationship" relationship="viewControllers" id="CCp-ih-CfE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZ4-9p-hfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-24" y="494"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Vex-mZ-Bir">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4zY-4S-y8Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XNZ-4Q-5ki"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VxF-oj-V8r">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0uv-zu-Kk2" kind="relationship" relationship="rootViewController" id="cfI-6g-kQF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycr-AI-ygi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598" y="1229"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="jNb-Oi-P6w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVi-Mx-K3f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="sKH-Mc-fOM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vNg-Fz-omh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P3e-tr-1Da" kind="relationship" relationship="rootViewController" id="x0C-i4-znZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgj-dl-6tH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3033" y="1229"/>
+        </scene>
+        <!--signIn-->
+        <scene sceneID="W3f-0O-mo4">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="signIn" storyboardName="SignIn" referencedIdentifier="signIn" id="xNe-zm-yB7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbW-OJ-wDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445.03816793893128" y="-160.56338028169014"/>
+        </scene>
+        <!--createAccount-->
+        <scene sceneID="R0I-w8-45t">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="createAccount" storyboardName="CreateAccount" referencedIdentifier="createAccount" id="LF0-hc-7e5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXE-Ko-yst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="-165"/>
+        </scene>
+        <!--budgetGoalsVC-->
+        <scene sceneID="rPb-TA-Oib">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="budgetGoalsVC" storyboardName="BudgetGoals" referencedIdentifier="budgetGoalsVC" id="DD8-I2-alv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sWF-zA-AGh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2M5-Rj-rr8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-483.20610687022901" y="1228.8732394366198"/>
+        </scene>
+        <!--Itemization-->
+        <scene sceneID="ldQ-Xy-2YC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Itemization" id="0uv-zu-Kk2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="F6C-0v-36Y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oy1-IS-tVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="1229"/>
+        </scene>
+        <!--UIViewController-1u5-gS-7ys-->
+        <scene sceneID="9fH-Jl-jRM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-1u5-gS-7ys" storyboardName="CreateExpense" referencedIdentifier="UIViewController-1u5-gS-7ys" id="uzg-SO-Ky4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rud-2h-BW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="1896"/>
+        </scene>
+        <!--PieChart-->
+        <scene sceneID="GCk-vn-JFz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PieChart" id="e61-HZ-y9G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TA1-mN-XoM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-bJ-4Tc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="1229"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="nhE-bI-c40">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calendar" id="P3e-tr-1Da" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="G2e-hh-TAi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pd9-za-QT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3790" y="1229"/>
+        </scene>
+        <!--UIViewController-aCR-3z-A4U-->
+        <scene sceneID="pmZ-pn-ddV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-aCR-3z-A4U" storyboardName="SignOut" referencedIdentifier="UIViewController-aCR-3z-A4U" id="q3Q-wv-bBX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KP1-Hy-mI7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4522.900763358778" y="1228.8732394366198"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+    </resources>
 </document>

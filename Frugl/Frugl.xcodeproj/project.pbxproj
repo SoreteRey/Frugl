@@ -7,23 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235F2E832A016BA50025E1AE /* CreateExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */; };
+		237063E229F9B5620014B188 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E129F9B5620014B188 /* SignInViewController.swift */; };
+		237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E329F9B5D90014B188 /* CreateAccountViewController.swift */; };
+		237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E629F9B5FD0014B188 /* SignInViewModel.swift */; };
+		237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */; };
+		237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */; };
+		237063EE29F9C6800014B188 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063ED29F9C6800014B188 /* BudgetTableViewCell.swift */; };
+		237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237063F129F9CCF30014B188 /* ItemizationViewController.swift */; };
+		237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */; };
+		237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889F929FB0B280044F6E1 /* SignOutViewController.swift */; };
+		237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */; };
+		2381B2A02A02C029003A8AB3 /* ItemizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2381B29F2A02C029003A8AB3 /* ItemizationViewModel.swift */; };
+		23B1B5A02A041054004DA6EF /* GlobalSOT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1B59F2A041054004DA6EF /* GlobalSOT.swift */; };
+		23B1B5A22A04110C004DA6EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1B5A12A04110C004DA6EF /* User.swift */; };
+		23B5AEE52A0AF33D001B32F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5AEE42A0AF33D001B32F5 /* Constants.swift */; };
+		23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */; };
+		23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */; };
+		23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */; };
+		23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */; };
+		23BCD23E2A00313F002EC273 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD23D2A00313F002EC273 /* SignIn.storyboard */; };
+		23BCD2402A003178002EC273 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD23F2A003178002EC273 /* CreateAccount.storyboard */; };
+		23BCD2422A0031BE002EC273 /* BudgetGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2412A0031BE002EC273 /* BudgetGoals.storyboard */; };
+		23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */; };
+		23BCD2472A003344002EC273 /* Itemization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2462A003344002EC273 /* Itemization.storyboard */; };
+		23BCD2492A0033AC002EC273 /* CreateExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */; };
+		23BCD24B2A0033F5002EC273 /* PieChart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD24A2A0033F5002EC273 /* PieChart.storyboard */; };
+		23BCD2562A003636002EC273 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2552A003636002EC273 /* Calendar.storyboard */; };
+		23BCD2582A00364E002EC273 /* SignOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BCD2572A00364E002EC273 /* SignOut.storyboard */; };
+		3498FAE02A0A9F5300962BA9 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */; };
+		3498FAE32A0AA64100962BA9 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498FAE22A0AA64100962BA9 /* ExpenseTableViewCell.swift */; };
+		34BED4352A1281DE003D455C /* UIViewControllersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BED4342A1281DE003D455C /* UIViewControllersExtension.swift */; };
+		34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34C4330E29FAD1C600064959 /* GoogleService-Info.plist */; };
+		34C4331229FAD24700064959 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331129FAD24700064959 /* FirebaseAuth */; };
+		34C4331429FAD24700064959 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34C4331329FAD24700064959 /* FirebaseFirestore */; };
+		34C433162A000F2000064959 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433152A000F2000064959 /* Budget.swift */; };
+		34C433182A000F3800064959 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433172A000F3800064959 /* Expense.swift */; };
+		34C4331A2A0018F000064959 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C433192A0018F000064959 /* DateExtension.swift */; };
+		34D5292E2A0182A30067B388 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5292D2A0182A30067B388 /* CalendarCollectionViewCell.swift */; };
+		34D529302A0183010067B388 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5292F2A0183010067B388 /* CalendarHelper.swift */; };
 		936A492F29F838F400F400CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A492E29F838F400F400CB /* AppDelegate.swift */; };
 		936A493129F838F400F400CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493029F838F400F400CB /* SceneDelegate.swift */; };
-		936A493329F838F400F400CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A493229F838F400F400CB /* ViewController.swift */; };
 		936A493629F838F400F400CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493429F838F400F400CB /* Main.storyboard */; };
 		936A493829F838F600F400CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936A493729F838F600F400CB /* Assets.xcassets */; };
 		936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936A493929F838F600F400CB /* LaunchScreen.storyboard */; };
+		939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */; };
+		939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939B5A5E2A001DE700FC3D2E /* PieChartView.xib */; };
+		939B5A632A004D9D00FC3D2E /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A622A004D9D00FC3D2E /* FirebaseService.swift */; };
+		939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExpenseViewModel.swift; sourceTree = "<group>"; };
+		237063E129F9B5620014B188 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		237063E329F9B5D90014B188 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		237063E629F9B5FD0014B188 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsViewController.swift; sourceTree = "<group>"; };
+		237063ED29F9C6800014B188 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		237063F129F9CCF30014B188 /* ItemizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationViewController.swift; sourceTree = "<group>"; };
+		237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetGoalsViewModel.swift; sourceTree = "<group>"; };
+		237889F929FB0B280044F6E1 /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
+		237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewModel.swift; sourceTree = "<group>"; };
+		2381B29F2A02C029003A8AB3 /* ItemizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemizationViewModel.swift; sourceTree = "<group>"; };
+		23B1B59F2A041054004DA6EF /* GlobalSOT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSOT.swift; sourceTree = "<group>"; };
+		23B1B5A12A04110C004DA6EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23B5AEE42A0AF33D001B32F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartTableViewCell.swift; sourceTree = "<group>"; };
+		23BCD23D2A00313F002EC273 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		23BCD23F2A003178002EC273 /* CreateAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		23BCD2412A0031BE002EC273 /* BudgetGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BudgetGoals.storyboard; sourceTree = "<group>"; };
+		23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExpenseViewController.swift; sourceTree = "<group>"; };
+		23BCD2462A003344002EC273 /* Itemization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Itemization.storyboard; sourceTree = "<group>"; };
+		23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateExpense.storyboard; sourceTree = "<group>"; };
+		23BCD24A2A0033F5002EC273 /* PieChart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PieChart.storyboard; sourceTree = "<group>"; };
+		23BCD2552A003636002EC273 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		23BCD2572A00364E002EC273 /* SignOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignOut.storyboard; sourceTree = "<group>"; };
+		3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		3498FAE22A0AA64100962BA9 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		34A4FA402A151DBB005C2321 /* Frugl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Frugl.entitlements; sourceTree = "<group>"; };
+		34BED4342A1281DE003D455C /* UIViewControllersExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllersExtension.swift; sourceTree = "<group>"; };
+		34C4330E29FAD1C600064959 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34C433152A000F2000064959 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		34C433172A000F3800064959 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		34C433192A0018F000064959 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		34D5292D2A0182A30067B388 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		34D5292F2A0183010067B388 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		936A492B29F838F400F400CB /* Frugl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frugl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A492E29F838F400F400CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A493029F838F400F400CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		936A493229F838F400F400CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		936A493529F838F400F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		936A493729F838F600F400CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		936A493A29F838F600F400CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		936A493C29F838F600F400CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		939B5A5E2A001DE700FC3D2E /* PieChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
+		939B5A622A004D9D00FC3D2E /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +114,197 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C4331229FAD24700064959 /* FirebaseAuth in Frameworks */,
+				34C4331429FAD24700064959 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237063D329F870820014B188 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				936A492E29F838F400F400CB /* AppDelegate.swift */,
+				936A493029F838F400F400CB /* SceneDelegate.swift */,
+				936A493729F838F600F400CB /* Assets.xcassets */,
+				936A493C29F838F600F400CB /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		237063D429F870FB0014B188 /* Helper&Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34C433192A0018F000064959 /* DateExtension.swift */,
+				34D5292F2A0183010067B388 /* CalendarHelper.swift */,
+				23B1B59F2A041054004DA6EF /* GlobalSOT.swift */,
+				23B5AEE42A0AF33D001B32F5 /* Constants.swift */,
+				34BED4342A1281DE003D455C /* UIViewControllersExtension.swift */,
+			);
+			path = "Helper&Extensions";
+			sourceTree = "<group>";
+		};
+		237063D729F871180014B188 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				939B5A622A004D9D00FC3D2E /* FirebaseService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		237063DA29F8712F0014B188 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34C433152A000F2000064959 /* Budget.swift */,
+				34C433172A000F3800064959 /* Expense.swift */,
+				23B1B5A12A04110C004DA6EF /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		237063DD29F871460014B188 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				237063E029F9B48C0014B188 /* UserSignIn */,
+				237063E529F9B5E50014B188 /* CreateAccount */,
+				237063EA29F9C6160014B188 /* BudgetGoals */,
+				237063F029F9CCC60014B188 /* Itemization */,
+				23BC26E729F9DB2E00B30A0F /* Calendar */,
+				23BC26EF29F9DC4100B30A0F /* PieChart */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		237063E029F9B48C0014B188 /* UserSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				237063E129F9B5620014B188 /* SignInViewController.swift */,
+				237063E629F9B5FD0014B188 /* SignInViewModel.swift */,
+				23BCD23D2A00313F002EC273 /* SignIn.storyboard */,
+			);
+			path = UserSignIn;
+			sourceTree = "<group>";
+		};
+		237063E529F9B5E50014B188 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				237063E329F9B5D90014B188 /* CreateAccountViewController.swift */,
+				237063E829F9B60F0014B188 /* CreateAccountViewModel.swift */,
+				23BCD23F2A003178002EC273 /* CreateAccount.storyboard */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		237063EA29F9C6160014B188 /* BudgetGoals */ = {
+			isa = PBXGroup;
+			children = (
+				237063EB29F9C6610014B188 /* BudgetGoalsViewController.swift */,
+				237889F529FB01E10044F6E1 /* BudgetGoalsViewModel.swift */,
+				23BCD2412A0031BE002EC273 /* BudgetGoals.storyboard */,
+				237063EF29F9C6830014B188 /* CustomCell */,
+			);
+			path = BudgetGoals;
+			sourceTree = "<group>";
+		};
+		237063EF29F9C6830014B188 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				237063ED29F9C6800014B188 /* BudgetTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		237063F029F9CCC60014B188 /* Itemization */ = {
+			isa = PBXGroup;
+			children = (
+				237063F129F9CCF30014B188 /* ItemizationViewController.swift */,
+				2381B29F2A02C029003A8AB3 /* ItemizationViewModel.swift */,
+				23BCD2462A003344002EC273 /* Itemization.storyboard */,
+				23BCD2432A0032DC002EC273 /* CreateExpense */,
+			);
+			path = Itemization;
+			sourceTree = "<group>";
+		};
+		237889FD29FB0BE80044F6E1 /* SignOut */ = {
+			isa = PBXGroup;
+			children = (
+				237889F929FB0B280044F6E1 /* SignOutViewController.swift */,
+				237889FB29FB0B460044F6E1 /* SignOutViewModel.swift */,
+				23BCD2572A00364E002EC273 /* SignOut.storyboard */,
+			);
+			path = SignOut;
+			sourceTree = "<group>";
+		};
+		23BC26E729F9DB2E00B30A0F /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26EA29F9DB8800B30A0F /* CalendarViewController.swift */,
+				3498FADF2A0A9F5300962BA9 /* CalendarViewModel.swift */,
+				23BCD2552A003636002EC273 /* Calendar.storyboard */,
+				3498FAE12A0AA54E00962BA9 /* TableViewCustomCell */,
+				34D5292C2A0182900067B388 /* CollectionCustomCell */,
+				237889FD29FB0BE80044F6E1 /* SignOut */,
+				23BC26EC29F9DB8C00B30A0F /* CustomCell */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		23BC26EC29F9DB8C00B30A0F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26ED29F9DBA400B30A0F /* CalendarTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		23BC26EF29F9DC4100B30A0F /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				23BCD24A2A0033F5002EC273 /* PieChart.storyboard */,
+				939B5A642A09516F00FC3D2E /* PieChartViewModel.swift */,
+				23BC26F029F9DC9400B30A0F /* PieChartViewController.swift */,
+				939B5A5A2A001D6E00FC3D2E /* PieChartView.swift */,
+				939B5A5E2A001DE700FC3D2E /* PieChartView.xib */,
+				23BC26F229F9DC9800B30A0F /* CustomCell */,
+			);
+			path = PieChart;
+			sourceTree = "<group>";
+		};
+		23BC26F229F9DC9800B30A0F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				23BC26F329F9DCB600B30A0F /* PieChartTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		23BCD2432A0032DC002EC273 /* CreateExpense */ = {
+			isa = PBXGroup;
+			children = (
+				23BCD2442A003313002EC273 /* CreateExpenseViewController.swift */,
+				235F2E822A016BA50025E1AE /* CreateExpenseViewModel.swift */,
+				23BCD2482A0033AC002EC273 /* CreateExpense.storyboard */,
+			);
+			path = CreateExpense;
+			sourceTree = "<group>";
+		};
+		3498FAE12A0AA54E00962BA9 /* TableViewCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				3498FAE22A0AA64100962BA9 /* ExpenseTableViewCell.swift */,
+			);
+			path = TableViewCustomCell;
+			sourceTree = "<group>";
+		};
+		34D5292C2A0182900067B388 /* CollectionCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				34D5292D2A0182A30067B388 /* CalendarCollectionViewCell.swift */,
+			);
+			path = CollectionCustomCell;
+			sourceTree = "<group>";
+		};
 		936A492229F838F400F400CB = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +324,15 @@
 		936A492D29F838F400F400CB /* Frugl */ = {
 			isa = PBXGroup;
 			children = (
-				936A492E29F838F400F400CB /* AppDelegate.swift */,
-				936A493029F838F400F400CB /* SceneDelegate.swift */,
-				936A493229F838F400F400CB /* ViewController.swift */,
+				34A4FA402A151DBB005C2321 /* Frugl.entitlements */,
+				237063DD29F871460014B188 /* Views */,
+				237063DA29F8712F0014B188 /* Model */,
+				237063D729F871180014B188 /* Networking */,
+				237063D429F870FB0014B188 /* Helper&Extensions */,
+				237063D329F870820014B188 /* SupportingFiles */,
 				936A493429F838F400F400CB /* Main.storyboard */,
-				936A493729F838F600F400CB /* Assets.xcassets */,
 				936A493929F838F600F400CB /* LaunchScreen.storyboard */,
-				936A493C29F838F600F400CB /* Info.plist */,
+				34C4330E29FAD1C600064959 /* GoogleService-Info.plist */,
 			);
 			path = Frugl;
 			sourceTree = "<group>";
@@ -83,6 +353,10 @@
 			dependencies = (
 			);
 			name = Frugl;
+			packageProductDependencies = (
+				34C4331129FAD24700064959 /* FirebaseAuth */,
+				34C4331329FAD24700064959 /* FirebaseFirestore */,
+			);
 			productName = Frugl;
 			productReference = 936A492B29F838F400F400CB /* Frugl.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +385,9 @@
 				Base,
 			);
 			mainGroup = 936A492229F838F400F400CB;
+			packageReferences = (
+				34C4331029FAD24700064959 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 936A492C29F838F400F400CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +402,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BCD2562A003636002EC273 /* Calendar.storyboard in Resources */,
 				936A493B29F838F600F400CB /* LaunchScreen.storyboard in Resources */,
+				939B5A5F2A001DE700FC3D2E /* PieChartView.xib in Resources */,
+				23BCD24B2A0033F5002EC273 /* PieChart.storyboard in Resources */,
 				936A493829F838F600F400CB /* Assets.xcassets in Resources */,
+				23BCD2582A00364E002EC273 /* SignOut.storyboard in Resources */,
 				936A493629F838F400F400CB /* Main.storyboard in Resources */,
+				23BCD23E2A00313F002EC273 /* SignIn.storyboard in Resources */,
+				23BCD2492A0033AC002EC273 /* CreateExpense.storyboard in Resources */,
+				23BCD2402A003178002EC273 /* CreateAccount.storyboard in Resources */,
+				23BCD2472A003344002EC273 /* Itemization.storyboard in Resources */,
+				23BCD2422A0031BE002EC273 /* BudgetGoals.storyboard in Resources */,
+				34C4330F29FAD1C700064959 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +425,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				936A493329F838F400F400CB /* ViewController.swift in Sources */,
+				34D5292E2A0182A30067B388 /* CalendarCollectionViewCell.swift in Sources */,
+				23B1B5A02A041054004DA6EF /* GlobalSOT.swift in Sources */,
+				34C433182A000F3800064959 /* Expense.swift in Sources */,
+				939B5A5B2A001D6E00FC3D2E /* PieChartView.swift in Sources */,
+				23BC26F429F9DCB600B30A0F /* PieChartTableViewCell.swift in Sources */,
+				34D529302A0183010067B388 /* CalendarHelper.swift in Sources */,
+				34C433162A000F2000064959 /* Budget.swift in Sources */,
+				23B1B5A22A04110C004DA6EF /* User.swift in Sources */,
+				23B5AEE52A0AF33D001B32F5 /* Constants.swift in Sources */,
+				237063EE29F9C6800014B188 /* BudgetTableViewCell.swift in Sources */,
+				237889FA29FB0B280044F6E1 /* SignOutViewController.swift in Sources */,
+				237063EC29F9C6610014B188 /* BudgetGoalsViewController.swift in Sources */,
+				2381B2A02A02C029003A8AB3 /* ItemizationViewModel.swift in Sources */,
+				237063E229F9B5620014B188 /* SignInViewController.swift in Sources */,
 				936A492F29F838F400F400CB /* AppDelegate.swift in Sources */,
+				939B5A632A004D9D00FC3D2E /* FirebaseService.swift in Sources */,
+				3498FAE32A0AA64100962BA9 /* ExpenseTableViewCell.swift in Sources */,
+				237889F629FB01E10044F6E1 /* BudgetGoalsViewModel.swift in Sources */,
 				936A493129F838F400F400CB /* SceneDelegate.swift in Sources */,
+				23BC26F129F9DC9400B30A0F /* PieChartViewController.swift in Sources */,
+				237063F229F9CCF30014B188 /* ItemizationViewController.swift in Sources */,
+				23BC26EE29F9DBA400B30A0F /* CalendarTableViewCell.swift in Sources */,
+				237063E429F9B5D90014B188 /* CreateAccountViewController.swift in Sources */,
+				939B5A652A09516F00FC3D2E /* PieChartViewModel.swift in Sources */,
+				237889FC29FB0B460044F6E1 /* SignOutViewModel.swift in Sources */,
+				237063E729F9B5FD0014B188 /* SignInViewModel.swift in Sources */,
+				34BED4352A1281DE003D455C /* UIViewControllersExtension.swift in Sources */,
+				34C4331A2A0018F000064959 /* DateExtension.swift in Sources */,
+				237063E929F9B60F0014B188 /* CreateAccountViewModel.swift in Sources */,
+				23BC26EB29F9DB8800B30A0F /* CalendarViewController.swift in Sources */,
+				3498FAE02A0A9F5300962BA9 /* CalendarViewModel.swift in Sources */,
+				23BCD2452A003313002EC273 /* CreateExpenseViewController.swift in Sources */,
+				235F2E832A016BA50025E1AE /* CreateExpenseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,15 +602,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Frugl/Frugl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Frugl/Info.plist;
+				INFOPLIST_FILE = Frugl/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,15 +631,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Frugl/Frugl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Frugl/Info.plist;
+				INFOPLIST_FILE = Frugl/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +677,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34C4331029FAD24700064959 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34C4331129FAD24700064959 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34C4331029FAD24700064959 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		34C4331329FAD24700064959 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34C4331029FAD24700064959 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 936A492329F838F400F400CB /* Project object */;
 }

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Budget Goals-->
+        <scene sceneID="5qg-oW-WkZ">
+            <objects>
+                <viewController storyboardIdentifier="budgetGoalsVC" id="ztZ-mf-VA6" customClass="BudgetGoalsViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ypi-4s-LtE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budgets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6C-5x-O5V">
+                                <rect key="frame" x="100" y="59" width="193" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="AZS-FV-YFY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGW-sz-jco">
+                                <rect key="frame" x="20" y="154" width="353" height="34"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="5he-bF-Ag8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Your Budget..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-qe-wo2">
+                                <rect key="frame" x="20" y="208" width="353" height="34"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="wEd-SH-QxY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-4c-QBE">
+                                <rect key="frame" x="130" y="267" width="133" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FIg-co-fvs"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Budget"/>
+                                <connections>
+                                    <action selector="addBudgetButtonTapped:" destination="ztZ-mf-VA6" eventType="touchUpInside" id="tFj-iD-iDY"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YmF-mw-9Ob">
+                                <rect key="frame" x="8" y="337" width="377" height="473"/>
+                                <color key="backgroundColor" red="0.87018114329999996" green="0.88916999100000005" blue="0.97054427860000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="budgetCell" rowHeight="68" id="LOi-mY-Xwd" customClass="BudgetTableViewCell" customModule="Frugl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LOi-mY-Xwd" id="kXd-Ku-2EV">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-hx-TT8">
+                                                    <rect key="frame" x="28" y="19" width="321" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-m7-jzn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="30"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="checkmarkButtonTapped:" destination="LOi-mY-Xwd" eventType="touchUpInside" id="hyZ-gT-OCL"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-sf-KYJ">
+                                                            <rect key="frame" x="57.666666666666664" y="0.0" width="121.66666666666669" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Amount)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-4q-s6t">
+                                                            <rect key="frame" x="187.33333333333337" y="0.0" width="133.66666666666663" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstItem="JPN-hx-TT8" firstAttribute="top" secondItem="kXd-Ku-2EV" secondAttribute="topMargin" constant="8" id="33s-Uz-wYg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JPN-hx-TT8" secondAttribute="bottom" constant="8" id="73Q-x6-wva"/>
+                                                <constraint firstItem="JPN-hx-TT8" firstAttribute="leading" secondItem="kXd-Ku-2EV" secondAttribute="leadingMargin" constant="8" id="EUp-I0-EMH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JPN-hx-TT8" secondAttribute="trailing" constant="8" id="mgy-p2-isE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <connections>
+                                            <outlet property="budgetAmountLabel" destination="MaS-4q-s6t" id="ULX-Dx-FVj"/>
+                                            <outlet property="budgetNameLabel" destination="xZ2-sf-KYJ" id="MRB-OW-8KF"/>
+                                            <outlet property="isCurrentBudgetButton" destination="BmU-m7-jzn" id="XPA-kC-IPB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JsQ-IA-dks"/>
+                        <color key="backgroundColor" red="0.87072570300826635" green="0.88931096442922009" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="W1h-4c-QBE" secondAttribute="trailing" constant="130" id="4Df-To-Poj"/>
+                            <constraint firstItem="SgS-qe-wo2" firstAttribute="leading" secondItem="fGW-sz-jco" secondAttribute="leading" id="ApJ-MV-7an"/>
+                            <constraint firstItem="W6C-5x-O5V" firstAttribute="centerX" secondItem="JsQ-IA-dks" secondAttribute="centerX" id="IKg-ch-RSb"/>
+                            <constraint firstItem="JsQ-IA-dks" firstAttribute="bottom" secondItem="YmF-mw-9Ob" secondAttribute="bottom" constant="8" id="IdU-jY-1RU"/>
+                            <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="fGW-sz-jco" secondAttribute="trailing" constant="20" id="MD4-7f-gDA"/>
+                            <constraint firstItem="fGW-sz-jco" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="20" id="MXB-AQ-He7"/>
+                            <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="YmF-mw-9Ob" secondAttribute="trailing" constant="8" id="NoG-J6-RTb"/>
+                            <constraint firstItem="SgS-qe-wo2" firstAttribute="top" secondItem="fGW-sz-jco" secondAttribute="bottom" constant="20" id="Q6k-Py-Fc5"/>
+                            <constraint firstItem="SgS-qe-wo2" firstAttribute="trailing" secondItem="fGW-sz-jco" secondAttribute="trailing" id="UKe-1M-3x9"/>
+                            <constraint firstItem="W1h-4c-QBE" firstAttribute="centerX" secondItem="JsQ-IA-dks" secondAttribute="centerX" id="Wcs-d9-m30"/>
+                            <constraint firstItem="W6C-5x-O5V" firstAttribute="top" secondItem="JsQ-IA-dks" secondAttribute="top" id="ZY2-sV-7VS"/>
+                            <constraint firstItem="JsQ-IA-dks" firstAttribute="trailing" secondItem="W6C-5x-O5V" secondAttribute="trailing" constant="100" id="aC0-S6-CO9"/>
+                            <constraint firstItem="W6C-5x-O5V" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="100" id="bnE-eo-qdO"/>
+                            <constraint firstItem="YmF-mw-9Ob" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="8" id="fVZ-Hs-7mJ"/>
+                            <constraint firstItem="fGW-sz-jco" firstAttribute="top" secondItem="W6C-5x-O5V" secondAttribute="bottom" constant="40" id="iY3-Mw-zeq"/>
+                            <constraint firstItem="YmF-mw-9Ob" firstAttribute="top" secondItem="W1h-4c-QBE" secondAttribute="bottom" constant="40" id="mEC-Dk-W09"/>
+                            <constraint firstItem="W1h-4c-QBE" firstAttribute="leading" secondItem="JsQ-IA-dks" secondAttribute="leading" constant="130" id="mR1-Uv-EDi"/>
+                            <constraint firstItem="W1h-4c-QBE" firstAttribute="top" secondItem="SgS-qe-wo2" secondAttribute="bottom" constant="25" id="ni9-lp-twt"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Budgets" image="dollarsign" catalog="system" id="KYL-IQ-i2i"/>
+                    <navigationItem key="navigationItem" title="Budget Goals" id="8Hs-1v-aQ6"/>
+                    <connections>
+                        <outlet property="budgetAmountTextField" destination="SgS-qe-wo2" id="aAo-mh-jSW"/>
+                        <outlet property="budgetNameTextField" destination="fGW-sz-jco" id="RUo-wl-9ap"/>
+                        <outlet property="budgetTableView" destination="YmF-mw-9Ob" id="kcF-qm-5SQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qR-DA-vzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-483.20610687022901" y="1228.8732394366198"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
+        <image name="dollarsign" catalog="system" width="89" height="128"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

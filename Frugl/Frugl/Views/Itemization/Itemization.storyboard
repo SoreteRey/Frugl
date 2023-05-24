@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Io-aa-BaI">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Expenses-->
+        <scene sceneID="hJj-ea-glf">
+            <objects>
+                <viewController id="9Io-aa-BaI" customClass="ItemizationViewController" customModule="Frugl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4sN-WQ-7ec">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qJI-JB-gAb">
+                                <rect key="frame" x="20" y="128" width="353" height="27.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-pg-r62">
+                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Budget Total)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-1y-urf">
+                                        <rect key="frame" x="176.66666666666663" y="0.0" width="176.33333333333337" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vx1-IU-U3v">
+                                <rect key="frame" x="8" y="165.66666666666669" width="377" height="584.66666666666652"/>
+                                <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="expenseCell" textLabel="7y7-KO-d4m" rowHeight="100" style="IBUITableViewCellStyleDefault" id="inY-Lg-dx9">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="inY-Lg-dx9" id="jXi-a6-Sf6">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7y7-KO-d4m">
+                                                    <rect key="frame" x="20" y="0.0" width="337" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-ZK-3xA">
+                                <rect key="frame" x="20" y="770.33333333333337" width="365" height="27.666666666666629"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Expected Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-mZ-YRH">
+                                        <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($um Number)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-X9-y7k">
+                                        <rect key="frame" x="186.66666666666663" y="0.0" width="178.33333333333337" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-2d-44z">
+                                <rect key="frame" x="100" y="59" width="193" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="lYy-yV-p4t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eb6-Aw-Fis"/>
+                        <color key="backgroundColor" red="0.87409788369999997" green="0.88966280220000005" blue="0.96091991659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="2BH-ZK-3xA" secondAttribute="trailing" constant="8" id="2HF-Pa-aed"/>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="Vx1-IU-U3v" secondAttribute="trailing" constant="8" id="7eP-j6-dQ7"/>
+                            <constraint firstItem="2BH-ZK-3xA" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="20" id="AjD-fT-Ocx"/>
+                            <constraint firstItem="2BH-ZK-3xA" firstAttribute="top" secondItem="Vx1-IU-U3v" secondAttribute="bottom" constant="20" id="GFA-wd-oeh"/>
+                            <constraint firstItem="Vx1-IU-U3v" firstAttribute="top" secondItem="qJI-JB-gAb" secondAttribute="bottom" constant="10" id="HFj-e2-aKZ"/>
+                            <constraint firstItem="iJ3-2d-44z" firstAttribute="centerX" secondItem="eb6-Aw-Fis" secondAttribute="centerX" id="HK7-5f-6FY"/>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="iJ3-2d-44z" secondAttribute="trailing" constant="100" id="NYf-aD-giT"/>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="bottom" secondItem="2BH-ZK-3xA" secondAttribute="bottom" constant="20" id="Rcb-T6-wzF"/>
+                            <constraint firstItem="iJ3-2d-44z" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="100" id="RhV-nt-C6L"/>
+                            <constraint firstItem="Vx1-IU-U3v" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="8" id="Rlo-Cq-7g6"/>
+                            <constraint firstItem="qJI-JB-gAb" firstAttribute="top" secondItem="iJ3-2d-44z" secondAttribute="top" constant="69" id="XcA-Ag-i50"/>
+                            <constraint firstItem="iJ3-2d-44z" firstAttribute="top" secondItem="eb6-Aw-Fis" secondAttribute="top" id="bhP-WQ-VUo"/>
+                            <constraint firstItem="qJI-JB-gAb" firstAttribute="leading" secondItem="eb6-Aw-Fis" secondAttribute="leading" constant="20" id="gdc-tw-yXo"/>
+                            <constraint firstItem="eb6-Aw-Fis" firstAttribute="trailing" secondItem="qJI-JB-gAb" secondAttribute="trailing" constant="20" id="lrk-YY-1V5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Expenses" image="list.bullet.clipboard" catalog="system" selectedImage="list.bullet.clipboard.fill" id="Mge-FY-7Ce"/>
+                    <navigationItem key="navigationItem" id="gA1-mZ-OaI">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7LF-Lt-ZK5">
+                            <connections>
+                                <segue destination="o8t-h2-yYK" kind="show" identifier="toCreateExpense" id="O7n-fG-PbL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="budgetTotalLabel" destination="NLB-1y-urf" id="e3N-SR-O43"/>
+                        <outlet property="expectedBalanceLabel" destination="6K2-X9-y7k" id="jdF-dJ-0v3"/>
+                        <outlet property="expensesTableView" destination="Vx1-IU-U3v" id="JQJ-ZS-s3X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4y-26-HfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374.8091603053435" y="1228.8732394366198"/>
+        </scene>
+        <!--UIViewController-1u5-gS-7ys-->
+        <scene sceneID="a4n-2k-vT8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-1u5-gS-7ys" id="o8t-h2-yYK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AI2-cl-slb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIj-Iv-wee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="1896"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
