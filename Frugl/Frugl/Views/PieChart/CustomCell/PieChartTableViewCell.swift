@@ -10,7 +10,6 @@ import UIKit
 class PieChartTableViewCell: UITableViewCell {
 
   // MARK: - Outlets
-    
     @IBOutlet weak var expenseNameTextLabel: UILabel!
     @IBOutlet weak var expensePercentageTextLabel: UILabel!
     
