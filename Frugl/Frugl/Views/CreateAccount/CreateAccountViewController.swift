@@ -14,7 +14,6 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var userPassWordTextField: UITextField!
     @IBOutlet weak var userConfirmPasswordTextField: UITextField!
     
-    
     // MARK: - Properties
     var viewModel: CreateAccountViewModel!
     
@@ -62,4 +61,3 @@ extension CreateAccountViewController: CreateAccountViewModelDelegate {
         presentMainVC()
     }
 }
-

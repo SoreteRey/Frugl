@@ -49,9 +49,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FIg-co-fvs"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Budget"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Budget">
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="addBudgetButtonTapped:" destination="ztZ-mf-VA6" eventType="touchUpInside" id="tFj-iD-iDY"/>
                                 </connections>
@@ -148,9 +149,6 @@
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="dollarsign" catalog="system" width="89" height="128"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

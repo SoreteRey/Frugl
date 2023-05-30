@@ -14,7 +14,6 @@ class ItemizationViewController: UIViewController {
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var expectedBalanceLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         expensesTableView.dataSource = self
